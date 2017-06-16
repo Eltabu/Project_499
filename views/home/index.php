@@ -4,8 +4,8 @@
 
 <h1>This is the Home Page</h1>
 
-	<?php 
-	echo "Hello World! from me Moad Eltabu";
+	<?php
+	echo "Hello World! from me ";
 	?>
 
 </body>
