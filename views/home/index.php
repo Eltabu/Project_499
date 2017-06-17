@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html>
-<body>
+<?php 
+    require_once  (__DIR__ .'/../includes/header.php');
+?>
 
-<h1>This is the Home Page</h1>
+<div>  <!-- Content -->
 
-	<?php
-	echo "Hello World! from me ";
-	?>
+    <?php 
+        echo "Hello World! This is the Home Page";
+    ?>
 
-</body>
-</html>
+</div> <!-- End of Content -->
+
+<?php 
+    require_once  (__DIR__ .'/../includes/footer.php');
+?>
