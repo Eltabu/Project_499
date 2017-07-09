@@ -7,7 +7,7 @@ class App
 
   protected $controller = 'home';
   protected $method = 'index';
-  protected $params = array();
+  protected $params = [];
 
   public function __construct()
   {
@@ -19,6 +19,7 @@ class App
          $this->controller = $url[0];
          unset($url[0]);
      }
+
      require_once(__DIR__ .'/../controllers/' . $this->controller . '.php');
      $this->controller = new $this->controller;
 
@@ -33,15 +34,14 @@ class App
      }
 
      //parase the params of exist
-     $this->params = $url ? array_values($url) : [];
-
+     $this->params = $url ? array_values($url) : []; 
 
 
      //call the controller and pass along the params
      call_user_func_array([$this->controller, $this->method], $this->params);
 
-
   }
+
   // function to paese the url
   public function parseUrl()
   {

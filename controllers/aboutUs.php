@@ -2,9 +2,9 @@
 
 class AboutUs extends Controller
 {
-    public function index($name ='')
+    public function index()
     {
-      $this->view('aboutUs/index');
+      $this->view('aboutUs/index', ['viewName' => 'About Us']);
     }
 
 }
