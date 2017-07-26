@@ -1,5 +1,5 @@
 /*************************
-*******Header****** Moad Eltabu
+*******Header************* 
 **************************/
 
 .fa {
@@ -346,6 +346,27 @@ ul.social-share li a {
   box-shadow: inset 0 0 0 5px #c52d2f;
   -webkit-box-shadow: inset 0 0 0 5px #c52d2f;
   border: 3px solid #c52d2f;
+}
+
+
+
+/*************************
+******* Admin ************* 
+**************************/
+.main-color-bg{
+  background-color: #e74c3c !important;
+  border-color: #c0392b !important;
+  color:#ffffff !important;
+}
+
+.list-group {
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    background: #333333;
+    color: #ffffff;
 }
 
 

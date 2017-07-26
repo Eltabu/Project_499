@@ -43,8 +43,25 @@
                     <div class="col-sm-6 col-xs-8">
                         <div class="top-nav" >
                             <ul class="top-nav-list">
-                                <li><a href="">Welcome, Moad</a></li>
-                                <li><a href="/moad/project/login">Login</a></li>                                
+                                <li><a href="/moad/project/dashboard">
+                                <?php
+                                if (isset($_SESSION['username']))
+                                {
+                                    echo 'Welcome, ' . $_SESSION['username'];
+                                }
+                                ?>
+                                 </a></li>
+                                <?php 
+                                if (isset($_SESSION['username']))
+                                {
+                                    echo '<li><a href="/moad/project/login/logout">Logout</a></li>';
+                                }
+                                else
+                                {
+                                    echo '<li><a href="/moad/project/login">Login</a></li>';  
+                                }
+                                ?> 
+                                                              
                             </ul>
                         </div>
                     </div>

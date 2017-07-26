@@ -8,28 +8,33 @@ class User extends Model
     public function __construct()
     {
         parent::__construct();
-        //echo md5('eltabu');
     }
 
-    public function isUser()
+    public function isUser($username = '', $password = '')
     {
-        $sth = $this->db->prepare("Select id From users Where
-                             username = :username AND password = :password");
-        $sth->execute(array(
-            ':username' => $_POST['username'],
-            'password' => md5($_POST['password'])
-        ));
+        $stmt = $this->db->prepare("CALL sp_login(?,?)");
 
-        $data = $sth->fetchAll();
+        $stmt->bindParam(1, $username, PDO::PARAM_STR);
+        $stmt->bindParam(2, $password, PDO::PARAM_STR);
+        
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+        print_r($result[0]);
 
-        if ($sth->rowCount() == 1)
+        if ($result[0]->role == 1)
         {
-           return TRUE; 
+            // role = 1 means admin
+           return ['role'=> 1, 'username'=> $result[0]->fname];
         }
-        else 
+        else if ($result[0]->role == 2)
         {
-            FALSE;
+            // role = 2 means customer
+            return ['role'=> 2, 'username'=> $result[0]->fname];
         }
-
+        else
+        {
+            // role = 0 means user does not exist in the database
+            return ['role'=> 0, 'username'=> $result[0]->fname];
+        }
     }
 }

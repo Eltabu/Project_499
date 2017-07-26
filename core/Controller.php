@@ -7,7 +7,7 @@ class Controller
 
   function __construct()
   {
-    # code...
+    Session::int();
   }
 
   public function model($model)
