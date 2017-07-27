@@ -6,6 +6,6 @@ class Database extends PDO
 {
     public function  __construct()
     {
-        parent::__construct('mysql:host=localhost; dbname=vrs', 'eltabu', 'password');
+        parent::__construct(DB_TYPE.':host='.DB_HOST.'; dbname='.DB_NAME, DB_USER, DB_PASSWORD );
     }
 }
