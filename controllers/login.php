@@ -11,7 +11,7 @@ class Login extends Controller
     {
       unset($_SESSION['username']);
       Session::destroy();
-      header('location: /moad/project/home');
+      header('location: '.URL.'home');
       Session::int();
     }
 
@@ -23,12 +23,12 @@ class Login extends Controller
       {
         //go to dashboard if admin else go to user account settings
         Session::set('username', $result['username']); 
-        header('location: /moad/project/dashboard');
+        header('location: '.URL.'dashboard');
       }
       else
       {
         //show an error 
-        header('location: /moad/project/login');
+        header('location: '.URL.'login');
       }
     }
 

@@ -8,12 +8,12 @@
         <meta name="author" content="Moad Eltabu, Cooper">
         
         <!-- BOOTSTRAP CORE CSS STYLE  -->
-        <link href="/moad/project/assets/css/bootstrap.css" rel="stylesheet" />
-        <link href="/moad/project/assets/css/font-awesome.min.css" rel="stylesheet">
-        <link href="/moad/project/assets/css/main.css" rel="stylesheet" />
+        <link href="<?php echo URL ?>assets/css/bootstrap.css" rel="stylesheet" />
+        <link href="<?php echo URL ?>assets/css/font-awesome.min.css" rel="stylesheet">
+        <link href="<?php echo URL ?>assets/css/main.css" rel="stylesheet" />
         
         <!-- Custome CSS Theme  -->
-        <link href="/moad/project/assets/css/theme1.css" rel="stylesheet" />
+        <link href="<?php echo URL ?>assets/css/theme1.css" rel="stylesheet" />
         
 
 
@@ -43,7 +43,7 @@
                     <div class="col-sm-6 col-xs-8">
                         <div class="top-nav" >
                             <ul class="top-nav-list">
-                                <li><a href="/moad/project/dashboard">
+                                <li><a href="<?php echo URL ?>dashboard">
                                 <?php
                                 if (isset($_SESSION['username']))
                                 {
@@ -54,11 +54,11 @@
                                 <?php 
                                 if (isset($_SESSION['username']))
                                 {
-                                    echo '<li><a href="/moad/project/login/logout">Logout</a></li>';
+                                    echo '<li><a href="'.URL.'login/logout">Logout</a></li>';
                                 }
                                 else
                                 {
-                                    echo '<li><a href="/moad/project/login">Login</a></li>';  
+                                    echo '<li><a href="'.URL.'login">Login</a></li>';  
                                 }
                                 ?> 
                                                               
@@ -78,13 +78,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/moad/project/home"><img src="/moad/project/assets/img/logo.png" alt="logo"><h6>Vehicle Rental Solutions</h6></a>
+                    <a class="navbar-brand" href="<?php echo URL ?>home"><img src="<?php echo URL ?>assets/img/logo.png" alt="logo"><h6>Vehicle Rental Solutions</h6></a>
                 </div>
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="/moad/project/home">Home</a></li>
-                        <li><a href="/moad/project/aboutUs">About Us</a></li>
+                        <li class="active"><a href="<?php echo URL ?>home">Home</a></li>
+                        <li><a href="<?php echo URL ?>aboutUs">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
                         <li class="dropdown">

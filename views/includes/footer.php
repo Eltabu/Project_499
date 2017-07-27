@@ -45,8 +45,8 @@
     	<!-- END of FOOTER -->
 
 		<!-- CORE JQUERY  -->
-        <script src="/moad/project/assets/js/jquery-1.10.2.js"></script>
+        <script src="<?php echo URL ?>assets/js/jquery-1.10.2.js"></script>
         <!-- BOOTSTRAP SCRIPTS  -->
-        <script src="/moad/project/assets/js/bootstrap.js"></script>
+        <script src="<?php echo URL ?>assets/js/bootstrap.js"></script>
 </body>
 </html>

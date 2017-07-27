@@ -10,7 +10,7 @@ class Dashboard extends Controller
       }
       else
       {
-        header('location: /moad/project/login');
+        header('location: '.URL.'login');
       }
     }
 
