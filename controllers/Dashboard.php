@@ -6,7 +6,7 @@ class Dashboard extends Controller
     { 
       if (isset($_SESSION['username'])) 
       {   
-        $this->view('dashboard/index', ['viewName' => 'Dashboard']);
+        $this->view('Dashboard/index', ['viewName' => 'Dashboard']);
       }
       else
       {

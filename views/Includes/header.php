@@ -16,7 +16,6 @@
         <link href="<?php echo URL ?>assets/css/theme1.css" rel="stylesheet" />
         
 
-
 		
         <!-- Page Title   -->
         <!--<title>Vehicle Rental Solutions </title> --> 
@@ -43,7 +42,7 @@
                     <div class="col-sm-6 col-xs-8">
                         <div class="top-nav" >
                             <ul class="top-nav-list">
-                                <li><a href="<?php echo URL ?>dashboard">
+                                <li><a href="<?php echo URL ?>Dashboard">
                                 <?php
                                 if (isset($_SESSION['username']))
                                 {
@@ -54,11 +53,11 @@
                                 <?php 
                                 if (isset($_SESSION['username']))
                                 {
-                                    echo '<li><a href="'.URL.'login/logout">Logout</a></li>';
+                                    echo '<li><a href="'.URL.'Login/logout">Logout</a></li>';
                                 }
                                 else
                                 {
-                                    echo '<li><a href="'.URL.'login">Login</a></li>';  
+                                    echo '<li><a href="'.URL.'Login">Login</a></li>';  
                                 }
                                 ?> 
                                                               
@@ -83,21 +82,16 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="<?php echo URL ?>home">Home</a></li>
-                        <li><a href="<?php echo URL ?>aboutUs">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="blog-item.html">Blog Single</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
-                                <li><a href="404.html">404</a></li>
-                                <li><a href="shortcodes.html">Shortcodes</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="blog.html">Blog</a></li> 
-                        <li><a href="contact-us.html">Contact</a></li>                        
+                        <li><a href="<?php echo URL ?>Home">Home</a></li>                        
+                        <li><a href="<?php echo URL ?>ProductInformation">Product Information</a></li>
+                        <li><a href="<?php echo URL ?>Pricing">Pricing</a></li>
+                        <li><a href="<?php echo URL ?>ContactUs">Contact Us</a></li>
+                        <li>
+                            <a href="<?php echo URL ?>Support">
+                                <i class="fa fa-lock"></i> Support
+                            </a>
+                        </li> 
+                        <li><a href="<?php echo URL ?>AboutUs">About Us</a></li>                        
                     </ul>
                 </div>
             </div><!--/.container-->

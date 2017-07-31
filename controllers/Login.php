@@ -4,14 +4,14 @@ class Login extends Controller
 {
     public function index()
     {
-      $this->view('login/index', ['viewName' => 'Login', 'username' => '']);
+      $this->view('Login/index', ['viewName' => 'Login', 'username' => '']);
     }
           
     public function logout()
     {
       unset($_SESSION['username']);
       Session::destroy();
-      header('location: '.URL.'home');
+      header('location: '.URL.'Home');
       Session::int();
     }
 
@@ -23,12 +23,12 @@ class Login extends Controller
       {
         //go to dashboard if admin else go to user account settings
         Session::set('username', $result['username']); 
-        header('location: '.URL.'dashboard');
+        header('location: '.URL.'Dashboard');
       }
       else
       {
         //show an error 
-        header('location: '.URL.'login');
+        header('location: '.URL.'Login');
       }
     }
 

@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
             <div class="col-md-4 col-md-offset-4">
-                <form id="login" action="<?php echo URL ?>login/isUser" method="post" class="well">
+                <form id="login" action="<?php echo URL ?>Login/isUser" method="post" class="well">
                     <div class="form-group">
                         <label>User Name</label>
                         <input type="text" name="username" class="form-control" placeholder="Enter User Name">

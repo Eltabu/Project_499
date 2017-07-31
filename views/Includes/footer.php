@@ -48,5 +48,6 @@
         <script src="<?php echo URL ?>assets/js/jquery-1.10.2.js"></script>
         <!-- BOOTSTRAP SCRIPTS  -->
         <script src="<?php echo URL ?>assets/js/bootstrap.js"></script>
+		<script src="<?php echo URL ?>assets/js/main.js"></script>
 </body>
 </html>

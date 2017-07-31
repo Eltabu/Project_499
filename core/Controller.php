@@ -23,12 +23,12 @@ class Controller
   public function view($view, $data = [])
   {   
       //load the header 
-      require_once (__DIR__ .'/../views/includes/header.php');
+      require_once (__DIR__ .'/../views/Includes/header.php');
 
       //load the spesific view
       require_once (__DIR__ .'/../views/' . $view . '.php');
 
       //load the footer
-      require_once (__DIR__ .'/../views/includes/footer.php');
+      require_once (__DIR__ .'/../views/Includes/footer.php');
   }
 }
