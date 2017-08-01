@@ -370,6 +370,108 @@ ul.social-share li a {
 }
 
 
+
+
+/*************************
+******* Pricing **********
+**************************/
+
+hr {
+    max-width: 250px;
+    border-color: #f05f40;
+    border-width: 3px;
+}
+
+.pricing-padding{
+    padding: 50px 30px;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.wow-pricing-table{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    transition: 0.3s;  
+}
+
+.wow-pricing-table>div {
+    list-style: none;
+    text-shadow: none;
+    margin-bottom: 0px;
+    border: 1px solid #eee;
+    margin: 0px 15px;
+}
+
+.wow-pricing-table .wow-pricing-header {
+    text-align: center;
+    padding: 20px 0 10px 0; 
+    background-color: #333;
+}
+
+.wow-pricing-table div {
+    list-style: none;
+}
+
+.wow-pricing-table .wow-pricing-header h5 {
+    color: #fff;
+    font-size: 20px;
+    margin: 0;
+    padding: 0 20px 0px;
+}
+
+.wow-pricing-table .wow-pricing-cost {
+    color: #fff;
+    font-size: 1.500em;
+    line-height: 1em;
+    padding-top: 15px;
+    background: #333;
+}
+
+.wow-pricing-table .wow-pricing-per {
+    font-size: 0.786em;
+    color: #fff;
+    background-color: #333;
+    padding-bottom: 10px;
+}
+
+.wow-pricing-table .wow-pricing-content {
+    background: #fff;
+    text-align: center;
+}
+
+.wow-pricing-table .wow-pricing-content ul {
+    margin: 0 !important;
+    list-style: none !important;
+    padding-left: 0;
+}
+
+.wow-pricing-table .wow-pricing-content ul li {
+    margin: 0 !important;
+    padding: 10px 20px !important;
+    border-bottom: 1px solid #eee;
+    list-style: none !important;
+    color: #555;
+}
+
+.wow-pricing-table .wow-pricing-button {
+    background: #fff;
+    text-align: center;
+    border-top: 1px solid #fff;
+    padding: 35px 20px 35px;
+}
+
+.wow-pricing-table .wow-pricing-button .wow-button {
+    float: none;
+    margin: 0 auto;
+    background: #333;
+    color: #fff;
+    border-radius: 3px;
+    padding: 12px 22px 14px;
+}
+
 /*************************
 *******Responsive******
 **************************/

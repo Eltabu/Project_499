@@ -17,7 +17,7 @@
             <div class="carousel-caption d-none d-md-block text-left">
               <h1>Example headline.</h1>
               <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-danger" href="#" role="button">Sign up today</a></p>
+              <p><a class="btn btn-lg btn-danger" href="#" role="button">Free Test-Drive</a></p>
             </div>
           </div>
         </div>
