@@ -10,6 +10,7 @@
         <!-- BOOTSTRAP CORE CSS STYLE  -->
         <link href="<?php echo URL ?>assets/css/bootstrap.css" rel="stylesheet" />
         <link href="<?php echo URL ?>assets/css/font-awesome.min.css" rel="stylesheet">
+        <link href="<?php echo URL ?>assets/css/icomoon-social.css" rel="stylesheet">
         <link href="<?php echo URL ?>assets/css/main.css" rel="stylesheet" />
         
         <!-- Custome CSS Theme  -->
@@ -86,11 +87,6 @@
                         <li><a href="<?php echo URL ?>ProductInformation">Product Information</a></li>
                         <li><a href="<?php echo URL ?>Pricing">Pricing</a></li>
                         <li><a href="<?php echo URL ?>ContactUs">Contact Us</a></li>
-                        <li>
-                            <a href="<?php echo URL ?>Support">
-                                <i class="fa fa-lock"></i> Support
-                            </a>
-                        </li> 
                         <li><a href="<?php echo URL ?>AboutUs">About Us</a></li>                        
                     </ul>
                 </div>
