@@ -7,6 +7,6 @@ class Pricing extends Controller
 {
     public function index()
     {
-      $this->view('Pricing/index', ['viewName' => 'Pricing', 'username' => '']);
+      $this->view('Pricing/index', ['viewName' => 'Pricing']);
     }
 }

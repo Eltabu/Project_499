@@ -4,7 +4,7 @@ class Login extends Controller
 {
     public function index()
     {
-      $this->view('Login/index', ['viewName' => 'Login', 'username' => '']);
+      $this->view('Login/index', ['viewName' => 'Login']);
     }
           
     public function logout()

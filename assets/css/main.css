@@ -596,6 +596,25 @@ textarea#message {
 .team-member ul li {
     line-height: 28px;
 }
+
+
+
+/*************************
+*******ProductInfo*********
+**************************/
+.ProductInfo{
+padding-bottom: 60px;
+padding-top: 60px;
+}
+
+
+
+
+
+
+
+
+
 /*************************
 *******Responsive*********
 **************************/

@@ -84,7 +84,7 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li><a href="<?php echo URL ?>Home">Home</a></li>                        
-                        <li><a href="<?php echo URL ?>ProductInformation">Product Information</a></li>
+                        <li><a href="<?php echo URL ?>ProductInfo">Product Information</a></li>
                         <li><a href="<?php echo URL ?>Pricing">Pricing</a></li>
                         <li><a href="<?php echo URL ?>ContactUs">Contact Us</a></li>
                         <li><a href="<?php echo URL ?>AboutUs">About Us</a></li>                        
