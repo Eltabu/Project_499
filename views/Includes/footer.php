@@ -11,9 +11,9 @@
 					<div class="col-footer col-md-4 col-sm-4">
 		    			<h3>Contact Us</h3>
 		    			<p class="contact-us-details">
-	        				<b>Address:</b> 123 Downtown Avenue, Manhattan, New York, United States of America<br/>
-	        				<b>Phone:</b> +1 123 45678910<br/>
-	        				<b>Fax:</b> +1 123 45678910<br/>
+	        				<b>Address:</b> 401 Sunset Ave, Windsor, ON N9B 3P4<br/>
+	        				<b>Phone:</b> +1 519-971-3650<br/>
+	        				<b>Fax:</b> +1 519-971-3650<br/>
 	        				<b>Email:</b> <a href="mailto:info@uwindsor.com">info@uwindsor.com</a>
 	        			</p>
 		    		</div>				

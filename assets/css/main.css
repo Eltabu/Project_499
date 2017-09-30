@@ -597,7 +597,13 @@ textarea#message {
     line-height: 28px;
 }
 
-
+/*************************
+*******Test Drive*********
+**************************/
+.TestDrive{
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
 
 /*************************
 *******ProductInfo*********
@@ -607,9 +613,60 @@ padding-bottom: 60px;
 padding-top: 60px;
 }
 
+.action-button{
+    border: 0;
+    display: inline-block;
+    background-color: #c52d2f;;
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 20px;
+    margin-top: 12px;
+    margin-right: 15px;
+}
 
+.theme-temp{
+    border: medium none !important;
+    margin: 0 0 10px;
+    min-width: 100%;
+    padding: 0;
+    width: 100%;
 
+}
 
+.theme-temp ul{
+    list-style: none;
+}
+.theme-temp ul li{
+    display: inline;
+}
+
+input[type="radio"]:checked + label {
+    border: 5px solid #adafb2;
+}
+.theme-radio {
+    opacity: 0;
+    position: absolute;
+}
+
+.theme1 {
+    background: url(../img/theme2.jpg);
+    background-size: cover;
+}
+
+.theme2 {
+    background: url(../img/theme1.jpg);
+    background-size: cover;
+}
+
+.theme1, .theme2 {
+    text-indent: -999em;
+    border: 10px solid white;
+    width: 200px;
+    height: 200px;
+    display: block;
+    float: left;
+    margin: 10px;
+}
 
 
 

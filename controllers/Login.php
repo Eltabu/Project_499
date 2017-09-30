@@ -10,6 +10,7 @@ class Login extends Controller
     public function logout()
     {
       unset($_SESSION['username']);
+      Session::set($_SESSION['role']); 
       Session::destroy();
       header('location: '.URL.'Home');
       Session::int();
@@ -17,13 +18,20 @@ class Login extends Controller
 
     public function isUser()
     {
-      $user_model = $this->model('User');
-      $result = $user_model->isUser($_POST['username'], md5($_POST['password']));  
-      if($result['role'] != 0)
+      $userModel = $this->model('User');
+      $result = $userModel->isUser($_POST['username'], md5($_POST['password']));  
+      if($result['role'] == 1)
       {
-        //go to dashboard if admin else go to user account settings
-        Session::set('username', $result['username']); 
+        //go to dashboard if the user is admin
+        Session::set('username', $result['username']);
+        Session::set('role', $result['role']); 
         header('location: '.URL.'Dashboard');
+      }
+      else if($result['role'] == 2)
+      {
+        //go to dashboard if the user is admin
+        Session::set('username', $result['username']);
+        Session::set('role', $result['role']);  
       }
       else
       {

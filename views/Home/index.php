@@ -15,9 +15,9 @@
         <div class="item active">
           <div class="container">
             <div class="carousel-caption d-none d-md-block text-left">
-              <h1>Example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-danger" href="#" role="button">Free Test-Drive</a></p>
+              <h1>Loaded with Features</h1>
+              <p>CEase of use, Outstanding performance, Good to go from 25 to 100000+ cars, XML with all major brokers and OTA, GDS Connection with Travelport, Optional booking engine for your website, and Full front office & back office</p>
+              <p><a class="btn btn-lg btn-danger" href="<?php echo URL ?>TestDrive" role="button">Free Test-Drive</a></p>
             </div>
           </div>
         </div>
@@ -26,7 +26,7 @@
             <div class="carousel-caption d-none d-md-block">
               <h1>Another example headline.</h1>
               <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-danger" href="#" role="button">Learn more</a></p>
+              <p><a class="btn btn-lg btn-danger" href="<?php echo URL ?>ProductInfo" role="button">Learn more</a></p>
             </div>
           </div>
         </div>
@@ -59,8 +59,8 @@
         <div class="container">
            <div class="center">
                 <h2>Features</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
-                    <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+                <p class="lead">Vehicl Rental Solution is a cloud based car hire software chosen for its ease of use, wealth of features and performance
+                    <br> Companies of any size increase their fleet utilization and manage their car rental operations</p>
             </div>
 
             <div class="row">
@@ -100,7 +100,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
                         <div class="feature-wrap">
                             <i class="fa fa-cogs"></i>
-                            <h2>Sed do eiusmod</h2>
+                            <h2>VRS Car Rental in the Cloud</h2>
                             <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
                         </div>
                     </div><!--/.col-md-4-->

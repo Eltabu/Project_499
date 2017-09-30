@@ -14,12 +14,13 @@ class User extends Model
     {
         $stmt = $this->db->prepare("CALL sp_login(?,?)");
 
+        // add parameters
         $stmt->bindParam(1, $username, PDO::PARAM_STR);
         $stmt->bindParam(2, $password, PDO::PARAM_STR);
         
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_OBJ);
-        print_r($result[0]);
+        //print_r($result[0]);
 
         if ($result[0]->role == 1)
         {
