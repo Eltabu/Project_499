@@ -5,8 +5,12 @@
 **/
 class TestDrive extends Controller
 {
+
+    public $countries;
+
     public function index()
     {
+      $this->getCountries();      
       $this->view('TestDrive/index', ['viewName' => 'Test Drive']);
     }
 
@@ -26,13 +30,20 @@ class TestDrive extends Controller
       {
           mkdir('./'.$_POST['WebsiteName'], 0777, true);          
           $customerModel->testDrive($_POST);
-          echo 'the process done successful';
-          sleep(100);
           header('location: '.URL.'Home');
       }
       else{
         echo 'Try with a different wesite name';
       }
-      
+     
+    }
+
+    /**
+    * retrieves the contries form the model
+    **/
+    public function getCountries()
+    {
+      $CountryCollectionModel = $this->model('CountryCollection');
+      $this->countries = $CountryCollectionModel->getCountries();
     }
 }
