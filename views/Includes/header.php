@@ -43,7 +43,19 @@
                     <div class="col-sm-6 col-xs-8">
                         <div class="top-nav" >
                             <ul class="top-nav-list">
-                                <li><a href="<?php echo URL ?>Dashboard">
+                                <li><a href="<?php
+                                                    if (isset($_SESSION['role']))
+                                                    {
+                                                        if($_SESSION['role'] == 1)
+                                                        {
+                                                            echo URL . "AdminDashboard";
+                                                        }
+                                                        else
+                                                        {
+                                                            echo URL . "CustomerDashboard";
+                                                        }
+                                                    }
+                                            ?>">
                                 <?php
                                 if (isset($_SESSION['username']))
                                 {

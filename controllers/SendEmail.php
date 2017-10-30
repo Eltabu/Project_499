@@ -11,7 +11,7 @@ class SendEmail extends Controller
         $phone = $_POST['phone'];
         $company = $_POST['company'];
         $message = $_POST['message'];
-        $myemail = 'moadeltabu@gmail.com';
+        $myemail = 'eltabu@vrs.myweb.cs.uwindsor.ca';
 
         $to = $myemail;
         $email_subject = "Contact form submission: $name";

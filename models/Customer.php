@@ -47,5 +47,18 @@ class Customer extends Model
         $stmt->execute();
         
     }
+
+
+
+    /*
+    /* function to retrieve the Customers data form the dtatbase 
+    */
+    public function getCustomers()
+    {
+         $stmt = $this->db->prepare("CALL sp_get_countries()");
+         $stmt->execute();
+         $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+         return $result;
+    }
 }
 
