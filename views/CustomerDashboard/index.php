@@ -5,9 +5,9 @@
           <div class="col-md-3">
             <div class="list-group">
               <a href="index.html" class="list-group-item active main-color-bg">
-                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard   
               </a>
-              <a href="pages.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> My Product </a>
+              <a href="pages.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> My Product 2</a>
               <a href="posts.html" class="list-group-item"><span class="glyphicon glyphicon-phone" aria-hidden="true"></span> Available Features </a>
               <a href="users.html" class="list-group-item"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Upgrade </a>
               <a href="users.html" class="list-group-item"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Pay Now </a>
