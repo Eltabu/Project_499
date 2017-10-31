@@ -18,6 +18,6 @@ class Session
 
     public static function destroy()
     {
-        SESSION_DESTROY();
+        SESSION_DESTROY(); //when should I destroy the session
     }
 }

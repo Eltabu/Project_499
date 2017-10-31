@@ -1,3 +1,2 @@
 <?php
-
-define('URL','/moad/project/local/');
+define('URL','http://localhost/vrs/');
