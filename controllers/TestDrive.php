@@ -37,12 +37,12 @@ class TestDrive extends Controller
       if(!file_exists($_POST['WebsiteName']) )
       {
           mkdir('./'.$_POST['WebsiteName'], 0777, true);          
-          $this->copyFiles('./local/public', './'.$_POST['WebsiteName']);
           $this->copyFiles('./local/app', './'.$_POST['WebsiteName']);
+          $this->copyFiles('./local/index.php', './'.$_POST['WebsiteName']);
 
           $customerModel->testDrive($_POST);
 
-          header('location: '.URL.'Congratulation?variable='.URL.$_POST['WebsiteName'].'/public/');
+          header('location: '.URL.'Congratulation?variable='.URL.$_POST['WebsiteName'].'/');
       }
       else{
         echo 'Try with a different wesite name';

@@ -1,3 +1,8 @@
+.item-active{
+  background-size:cover;
+  background-image:url('../img/bmw.jpg');
+}
+
 /*************************
 *******Header************* 
 **************************/
@@ -678,7 +683,6 @@ input[type="radio"]:checked + label {
     float: left;
     margin: 10px;
 }
-
 
 
 

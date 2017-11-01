@@ -7,7 +7,7 @@
               <a href="index.html" class="list-group-item active main-color-bg">
                 <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard   
               </a>
-              <a href="pages.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> My Product 2</a>
+              <a href="pages.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> My Product</a>
               <a href="posts.html" class="list-group-item"><span class="glyphicon glyphicon-phone" aria-hidden="true"></span> Available Features </a>
               <a href="users.html" class="list-group-item"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Upgrade </a>
               <a href="users.html" class="list-group-item"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Pay Now </a>
@@ -19,14 +19,14 @@
             <div class="well">
               <h4>Disk Space Used</h4>
               <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                      60%
+                  <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
+                    25%
               </div>
             </div>
             <h4>Bandwidth Used </h4>
             <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-                    40%
+                <div class="progress-bar" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width: 15%;">
+                    15%
             </div>
           </div>
             </div>
@@ -46,13 +46,13 @@
                 </div>
                 <div class="col-md-4">
                   <div class="well dash-box">
-                    <h2><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> 12</h2>
+                    <h2><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> 2</h2>
                     <h4>Open tickets </h4>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="well dash-box">
-                    <h2><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> 33</h2>
+                    <h2><span class="glyphicon glyphicon-usd" aria-hidden="true"></span>29.99</h2>
                     <h4>Unpaid Fees</h4>
                   </div>
                 </div>
@@ -72,27 +72,27 @@
                         <th>Description</th>
                       </tr>
                       <tr>
-                        <td>Jill Smith</td>
+                        <td>Vertical inspection</td>
                         <td>$1.5</td>
                         <td>Free Trial</td>
                       </tr>
                       <tr>
-                        <td>Eve Jackson</td>
+                        <td>Online payment</td>
                         <td>$2.5</td>
                         <td>Standard</td>
                       </tr>
                       <tr>
-                        <td>John Doe</td>
+                        <td>Reporting System</td>
                         <td>$5.3</td>
                         <td>Untimate</td>
                       </tr>
                       <tr>
-                        <td>Stephanie Landon</td>
+                        <td>Recognize account types</td>
                         <td>$3.6</td>
                         <td>Free Trial</td>
                       </tr>
                       <tr>
-                        <td>Mike Johnson</td>
+                        <td>Inventory Report</td>
                         <td>$0.99</td>
                         <td>Free Trial</td>
                       </tr>

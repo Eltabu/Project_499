@@ -1,3 +1,3 @@
 <?php
 
-define('URL','http://localhost/Project_499/');
+define('URL','/moad/project/');

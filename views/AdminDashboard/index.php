@@ -8,6 +8,7 @@
                 <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard
               </a>
               <a href="pages.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Customers </a>
+              <a href="pages.html" class="list-group-item"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Inquiries </a>
               <a href="posts.html" class="list-group-item"><span class="glyphicon glyphicon-phone" aria-hidden="true"></span> Products </a>
               <a href="users.html" class="list-group-item"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Features </a>
               <a href="users.html" class="list-group-item"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Financial </a>
@@ -40,13 +41,13 @@
               <div class="panel-body">
                 <div class="col-md-3">
                   <div class="well dash-box">
-                    <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 203</h2>
+                    <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?php echo $this->totalCustomers[0]->total;?></h2>
                     <h4>Customers</h4>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="well dash-box">
-                    <h2><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> 12</h2>
+                    <h2><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> <?php echo $this->totalInquiries[0]->total;?> </h2>
                     <h4>Inquiries </h4>
                   </div>
                 </div>
@@ -68,7 +69,7 @@
               <!-- Latest Users -->
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h3 class="panel-title">Latest Users</h3>
+                  <h3 class="panel-title">Latest Companies</h3>
                 </div>
                 <div class="panel-body">
                   <table class="table table-striped table-hover">
@@ -77,56 +78,16 @@
                         <th>Country</th>
                         <th>Product</th>
                       </tr>
-                      <tr>
-                        <td>Jill Smith</td>
-                        <td>United States of America</td>
-                        <td>Free Trial</td>
-                      </tr>
-                      <tr>
-                        <td>Eve Jackson</td>
-                        <td>Canada</td>
-                        <td>Standard</td>
-                      </tr>
-                      <tr>
-                        <td>John Doe</td>
-                        <td>United Kingdom</td>
-                        <td>Untimate</td>
-                      </tr>
-                      <tr>
-                        <td>Stephanie Landon</td>
-                        <td>Australia</td>
-                        <td>Free Trial</td>
-                      </tr>
-                      <tr>
-                        <td>Mike Johnson</td>
-                        <td>Dominica</td>
-                        <td>Free Trial</td>
-                      </tr>
-                                            <tr>
-                        <td>Stephanie Landon</td>
-                        <td>Australia</td>
-                        <td>Standard</td>
-                      </tr>
-                      <tr>
-                        <td>Mike Johnson</td>
-                        <td>United Kingdom</td>
-                        <td>Untimate</td>
-                      </tr>
-                                            <tr>
-                        <td>John Doe</td>
-                        <td>United Kingdom</td>
-                        <td>Untimate</td>
-                      </tr>
-                      <tr>
-                        <td>Stephanie Landon</td>
-                        <td>Australia</td>
-                        <td>Free Trial</td>
-                      </tr>
-                      <tr>
-                        <td>Mike Johnson</td>
-                        <td>Dominica</td>
-                        <td>Free Trial</td>
-                      </tr>
+                      <?php //print_r($this->countries); 
+                        foreach ($this->latestCompanies as $item) 
+                        {
+                          echo "<tr> 
+                                  <td> $item->name </td>  
+                                  <td> $item->country </td>  
+                                  <td> $item->product </td> 
+                                </tr>";
+                        }
+                      ?>
                     </table>
                 </div>
               </div>
