@@ -11,7 +11,7 @@
         <li data-target="#myCarousel" data-slide-to="1"></li>
       </ol> -->
       <div class="carousel-inner" >
-        <div class="item active" style="background-size:cover;background-image: url('../vrs/assets/img/bmw.jpg')">
+        <div class="item active" style="background-size:cover;background-image: url('../app/assets/img/bmw.jpg')">
           <div class="container">
             
           </div>

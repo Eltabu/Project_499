@@ -22,9 +22,6 @@ class Controller
   */
   public function view($view, $data = [])
   {   
-      echo '<script>debugger;</script>';
-      echo '<script>console.log("Loading view...");</script>';
-      echo '<script>console.log("'.$view.'");</script>';
       //load the header 
       require_once (__DIR__ .'/../views/Includes/header.php');
 
