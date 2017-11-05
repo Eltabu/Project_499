@@ -11,7 +11,7 @@
         <li data-target="#myCarousel" data-slide-to="1"></li>
       </ol> -->
       <div class="carousel-inner" >
-        <div class="item-active">
+        <div class="item active backgroundStyle">
           <div class="container">
             
           </div>
