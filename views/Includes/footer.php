@@ -49,5 +49,7 @@
         <!-- BOOTSTRAP SCRIPTS  -->
         <script src="<?php echo URL ?>assets/js/bootstrap.js"></script>
 		<script src="<?php echo URL ?>assets/js/main.js"></script>
+		<script src="<?php echo URL ?>assets/js/jquery.dataTables.min.js"></script>
+		<script src="<?php echo URL ?>assets/js/dataTables.bootstrap.min.js"></script>
 </body>
 </html>

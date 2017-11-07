@@ -19,3 +19,7 @@ function setNavigation()
         }
     });
 }
+
+$(document).ready(function() {
+    $('#customerTable').DataTable();
+} );

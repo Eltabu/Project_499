@@ -15,6 +15,8 @@
         
         <!-- Custome CSS Theme  -->
         <link href="<?php echo URL ?>assets/css/theme1.css" rel="stylesheet" />
+
+        <link href="<?php echo URL ?>assets/css/dataTables.bootstrap.min.css" rel="stylesheet" />
         
 
 		
