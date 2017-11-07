@@ -36,61 +36,24 @@
             <!-- Website Overview -->
             <div class="panel panel-default">
               <div class="panel-heading main-color-bg">
-                <h3 class="panel-title">Website Overview</h3>
+                <h3 class="panel-title">Customers Overview</h3>
               </div>
               <div class="panel-body">
-                <div class="col-md-3">
-                  <div class="well dash-box">
-                    <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?php echo $this->totalCustomers[0]->total;?></h2>
-                    <h4>Customers</h4>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="well dash-box">
-                    <h2><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> <?php echo $this->totalInquiries[0]->total;?> </h2>
-                    <h4>Inquiries </h4>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="well dash-box">
-                    <h2><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> 33</h2>
-                    <h4>Unpaid Fees</h4>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="well dash-box">
-                    <h2><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> 12,334</h2>
-                    <h4>Visitors</h4>
-                  </div>
-                </div>
-              </div>
-              </div>
-
-              <!-- Latest Users -->
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Latest Companies</h3>
-                </div>
-                <div class="panel-body">
                   <table class="table table-striped table-hover">
                       <tr>
                         <th>Name</th>
                         <th>Country</th>
                         <th>Product</th>
                       </tr>
-                      <?php //print_r($this->countries); 
-                        foreach ($this->latestCompanies as $item) 
-                        {
-                          echo "<tr> 
-                                  <td> $item->name </td>  
-                                  <td> $item->country </td>  
-                                  <td> $item->product </td> 
-                                </tr>";
-                        }
-                      ?>
+                      <tr>
+                      <td> Moad </td>
+                      <td> Moad </td>
+                      <td> Moad </td>
+                      </tr>
                     </table>
-                </div>
               </div>
+              </div>
+
           </div>
         </div>
       </div>

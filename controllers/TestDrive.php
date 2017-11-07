@@ -41,7 +41,7 @@ class TestDrive extends Controller
           mkdir('./'.$_POST['WebsiteName'], 0777, true);          
           $this->copyFiles('./local/app', './'.$_POST['WebsiteName']);
           $this->copyFiles('./local/index.php', './'.$_POST['WebsiteName']);
-          $this->copyFiles('./local/.htaccess', './'.$_POST['WebsiteName']);
+          $this->copyFiles('./local/.htaccess', './'.$_POST['WebsiteName']);   
 
           //Write to .htaccess file
           $myfile = fopen('./'.$_POST['WebsiteName'].'/.htaccess', "w");
