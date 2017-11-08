@@ -7,6 +7,18 @@
 *******Header************* 
 **************************/
 
+.main-logo{
+color: #ffffff;
+  font-family:  "Great Vibes", cursive;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 72px; 
+  margin: 0 0 24px; 
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 15px red;;  
+}
+
 .fa {
   line-height: 2 !important;
 }
