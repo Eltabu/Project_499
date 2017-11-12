@@ -1,23 +1,23 @@
-<div class="container">
+<div class="container ProductInfo">
 	<div class="row form-group">
         <div class="col-xs-12">
             <ul class="nav nav-pills nav-justified thumbnail setup-panel">
                 <li class="active"><a href="#step-1">
                     <h4 class="list-group-item-heading">Step 1</h4>
-                    <p class="list-group-item-text">First step description</p>
+                    <p class="list-group-item-text">Customer information</p>
                 </a></li>
                 <li class="disabled"><a href="#step-2">
                     <h4 class="list-group-item-heading">Step 2</h4>
-                    <p class="list-group-item-text">Second step description</p>
+                    <p class="list-group-item-text">Payment information</p>
                 </a></li>
                 <li class="disabled"><a href="#step-3">
                     <h4 class="list-group-item-heading">Step 3</h4>
-                    <p class="list-group-item-text">Third step description</p>
+                    <p class="list-group-item-text">Aggrement</p>
                 </a></li>
 
                 <li class="disabled"><a href="#step-4">
                     <h4 class="list-group-item-heading">Step 4</h4>
-                    <p class="list-group-item-text">Second step description</p>
+                    <p class="list-group-item-text">Complete</p>
                 </a></li>
 
             </ul>
@@ -28,53 +28,9 @@
             <div class="col-md-12 well text-center">
                 <h1> STEP 1</h1>
 
-<form>
-<div class="container">
-    <div class="row clearfix">
-		<div class="col-md-12 column">
-		    <a id="add_row" class="btn btn-success pull-left">Add Row</a><a id='delete_row' class="btn btn-danger pull-right">Delete Row</a>
-		    <br /><br /><br />
+                <form>
 
-			<table class="table table-bordered table-hover" id="tab_logic">
-				<thead>
-					<tr >
-						<th class="text-center">
-							#
-						</th>
-						<th class="text-center">
-							Name
-						</th>
-						<th class="text-center">
-							Surname
-						</th>
-						<th class="text-center">
-							Email
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr id='addr0'>
-						<td>
-						1
-						</td>
-						<td>
-						<input type="text" name='name0'  placeholder='Name' class="form-control"/>
-						</td>
-						<td>
-						<input type="text" name='sur0' placeholder='Surname' class="form-control"/>
-						</td>
-						<td>
-						<input type="text" name='email0' placeholder='Email' class="form-control"/>
-						</td>
-					</tr>
-                    <tr id='addr1'></tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-	<!-- <a id="add_row" class="btn btn-success pull-left">Add Row</a><a id='delete_row' class="btn btn-danger pull-right">Delete Row</a> -->
-</div>
-</form>
+                </form>
 
 
                 <button id="activate-step-2" class="btn btn-primary btn-md">Activate Step 2</button>
@@ -115,7 +71,7 @@
             <div class="col-md-12 well text-center">
                 <h1 class="text-center"> STEP 3</h1>
 
-<form></form>
+            <form></form>
 
                 <button id="activate-step-4" class="btn btn-primary btn-md">Activate Step 4</button>
             </div>
