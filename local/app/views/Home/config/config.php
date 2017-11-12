@@ -1,6 +1,6 @@
 <?php
 
-if(CHANGEMAP == 1){
+if(CHANGE == 1){
 
 	//CHanges found. Open for writing
 	$fp = fopen(__DIR__."/map.php", "w+");
