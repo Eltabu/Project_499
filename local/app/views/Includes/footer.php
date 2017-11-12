@@ -1,9 +1,4 @@
-        
-				
-		
-		<!-- FOOTER -->
-
-
+        	<!-- FOOTER -->
 		<footer id="footer">
 			<div class="container">
 				<div class="row">
@@ -19,7 +14,6 @@
 		    		</div>				
 		    		<div class="col-footer col-md-4 col-sm-4">
 		    			<h3>Our Social Networks</h3>
-						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.</p>
                         <ul class="social-share">
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -43,11 +37,5 @@
 			</div>
 		</footer>
     	<!-- END of FOOTER -->
-
-		<!-- CORE JQUERY  -->
-        <script src="<?php echo URL ?>app/assets/js/jquery-1.10.2.js"></script>
-        <!-- BOOTSTRAP SCRIPTS  -->
-        <script src="<?php echo URL ?>app/assets/js/bootstrap.js"></script>
-		<script src="<?php echo URL ?>app/assets/js/main.js"></script>
 </body>
 </html>

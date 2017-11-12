@@ -43,7 +43,21 @@
                   </div>
                 </div>
                
-                <div class="col-md-3 admin-boxes clickable" id="add-vehicle">
+                <div class="col-md-3 admin-boxes clickable" id="add-make">
+                  <div class="well dash-box">
+                    <h2><span class="fa fa-plus-circle" aria-hidden="true"></span></h2>
+                    <h4>Add a Make</h4>
+                  </div>
+                </div>
+
+                 <div class="col-md-3 admin-boxes clickable" id="add-model">
+                  <div class="well dash-box">
+                    <h2><span class="fa fa-plus-circle" aria-hidden="true"></span></h2>
+                    <h4>Add a Model</h4>
+                  </div>
+                </div>
+
+                 <div class="col-md-3 admin-boxes clickable" id="add-vehicle">
                   <div class="well dash-box">
                     <h2><span class="fa fa-plus-circle" aria-hidden="true"></span></h2>
                     <h4>Add a Vehicle</h4>
@@ -60,13 +74,14 @@
                     <th>Make</th>
                     <th>Model</th> 
                     <th>Year</th>
-                    <th>Mileage</th>
+                    <th>Mileage<p style="font-size:0.7em;font-style: italic;">(km)</p></th>
+                    <th>Delete</th>
                   </tr>
                   
                 <?php
                    foreach ($this->vehicles as $vehicle) 
                   {
-                    echo "<tr><td>".$vehicle->company."</td><td>".$vehicle->model_name."</td> <td>".$vehicle->year."</td><td>".$vehicle->mileage."</td></tr>";
+                    echo "<tr><td>".$vehicle->company."</td><td>".$vehicle->model_name."</td> <td>".$vehicle->year."</td><td>".$vehicle->mileage."</td><td><h1 style=\"margin:0px;padding-left:5px\"><span class=\"fa fa-trash-o clickable\" aria-hidden=\"true\"></span></h1></td></tr>";
                   }
                ?>
 
@@ -74,6 +89,7 @@
 
               </div>
             </div>
+
 
               </div>
           </div>
@@ -85,7 +101,7 @@
 <script>
 $(document).ready(function(){       
     $("#add-vehicle").click(function() {
-        $("#form-space").html('<form method="post" action="<?php echo URL ?>Admin/addVehicle" onsubmit="">Make:<input class="form-admin" type="text" name="make"><br>Model:<input type="text" name="model"><br>Year:<input type="text" name="year"><br><button type="submit">Add Vehicle</button></form>');
+        $("#form-space").html('<form method="post" action="<?php echo URL ?>Admin/addVehicle" onsubmit=""><div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><input class="form-admin" placeholder="Make" type="text" name="make"><br><input class="form-admin"  placeholder="Model" type="text" name="model"><br><input class="form-admin"  placeholder="Year" type="text" name="year"></div><div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><input class="form-admin"  placeholder="Mileage" type="text" name="mileage"><br><input class="form-admin"  placeholder="# of Seats" type="text" name="seats"><br><input class="form-admin"  placeholder="Location" type="text" name="location"></div><br><div class="admin-btn-div"><button class="admin-btn btn btn-danger btn-lg" type="submit">Add Vehicle</button></div></form>');
 
     });
      

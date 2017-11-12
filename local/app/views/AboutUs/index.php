@@ -1,6 +1,6 @@
 <div class="aboutUs">  <!-- About Us Content -->
 
-
+<section id="aboutus">
  <div class="row col-lg-12 text-center">
 
     <h1> About Us</h1>
@@ -15,7 +15,6 @@
     <p style="font-size: 1.3em">At select location. Toronto, Calagary and Montreal currently</p>
 
  </div>
-
-
+</section><!--/#contact-page-->
 </div> <!-- End of Content -->
 

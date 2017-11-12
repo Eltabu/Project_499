@@ -10,7 +10,7 @@ class Login extends Controller
     public function logout()
     {
       unset($_SESSION['username']);
-      unset($_SESSION['role']); 
+      Session::set($_SESSION['role']); 
       Session::destroy();
       header('location: '.URL.'Home');
       Session::int();
@@ -25,21 +25,18 @@ class Login extends Controller
         //go to dashboard if the user is admin
         Session::set('username', $result['username']);
         Session::set('role', $result['role']); 
-        header('location: '.URL.'Admin');
-        echo "admin";
+        header('location: '.URL.'Dashboard');
       }
       else if($result['role'] == 2)
       {
         //go to dashboard if the user is admin
         Session::set('username', $result['username']);
-        Session::set('role', $result['role']);
-        echo "customer";  
+        Session::set('role', $result['role']);  
       }
       else
       {
         //show an error 
         header('location: '.URL.'Login');
-        
       }
     }
 

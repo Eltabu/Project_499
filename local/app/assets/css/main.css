@@ -1,12 +1,12 @@
-.backgroundStyle{
-  background-size:cover;
-  background-image:url('../img/bmw.jpg');
-}
-
 /*************************
 *******Header************* 
 **************************/
+.background-image{
 
+  background-size:cover;
+  background-image: url('../img/bmw.jpg');
+
+}
 .main-logo{
 color: #ffffff;
   font-family:  "Great Vibes", cursive;
@@ -19,6 +19,24 @@ color: #ffffff;
   text-shadow: 2px 2px 15px red;;  
 }
 
+/*ADMIN*/
+.admin-boxes{
+  text-align: center;
+}
+.clickable{
+  cursor:pointer;
+}
+.form-admin {
+  padding:5px;
+  margin:5px;
+  font-weight:bold;
+}
+.admin-btn-div {
+  text-align:center;
+}
+.admin-btn{
+  margin-top:20px;
+}
 .fa {
   line-height: 2 !important;
 }
@@ -695,6 +713,7 @@ input[type="radio"]:checked + label {
     float: left;
     margin: 10px;
 }
+
 
 
 

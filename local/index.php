@@ -1,5 +1,6 @@
 
 <?php
+
 try {
     require_once 'app/core/init.php';
     $app = new App;

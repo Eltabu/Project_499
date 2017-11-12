@@ -18,18 +18,18 @@ class Admin extends Controller
     }
 
     public function vehicles()
-    { 
-      $this->getVehicles();
-      //Loading the about us page
-      $this->view('Admin/vehicles', ['viewName' => 'Admin Dashboard']);    
-    }
+  { 
+    $this->getVehicles();
+    //Loading the about us page
+    $this->view('Admin/vehicles', ['viewName' => 'Admin Dashboard']);    
+  }
 
      public function locations()
-    { 
-      $this->getLocations();   
-      //Loading the about us page
-      $this->view('Admin/locations', ['viewName' => 'Admin Dashboard']);    
-    }
+  { 
+    $this->getLocations();   
+    //Loading the about us page
+    $this->view('Admin/locations', ['viewName' => 'Admin Dashboard']);    
+  }
 
  
     public function getLocations()
