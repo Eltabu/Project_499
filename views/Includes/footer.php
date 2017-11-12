@@ -51,5 +51,12 @@
 		<script src="<?php echo URL ?>assets/js/main.js"></script>
 		<script src="<?php echo URL ?>assets/js/jquery.dataTables.min.js"></script>
 		<script src="<?php echo URL ?>assets/js/dataTables.bootstrap.min.js"></script>
+		<script src="<?php echo URL ?>assets/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+		<script>
+			$(function () {
+				//Add text editor
+				$("#compose-textarea").wysihtml5();
+			});
+		</script>
 </body>
 </html>

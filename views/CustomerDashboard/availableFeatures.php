@@ -34,70 +34,28 @@
             <!-- Website Overview -->
             <div class="panel panel-default">
               <div class="panel-heading main-color-bg">
-                <h3 class="panel-title">Overview</h3>
+                <h3 class="panel-title">Features</h3>
               </div>
               <div class="panel-body">
-                <div class="col-md-4">
-                  <div class="well dash-box">
-                    <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 14</h2>
-                    <h4> Days to next payment</h4>
-                  </div>
+                <div class="panel panel-danger">
+                    <div class="panel-heading">Feature Name</div>
+                    <div class="panel-body">Provides hosting services such as domain and disk space, and database on the cloud.</div>
+                    <div class="panel-footer">Monthly Fees: $0.00</div>
                 </div>
-                <div class="col-md-4">
-                  <div class="well dash-box">
-                    <h2><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> 2</h2>
-                    <h4>Open tickets </h4>
-                  </div>
+                <div class="panel panel-danger">
+                    <div class="panel-heading">Feature Name</div>
+                    <div class="panel-body">Provides hosting services such as domain and disk space, and database on the cloud.</div>
+                    <div class="panel-footer">Monthly Fees: $0.00</div>
                 </div>
-                <div class="col-md-4">
-                  <div class="well dash-box">
-                    <h2><span class="glyphicon glyphicon-usd" aria-hidden="true"></span>29.99</h2>
-                    <h4>Unpaid Fees</h4>
-                  </div>
+                <div class="panel panel-danger">
+                    <div class="panel-heading">Feature Name</div>
+                    <div class="panel-body">Provides hosting services such as domain and disk space, and database on the cloud.</div>
+                    <div class="panel-footer">Monthly Fees: $0.00</div>
                 </div>
+
               </div>
               </div>
 
-              <!-- Latest Users -->
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Latest Features</h3>
-                </div>
-                <div class="panel-body">
-                  <table class="table table-striped table-hover">
-                      <tr>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Description</th>
-                      </tr>
-                      <tr>
-                        <td>Vertical inspection</td>
-                        <td>$1.5</td>
-                        <td>Free Trial</td>
-                      </tr>
-                      <tr>
-                        <td>Online payment</td>
-                        <td>$2.5</td>
-                        <td>Standard</td>
-                      </tr>
-                      <tr>
-                        <td>Reporting System</td>
-                        <td>$5.3</td>
-                        <td>Untimate</td>
-                      </tr>
-                      <tr>
-                        <td>Recognize account types</td>
-                        <td>$3.6</td>
-                        <td>Free Trial</td>
-                      </tr>
-                      <tr>
-                        <td>Inventory Report</td>
-                        <td>$0.99</td>
-                        <td>Free Trial</td>
-                      </tr>
-                    </table>
-                </div>
-              </div>
           </div>
         </div>
       </div>

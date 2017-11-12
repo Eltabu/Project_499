@@ -17,7 +17,11 @@
         <link href="<?php echo URL ?>assets/css/theme1.css" rel="stylesheet" />
 
         <link href="<?php echo URL ?>assets/css/dataTables.bootstrap.min.css" rel="stylesheet" />
-        
+
+
+        <link href="<?php echo URL ?>assets/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" />
+
+        <link href="<?php echo URL ?>assets/css/AdminLTE.css" rel="stylesheet" type="text/css">
 
 		
         <!-- Page Title   -->

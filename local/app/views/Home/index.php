@@ -1,7 +1,4 @@
-
 <!-- Home Content -->
-
-
 <!-- Section Intro Slider
 ================================================== -->
 
@@ -11,7 +8,7 @@
         <li data-target="#myCarousel" data-slide-to="1"></li>
       </ol> -->
       <div class="carousel-inner" >
-        <div class="item active backgroundStyle">
+        <div class="item active background-image">
           <div class="container">
             
           </div>
@@ -51,19 +48,29 @@
                                 
 
                         <div class="row">
-                                <select class="home-select">
+                                <select name="pick_loc" class="home-select">
                                   <option selected disabled>Pickup Location</option>
-                                  <option>Windsor - Huron Church</option>
-                                  <option>Windsor - Jefferson</option>
+
+                                 <?php  foreach ($this->locations as $location) 
+                                      {
+                                        echo "<option value=".$location->location_id.">".$location->name."</option>";
+                                      }
+                                      ?>
+
                                 </select>
                        </div>
 
 
                         <div class="row">
-                                 <select class="home-select">
+                                 <select name="drop_loc" class="home-select">
                                   <option selected disabled>Dropoff Location</option>
-                                  <option>Windsor - Huron Church</option>
-                                  <option>Windsor - Jefferson</option>
+                                  
+                                  <?php  foreach ($this->locations as $location) 
+                                      {
+                                        echo "<option value=".$location->location_id.">".$location->name."</option>";
+                                      }
+                                      ?>
+
                                 </select>
                         </div>
 
@@ -75,21 +82,54 @@
                             <i class="fa fa-clock-o"></i>
                             <h2>Pick a Time</h2>
                             
-
                         <div class="row">
-                            <select class="home-select">
-                                  <option selected disabled>Pickup Time</option>
-                                  <option>Windsor - Huron Church</option>
-                                  <option>Windsor - Jefferson</option>
+                            <select name="pick_time" class="home-select">
+                                    <option selected disabled>Pickup Time</option>
+                              <?php 
+
+                                for ($i=7; $i < 12 ; $i++) { 
+
+                                  echo '<option value=":'.$i.'00:00">'.$i.':00am</option>';
+                                  echo '<option value=":'.$i.'30:00">'.$i.':30am</option>';
+                                }
+
+
+                                echo '<option value="12:00:00pm">12:00pm</option>';
+                                echo '<option value="12:30:00pm">12:30pm</option>';
+
+                                 for ($i=1; $i < 5 ; $i++) { 
+
+                                  echo '<option value=":'.$i.'00:00">'.$i.':00pm</option>';
+                                  echo '<option value=":'.$i.'30:00">'.$i.':30pm</option>';
+                                }
+                              ?>
+
                                 </select>
                         </div>
 
 
                         <div class="row">
-                                 <select class="home-select">
-                                  <option selected disabled>Dropoff Time</option>
-                                  <option>Windsor - Huron Church</option>
-                                  <option>Windsor - Jefferson</option>
+                                 <select name="drop_time" class="home-select">
+                                    <option selected disabled>Dropoff Time</option>
+                              <?php 
+
+                                for ($i=7; $i < 12 ; $i++) { 
+
+                                  echo '<option value=":'.$i.'00:00">'.$i.':00am</option>';
+                                  echo '<option value=":'.$i.'30:00">'.$i.':30am</option>';
+                                }
+
+
+                                echo '<option value="12:00:00pm">12:00pm</option>';
+                                echo '<option value="12:30:00pm">12:30pm</option>';
+
+                                 for ($i=1; $i < 5 ; $i++) { 
+
+                                  echo '<option value=":'.$i.'00:00">'.$i.':00pm</option>';
+                                  echo '<option value=":'.$i.'30:00">'.$i.':30pm</option>';
+                                }
+                              ?>
+
                                 </select>
                         </div>
 
@@ -102,21 +142,28 @@
                             <h2>Pick a Vehicle</h2>
                            
                         <div class="row">
-                            <select class="home-select" id="vehicle-select">
+                            <select name="class" class="home-select" id="vehicle-select">
                             <option selected disabled>Select a Class</option>
-                            <option>Four Door Sedan</option>
-                            <option>Truvk</option>
-                            <option>Van</option>
+                             <?php  foreach ($this->classes as $classes) 
+                                      {
+                                        echo "<option value=".$classes->classid.">".$classes->class."</option>";
+                                      }
+                                      ?>
+
                           </select>
                         </div>
 
                         <div class="clearfix">
 
                         <div class="row">
-                          <select class="home-select" id="vehicle-select">
+                          <select name="vehicle" class="home-select" id="vehicle-select">
                             <option selected disabled>Select a Vehicle</option>
-                            <option>Toyota</option>
-                            <option>BMW</option>
+                            <?php  foreach ($this->vehicles as $vehicles) 
+                                      {
+                                        echo "<option value=".$vehicles->vid.">".$vehicles->year." ".$vehicles->company." ".$vehicles->model_name."</option>";
+                                      }
+                                      ?>
+
                           </select>
                         </div>
 
@@ -136,32 +183,9 @@
 
   <hr style="border-color:black;max-width:100%">
 
-  <div  class="col-lg-6 col-md-6 col-sm-6 col-xs-12 center" >
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 center" >
 
-      <div style="min-height:400px" id="map"></div>
-
-  </div>
-
-   <div  class="col-lg-6 col-md-6 col-sm-6 col-xs-12" >
-
-    <ul id="province-select">
-      <h2>Ontario</h2>
-      
-      <li><a>Windsor</a></li>
-      <li><a>Chatham</a></li>
-      <li><a>Sarnia</a></li>
-      <li><a>More...</a></li>
-    </ul>
-
-   <ul id="province-select">
-      <h2>Quebec</h2>
-      
-      <li><a>Montreal</a></li>
-      <li><a>Quebec City</a></li>
-      <li><a>Val D'Ors</a></li>
-      <li><a>More...</a></li>
- 
-    </ul>
+  <?php include(dirname(__DIR__)."\Home\config\map.php") ?>
 
    </div> 
         </div><!--/.container-->
@@ -173,7 +197,7 @@
 
 <!-- End of Content -->
 
-  <script type="text/javascript">
+<script type="text/javascript">
 
 function initMap(){
     var locations = [
@@ -214,7 +238,8 @@ function initMap(){
       })(marker, i));
     }
   }
+  
   </script>
 
-    <!-- Google Maps API -->
+
   <script src="http://maps.google.com/maps/api/js?key=AIzaSyB7i973YBFx3nNz3I93BbLjZjB_gUmRJz8&callback=initMap" type="text/javascript"></script>

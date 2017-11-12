@@ -598,6 +598,23 @@ textarea#message {
 }
 
 /*************************
+*******Admin Inquiries*****
+**************************/
+.customers-inquiries-list{
+  max-height: 800px;
+  overflow-y:auto; 
+}
+
+/*************************
+*******Admin Management****
+**************************/
+
+.select-meanu{
+  min-height: 125px;
+  overflow-y:auto; 
+}
+
+/*************************
 *******Test Drive*********
 **************************/
 .TestDrive{
