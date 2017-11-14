@@ -8,10 +8,11 @@
         <meta name="author" content="Moad Eltabu, Cooper Fecteau">
         
         <!-- BOOTSTRAP CORE CSS STYLE  -->
-        <link href="<?php echo URL ?>assets/css/bootstrap.css" rel="stylesheet" />
-        <link href="<?php echo URL ?>assets/css/font-awesome.min.css" rel="stylesheet">
-        <link href="<?php echo URL ?>assets/css/icomoon-social.css" rel="stylesheet">
-        <link href="<?php echo URL ?>assets/css/main.css" rel="stylesheet" />
+        <link href="<?php echo URL ?>app/assets/css/bootstrap.css" rel="stylesheet" />
+        <link href="<?php echo URL ?>app/assets/css/font-awesome.min.css" rel="stylesheet">
+        <link href="<?php echo URL ?>app/assets/css/icomoon-social.css" rel="stylesheet">
+        <link href="<?php echo URL ?>app/assets/css/main.css" rel="stylesheet" />
+        <link href="<?php echo URL ?>app/assets/datetime/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
         
         
 
@@ -31,40 +32,6 @@
     <body> 
 
     <header id="header">
- <!--  <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 col-xs-4">
-                        <div class="top-number"><p><i class="fa fa-phone-square"></i>  +1 (519) 984-3935</p></div>
-                    </div>
-                    <div class="col-sm-6 col-xs-8">
-                        <div class="top-nav" >
-                            <ul class="top-nav-list">
-                                <li><a href="<?php echo URL ?>Dashboard">
-                                <?php
-                                if (isset($_SESSION['username']))
-                                {
-                                    echo 'Welcome, ' . $_SESSION['username'];
-                                }
-                                ?>
-                                 </a></li>
-                                <?php 
-                                if (isset($_SESSION['username']))
-                                {
-                                    echo '<li><a href="'.URL.'Login/logout">Logout</a></li>';
-                                }
-                                else
-                                {
-                                    echo '<li><a href="'.URL.'Login">Login</a></li>';  
-                                }
-                                ?> 
-                                                              
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
 
         <nav class="navbar navbar-inverse" role="banner">
             <div class="container">
@@ -81,20 +48,30 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
+
                         <li><a href="<?php echo URL ?>Home">Home</a></li>                        
                         <li><a href="<?php echo URL ?>ContactUs">Contact Us</a></li>
                         <li><a href="<?php echo URL ?>AboutUs">About Us</a></li> 
-                                <?php 
-                                if (isset($_SESSION['username']))
+
+                               <?php
+                                
+                        if ( isset($_SESSION['user_id']))
                                 {
-                                    echo '<li><a href="'.URL.'Login/logout">Logout</a></li>';
+                                    echo '<li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account
+                                        <span class="caret"></span>
+                                        </a>
+                                        <ul style="margin-top:-20px" class="dropdown-menu">
+                                            <li><a href="'.URL.'Admin">Dashboard</a></li>
+                                            <li><a href="'.URL.'Login/logout">Logout</a></li>
+                                        </ul>
+                                     </li>';
                                 }
                                 else
                                 {
                                     echo '<li><a href="'.URL.'Login">Login</a></li>';  
                                 }
                                 ?> 
-
 
                     </ul>
                 </div>
@@ -103,10 +80,11 @@
 		
 
                         <!-- CORE JQUERY  -->
-        <script src="<?php echo URL ?>assets/js/jquery-1.10.2.js"></script>
+        <script src="<?php echo URL ?>app/assets/js/jquery-1.10.2.js"></script>
         <!-- BOOTSTRAP SCRIPTS  -->
-        <script src="<?php echo URL ?>assets/js/bootstrap.js"></script>
-        <script src="<?php echo URL ?>assets/js/main.js"></script>
+        <script src="<?php echo URL ?>app/assets/js/bootstrap.js"></script>
+        <script src="<?php echo URL ?>app/assets/js/main.js"></script>
+        <script type="text/javascript" src="<?php echo URL ?>app/assets/datetime/js/bootstrap-datetimepicker.min.js"></script>
     </header>
     <!--End Header-->
 

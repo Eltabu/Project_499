@@ -3,16 +3,28 @@ class Reservation extends Model{
 
 	public $reservation;
 
-	public function addReservation($ReservationInfo = [])
+	public function addReservation()
 	{
 
-		$User = 1;
-		$ResId = "XPL7HB";
-		$PickLoc = $ReservationInfo['pick_loc'];
-		$DropLoc = $ReservationInfo['drop_loc'];
-		$PickTime = $ReservationInfo['pick_time'];
-		$DropTime = $ReservationInfo['drop_time'];
-		$Vehicle = $ReservationInfo['vehicle'];
+		if(!isset($_SESSION['user_id']))
+      {
+        header('location: '.URL.'Login');
+      }
+
+      	$pickup = explode(" ", $_POST['pick_time']);
+      	$dropoff = explode(" ", $_POST['drop_time']);
+
+		$user = $_SESSION['user_id'];
+		$resid = "XPL7HB";
+		$pickloc = $_POST['pick_loc'];
+		$droploc = $_POST['drop_loc'];
+
+		$pickdate = $pickup[0];
+		$dropdate = $dropoff[0];
+
+		$picktime = $pickup[1];
+		$droptime = $dropoff[1];
+		$vehicle = $_POST['vehicle'];
 
 		$check = 0;
 		
@@ -31,17 +43,23 @@ class Reservation extends Model{
 		// 	}
 		// }
 
-		$stmt = $this->db->prepare("CALL sp_add_reservation(?,?,?,?,?,?,?)");
+		$stmt = $this->db->prepare("CALL sp_add_reservation(?,?,?,?,?,?,?,?,?)");
 
-		$stmt->bindParam(1, $User, PDO::PARAM_STR);
-        $stmt->bindParam(2, $ResId, PDO::PARAM_STR);
-        $stmt->bindParam(3, $PickLoc, PDO::PARAM_STR);
-        $stmt->bindParam(4, $PickTime, PDO::PARAM_STR);
-        $stmt->bindParam(5, $DropLoc, PDO::PARAM_STR);
-        $stmt->bindParam(6, $DropTime, PDO::PARAM_STR);
-        $stmt->bindParam(7, $Vehicle, PDO::PARAM_STR);
+		$stmt->bindParam(1, $user, PDO::PARAM_STR);
+        $stmt->bindParam(2, $resid, PDO::PARAM_STR);
+        $stmt->bindParam(3, $pickloc, PDO::PARAM_STR);
+        $stmt->bindParam(4, $picktime, PDO::PARAM_STR);
+        $stmt->bindParam(5, $pickdate, PDO::PARAM_STR);
+        $stmt->bindParam(6, $droploc, PDO::PARAM_STR);
+        $stmt->bindParam(7, $droptime, PDO::PARAM_STR);
+        $stmt->bindParam(8, $dropdate, PDO::PARAM_STR);
+        $stmt->bindParam(9, $vehicle, PDO::PARAM_STR);
         
-        mail("fecteauc@uwindsor.ca" , "Your Reservation Key" , "Here is your reservation key for Lancer Rental: ".$ResId);
+  //       $headers =  'MIME-Version: 1.0' . "\r\n"; 
+		// $headers .= 'From: Your name <info@cruzecarrental.com>' . "\r\n";
+		// $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n"; 
+
+  //       mail("fecteauc@uwindsor.ca" , "Your Reservation Key" , "Here is your reservation key for Lancer Rental: ".$resid, $headers);
 
         $stmt->execute();
 	}
@@ -50,7 +68,7 @@ class Reservation extends Model{
     {
          $stmt = $this->db->prepare("CALL sp_get_reservation(?)");
 
-         $stmt->bindParam(1, $resId, PDO::PARAM_STR);
+         $stmt->bindParam(1, $resid, PDO::PARAM_STR);
 
          $stmt->execute();
          $result = $stmt->fetchAll(PDO::FETCH_OBJ);

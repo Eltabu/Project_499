@@ -388,11 +388,16 @@ ul.social-share li a {
   margin-top: 10px;
   font-size: 1.2em;
   padding:5px;
-  color:#2e2e2e;
+  color:gray;
   font-weight: 700;
   border-radius: 200px;
   border:solid 2px #2e2e2e;
   width:70%;
+  cursor:pointer;
+}
+.home-select:hover,focus{
+  border:solid 2px #c52d2f;
+
 }
 .province-select > li,a {
   color:#d9534f;
@@ -715,7 +720,27 @@ input[type="radio"]:checked + label {
 }
 
 
+.agreements {
+  padding: 10px;
+  width : 800px;
+  font-size: 16px;
+  outline:none;
+  resize: none;
+  border: 2px solid black;
+}
 
+textarea::-webkit-scrollbar {
+    width: 1em;
+}
+ 
+textarea::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+textarea::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
 
 
 /*************************

@@ -9,8 +9,9 @@ class Login extends Controller
           
     public function logout()
     {
-      unset($_SESSION['username']);
-      Session::set($_SESSION['role']); 
+      unset($_SESSION['user_id']);
+     unset($_SESSION['type']);
+     unset($_SESSION['username']);
       Session::destroy();
       header('location: '.URL.'Home');
       Session::int();
@@ -18,20 +19,25 @@ class Login extends Controller
 
     public function isUser()
     {
+
       $userModel = $this->model('User');
-      $result = $userModel->isUser($_POST['username'], md5($_POST['password']));  
-      if($result['role'] == 1)
+      $result = $userModel->isUser($_POST['username'], $_POST['password']);  
+
+      if($result[0]->type == 2)
       {
         //go to dashboard if the user is admin
-        Session::set('username', $result['username']);
-        Session::set('role', $result['role']); 
-        header('location: '.URL.'Dashboard');
+        Session::set('user_id', $result[0]->user_id);
+        Session::set('username', $result[0]->username);
+        Session::set('type', $result[0]->type); 
+        header('location: '.URL.'Admin');
       }
-      else if($result['role'] == 2)
+      else if($result[0]->type == 1)
       {
         //go to dashboard if the user is admin
-        Session::set('username', $result['username']);
-        Session::set('role', $result['role']);  
+        Session::set('user_id', $result[0]->user_id);
+        Session::set('username', $result[0]->username);
+        Session::set('type', $result[0]->type);  
+        header('location: '.URL.'Home');
       }
       else
       {

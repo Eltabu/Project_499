@@ -41,6 +41,7 @@
             <div class="row">
                 <div class="quick-reservation">
 
+                <form method="post" action="<?php echo URL ?>Reservation/addReservation">
                   <div class="col-lg-4 col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
                         <div class="feature-wrap">
                            <i class="fa fa-map-marker"></i>
@@ -77,60 +78,18 @@
                         </div>
                     </div><!--/.col-md-4-->
 
-                     <div class="col-lg-4 col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                      <div class="col-lg-4 col-md-4 col-sm-6 wow fadeInDown" style="max-height:277px" data-wow-duration="1000ms" data-wow-delay="600ms">
                         <div class="feature-wrap" style=>
                             <i class="fa fa-clock-o"></i>
                             <h2>Pick a Time</h2>
                             
                         <div class="row">
-                            <select name="pick_time" class="home-select">
-                                    <option selected disabled>Pickup Time</option>
-                              <?php 
-
-                                for ($i=7; $i < 12 ; $i++) { 
-
-                                  echo '<option value=":'.$i.'00:00">'.$i.':00am</option>';
-                                  echo '<option value=":'.$i.'30:00">'.$i.':30am</option>';
-                                }
-
-
-                                echo '<option value="12:00:00pm">12:00pm</option>';
-                                echo '<option value="12:30:00pm">12:30pm</option>';
-
-                                 for ($i=1; $i < 5 ; $i++) { 
-
-                                  echo '<option value=":'.$i.'00:00">'.$i.':00pm</option>';
-                                  echo '<option value=":'.$i.'30:00">'.$i.':30pm</option>';
-                                }
-                              ?>
-
-                                </select>
+                          <input type="text" name="pick_time" placeholder="Pickup Date and Time" readonly class="form_datetime home-select">
                         </div>
 
 
                         <div class="row">
-                                 <select name="drop_time" class="home-select">
-                                    <option selected disabled>Dropoff Time</option>
-                              <?php 
-
-                                for ($i=7; $i < 12 ; $i++) { 
-
-                                  echo '<option value=":'.$i.'00:00">'.$i.':00am</option>';
-                                  echo '<option value=":'.$i.'30:00">'.$i.':30am</option>';
-                                }
-
-
-                                echo '<option value="12:00:00pm">12:00pm</option>';
-                                echo '<option value="12:30:00pm">12:30pm</option>';
-
-                                 for ($i=1; $i < 5 ; $i++) { 
-
-                                  echo '<option value=":'.$i.'00:00">'.$i.':00pm</option>';
-                                  echo '<option value=":'.$i.'30:00">'.$i.':30pm</option>';
-                                }
-                              ?>
-
-                                </select>
+                          <input type="text" name="drop_time" placeholder="Dropoff Date and Time" readonly class="form_datetime home-select">
                         </div>
 
                         </div>
@@ -241,5 +200,8 @@ function initMap(){
   
   </script>
 
+<script type="text/javascript">
+    $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+</script>       
 
   <script src="http://maps.google.com/maps/api/js?key=AIzaSyB7i973YBFx3nNz3I93BbLjZjB_gUmRJz8&callback=initMap" type="text/javascript"></script>

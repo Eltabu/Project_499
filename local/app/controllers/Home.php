@@ -32,4 +32,14 @@ class Home extends Controller
       $this->vehicles = $vehiclesModel->getVehicles();
     }
 
+
+   public function addReservation()
+  { 
+     $reservationModel = $this->model('Reservation');
+
+          $reservationModel->addReservation($_POST);
+
+          header('location: '.URL.'Home/index');  
+  }
+
 }
