@@ -1,3 +1,4 @@
 <?php
-define('CHANGE',0);
-define('MAP',1);
+define('CHANGE',1);
+define('MAP',0);
+define('INQUIRIES',1);

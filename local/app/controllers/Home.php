@@ -35,11 +35,11 @@ class Home extends Controller
 
    public function addReservation()
   { 
-     $reservationModel = $this->model('Reservation');
+          $reservationModel = $this->model('Reservation');
 
           $reservationModel->addReservation($_POST);
 
-          header('location: '.URL.'Home/index');  
+          $this->view('Checkout/index', ['viewName' => 'Checkout']);  
   }
 
 }

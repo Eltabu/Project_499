@@ -1,59 +1,151 @@
+<div class="container ProductInfo">
+	<div class="row form-group">
+        <div class="col-xs-12">
+            <ul class="nav nav-pills nav-justified thumbnail setup-panel">
+                <li class="active"><a href="#step-1">
+                    <h4 class="list-group-item-heading">Step 1</h4>
+                    <p class="list-group-item-text">Customer information</p>
+                </a></li>
+                <li class="disabled"><a href="#step-2">
+                    <h4 class="list-group-item-heading">Step 2</h4>
+                    <p class="list-group-item-text">Payment information</p>
+                </a></li>
+                <li class="disabled"><a href="#step-3">
+                    <h4 class="list-group-item-heading">Step 3</h4>
+                    <p class="list-group-item-text">Aggrement</p>
+                </a></li>
 
-<section id="checkout-info">
+                <li class="disabled"><a href="#step-4">
+                    <h4 class="list-group-item-heading">Step 4</h4>
+                    <p class="list-group-item-text">Complete</p>
+                </a></li>
 
-<form method="post" action="<?php echo URL ?>Checkout/checkout">
-<div class="container" style="padding-top:40px">
+            </ul>
+        </div>
+	</div>
+    <div class="row setup-content" id="step-1">
+        <div class="col-xs-12">
+            <div class="col-md-12 well">
+                
+                <form class="col-md-6">
+                    <h1> Customer information:</h1>
+                    <div class="form-group">
+						<label for="FirstName" class="control-label">First name:</label>
+						<input name="FirstName" type="text" id="FirstName" class="form-control" required="required">
+					</div>
 
-<div class="col-lg-6 col-md-6 col-sm-12" style="text-align: center">
-  
-        <div class="panel panel-default credit-card-box">
-                                <div class="panel-heading display-table">
-                                    <div class="row display-tr">
-                                        <h2 class="panel-title display-td">Payment Details</h2>
-                                        <div class="display-td">
+					<div class="form-group">
+						<label for="LastName" class="control-label">Last name:</label>
+						<input name="LastName" type="text" id="LastName" class="form-control" required="required">
+					</div>
 
-                                            <br> 
-                                        <label>Total: $</label>  
-                                        <input type="text" style="background:transparent;box-shadow: none;border:0" readonly name="total" value="19.99" /> 
-                                        <label>User: </label>  
-                                        <input type="text" style="background:transparent;box-shadow: none;border:0" readonly name="user" value="<?php echo $_SESSION['user_id']; ?>" />    
-                                        <br> 
-                                        <br>                       
-                                            <label>
-                                              <input type="radio" name="type" value="2" required />
-                                              <img src="<?php echo URL ?>../assets/img/credit/visa.png" alt="Visa">
-                                            </label>
-                                            <label>
-                                              <input type="radio" name="type" value="1" required/>
-                                              <img src="<?php echo URL ?>../assets/img/credit/mastercard.png" alt="Mastercard">
-                                            </label>
-                                            <label>
-                                              <input type="radio" name="type" value="3" required/>
-                                              <img src="<?php echo URL ?>../assets/img/credit/american-express.png" alt="American Express">
-                                            </label>
+                    <div class="form-group">
+						<label for="suffix" class="control-label">Suffix:</label>
+						<input name="suffix" type="text" id="suffix" class="form-control" required="required">
+					</div>
 
+                    <div class="form-group">
+						<label for="countries" class="control-label">Your role: </label>
+						<select name="countries" id="countries" class="form-control" required="required">
+								<option value="1">Antigua and Barbuda</option>
+                                <option value="2">Australia</option>
+                                <option value="3">The Bahamas</option>
+                                <option value="4">Barbados</option>
+                                <option value="5">Belize</option>
+                                <option value="6">Canada</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label for="Email" class="control-label">Your E-mail:</label>
+						<input name="Email" id="Email" class="form-control" type="email" required="required">
+					</div>
+
+					<div class="form-group">
+						<label for="Phone" class="control-label">Your phone:</label>
+						<input name="Phone" id="Phone" class="form-control" type="tel" required="required">
+					</div>	
+				
+                </form>
+                <form class="col-md-6">
+                    <h1> Company information:</h1>
+                    <div class="form-group">
+						<label for="companyName" class="control-label">Company name:</label>
+						<input name="companyName" type="text" id="companyName" class="form-control" required="required">
+					</div>
+                    <div class="form-group">
+						<label for="websiteName" class="control-label">Website name:</label>
+						<input name="websiteName" type="text" id="websiteName" class="form-control" required="required">
+					</div>
+                    <div class="form-group">
+						<label for="countries" class="col-sm-4 control-label">Fleet size: <span>*</span> </label>
+						<select name="countries" id="countries" class="form-control" required="required" disabled="">
+								<option value="1">1-499</option>
+						</select>
+					</div>
+                    <div class="form-group">
+						<label for="countries" class="col-sm-4 control-label">Country: <span>*</span> </label>
+						<select name="countries" id="countries" class="form-control" required="required">
+								<option value="1">Antigua and Barbuda</option>
+                                <option value="2">Australia</option>
+                                <option value="3">The Bahamas</option>
+                                <option value="4">Barbados</option>
+                                <option value="5">Belize</option>
+                                <option value="6">Canada</option>
+						</select>
+					</div>
+                    <div class="form-group">
+						<label for="Email" class="control-label">Company E-mail:</label>
+						<input name="Email" id="Email" class="form-control" type="email" required="required">
+					</div>
+
+					<div class="form-group">
+						<label for="Phone" class="control-label">Company phone:</label>
+						<input name="Phone" id="Phone" class="form-control" type="tel" required="required">
+					</div>
+                </form>                
+            </div>
+            <button id="activate-step-2" class="btn btn-primary btn-md pull-right">Next Step</button>
+        </div>
+    </div>
+
+    <div class="row setup-content" id="step-2">
+        <div class="col-xs-12">
+            <div class="col-md-12 text-center">
+                
+                <div class="col-md-3">
+                </div>
+
+                <form class="col-md-6" >
+
+                        <!-- You can make it whatever width you want. I'm making it full width
+                            on <= small devices and 4/12 page width on >= medium devices -->                        
+                        
+                            <!-- CREDIT CARD FORM STARTS HERE -->
+                            <div class="panel panel-default credit-card-box">
+                                <div class="panel-heading display-table" >
+                                    <div class="row display-tr" >
+                                        <h2 class="panel-title display-td" >Payment Details</h2>
+                                        <div class="display-td" >                            
+                                            <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
                                         </div>
                                     </div>                    
                                 </div>
                                 <div class="panel-body">
-                                    
-                                        <div class="row">
-                                            <div class="col-xs-12">
-                                                <div class="form-group">
-                                                    <label for="cardName">CARD NAME</label>
-                                                    <div class="input-group">
-                                                        <input type="tel" class="form-control" name="cardName" placeholder="Name Present on Card" autocomplete="cc-name" required="" autofocus="">
-                                                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                                    </div>
-                                                </div>                            
-                                            </div>
-                                        </div>
+                                    <form role="form" id="payment-form" method="POST" action="javascript:void(0);">
                                         <div class="row">
                                             <div class="col-xs-12">
                                                 <div class="form-group">
                                                     <label for="cardNumber">CARD NUMBER</label>
                                                     <div class="input-group">
-                                                        <input type="tel" class="form-control" name="cardNumber" placeholder="Valid Card Number" autocomplete="cc-number" required="" autofocus="">
+                                                        <input 
+                                                            type="tel"
+                                                            class="form-control"
+                                                            name="cardNumber"
+                                                            placeholder="Valid Card Number"
+                                                            autocomplete="cc-number"
+                                                            required autofocus 
+                                                        />
                                                         <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
                                                     </div>
                                                 </div>                            
@@ -62,25 +154,34 @@
                                         <div class="row">
                                             <div class="col-xs-7 col-md-7">
                                                 <div class="form-group">
-                                                    <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline"></span> DATE</label>
-                                                    <input type="tel" class="form-control" name="cardExpiry" placeholder="MM / YY" autocomplete="cc-exp" required="">
+                                                    <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
+                                                    <input 
+                                                        type="tel" 
+                                                        class="form-control" 
+                                                        name="cardExpiry"
+                                                        placeholder="MM / YY"
+                                                        autocomplete="cc-exp"
+                                                        required 
+                                                    />
                                                 </div>
                                             </div>
                                             <div class="col-xs-5 col-md-5 pull-right">
                                                 <div class="form-group">
                                                     <label for="cardCVC">CV CODE</label>
-                                                    <input type="tel" class="form-control" name="cardCVC" placeholder="CVC" autocomplete="cc-csc" required="">
+                                                    <input 
+                                                        type="tel" 
+                                                        class="form-control"
+                                                        name="cardCVC"
+                                                        placeholder="CVC"
+                                                        autocomplete="cc-csc"
+                                                        required
+                                                    />
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row" style="padding-bottom: 10px">
-                                          <div class="col-xs-12">
-                                            <input type="checkbox" name="terms" id="terms" required> I have read and accepted the terms and conditions</input>
-                                          </div>
-                                        </div>
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                <button class="btn btn-danger btn-lg" type="submit">Checkout</button>
+                                                <button class="subscribe btn btn-success btn-lg btn-block" type="button">Validate</button>
                                             </div>
                                         </div>
                                         <div class="row" style="display:none;">
@@ -88,15 +189,24 @@
                                                 <p class="payment-errors"></p>
                                             </div>
                                         </div>
-                                    
+                                    </form>
                                 </div>
-                            </div>
+                            </div>            
+                            <!-- CREDIT CARD FORM ENDS HERE -->   
+                
+                
+                </form>
 
-</div>
 
-<div class="col-lg-6 col-md-6 col-sm-12" style="max-height:400px;overflow-y:scroll;border: 1px solid #ddd;">
-     
-          <h1 class="text-center"> Terms of use</h1>
+            </div>
+            <button id="activate-step-3" class="btn btn-primary btn-md pull-right">Next Step</button>
+            
+        </div>
+    </div>
+    <div class="row setup-content" id="step-3">
+        <div class="col-xs-12">
+            <div class="col-md-12 well">
+                <h1 class="text-center"> Terms of use</h1>
 
                 <form>
 
@@ -141,9 +251,38 @@
                     <li>Or the results of using the Service/Products will meet your requirements.</li>
                     </ul>
                     </div></div></div><div id="sppb-addon-1507107453" class="clearfix"><div class="sppb-empty-space  clearfix"></div></div><div id="sppb-addon-1507107454" class="clearfix"><div class="sppb-addon sppb-addon-text-block sppb-text-left "><h2 class="sppb-addon-title">Exclusions</h2><div class="sppb-addon-content">Some jurisdictions do not allow the exclusion of certain warranties or the exclusion or limitation of liability for consequential or incidental damages, so the limitations above may not apply to you.<br><br>We reserve the right to change and modify terms and conditions at any time without any prior notice. By continuing to access or use our Service after any revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, you are no longer authorized to use the Service.</div></div></div></div>
- 
-</div>
-</div>
 
-  </form>
-</section>
+                    <div class="form-group">
+                        <div class="">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="agree" value="agree" /> Agree with the terms and conditions
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--<div class="form-group">
+                        <div class="">
+                            <button type="submit" class="btn btn-primary" name="signup" value="Sign up">Submit</button>
+                        </div>
+                    </div>-->
+                </form>
+
+            </div>
+            <button id="activate-step-4" class="btn btn-primary btn-md pull-right">Next Step</button>
+            
+        </div>
+    </div>
+
+    <div class="row setup-content" id="step-4">
+        <div class="col-xs-12">
+            <div class="col-md-12">
+
+            <?php require_once('invoice.php'); ?>
+
+            </div>
+        </div>
+    </div>
+
+</div>

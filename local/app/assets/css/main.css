@@ -41,6 +41,18 @@ color: #ffffff;
   line-height: 2 !important;
 }
 
+label > input{ /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
+}
+label > input + img{ /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+}
+label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+  border:2px solid #f00;
+}
+
 .home
 {
   margin-top: 25px;
@@ -722,11 +734,10 @@ input[type="radio"]:checked + label {
 
 .agreements {
   padding: 10px;
-  width : 800px;
+  width : 700px;
   font-size: 16px;
   outline:none;
   resize: none;
-  border: 2px solid black;
 }
 
 textarea::-webkit-scrollbar {

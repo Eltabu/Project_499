@@ -13,6 +13,15 @@ class App
   {
      $url = $this->parseUrl();
 
+     if(CHANGE == 1)
+      {
+              // //load the config file
+      require_once (__DIR__ .'/../views/Home/config/config.php');
+      require_once (__DIR__ .'/../controllers/config/config.php');
+      require_once (__DIR__ .'/../views/Admin/config/config.php');
+
+      }
+      
      //parase the controller if exist
      if(file_exists(__DIR__ .'/../controllers/'. $url[0] .'.php'))
      {

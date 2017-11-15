@@ -22,11 +22,9 @@ class Controller
   */
   public function view($view, $data = [])
   {   
+
       //load the header 
       require_once (__DIR__ .'/../views/Includes/header.php');
-      
-      // //load the config file
-      require_once (__DIR__ .'/../views/Home/config/config.php');
 
       //load the spesific view
       require_once (__DIR__ .'/../views/' . $view . '.php');

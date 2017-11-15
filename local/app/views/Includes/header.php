@@ -50,14 +50,15 @@
                     <ul class="nav navbar-nav">
 
                         <li><a href="<?php echo URL ?>Home">Home</a></li>                        
-                        <li><a href="<?php echo URL ?>ContactUs">Contact Us</a></li>
                         <li><a href="<?php echo URL ?>AboutUs">About Us</a></li> 
 
                                <?php
                                 
                         if ( isset($_SESSION['user_id']))
                                 {
-                                    echo '<li class="dropdown">
+                                    if($_SESSION['type'] == 1)
+                                    {
+                                        echo '<li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account
                                         <span class="caret"></span>
                                         </a>
@@ -66,10 +67,25 @@
                                             <li><a href="'.URL.'Login/logout">Logout</a></li>
                                         </ul>
                                      </li>';
+                                    }
+                                    else
+                                    {
+                                         echo '<li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account
+                                        <span class="caret"></span>
+                                        </a>
+                                        <ul style="margin-top:-20px" class="dropdown-menu">
+                                            <li><a href="'.URL.'Dashboard">Dashboard</a></li>
+                                            <li><a href="'.URL.'Login/logout">Logout</a></li>
+                                        </ul>
+                                     </li>';
+                                    }
+                                    
                                 }
                                 else
                                 {
-                                    echo '<li><a href="'.URL.'Login">Login</a></li>';  
+                                    echo '<li><a href="'.URL.'Login">Login</a></li>'; 
+                                    echo '<li><a href="'.URL.'SignUp">Sign Up</a></li>';   
                                 }
                                 ?> 
 

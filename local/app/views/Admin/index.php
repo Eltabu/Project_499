@@ -13,6 +13,7 @@
              <!--  <a href="users.html" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Agreements </a>
               <a href="users.html" class="list-group-item"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Finanaces </a>
               <a href="users.html" class="list-group-item"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings </a> -->
+              <?php include("config/inquirymenu.php"); ?>
             </div>
 
             <div class="well">
@@ -25,7 +26,7 @@
             <h4>Bandwidth Used </h4>
             <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-                    40%
+                    45%
             </div>
           </div>
             </div>

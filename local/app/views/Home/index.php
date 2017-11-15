@@ -39,15 +39,14 @@
         <div class="container">
 
             <div class="row">
-                <div class="quick-reservation">
+                <div class="quick-reservation" style="background-color:#f5f5f5;padding-top:40px;border:1px solid #ddd">
 
                 <form method="post" action="<?php echo URL ?>Reservation/addReservation">
                   <div class="col-lg-4 col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
                         <div class="feature-wrap">
                            <i class="fa fa-map-marker"></i>
                             <h2>Pick A Location</h2>
-                                
-
+                              
                         <div class="row">
                                 <select name="pick_loc" class="home-select">
                                   <option selected disabled>Pickup Location</option>
@@ -119,7 +118,7 @@
                             <option selected disabled>Select a Vehicle</option>
                             <?php  foreach ($this->vehicles as $vehicles) 
                                       {
-                                        echo "<option value=".$vehicles->vid.">".$vehicles->year." ".$vehicles->company." ".$vehicles->model_name."</option>";
+                                        echo "<option value=".$vehicles->vid.">".$vehicles->year." ".$vehicles->make." ".$vehicles->model."</option>";
                                       }
                                       ?>
 
@@ -139,6 +138,24 @@
 
 
             </div><!--/.row-->  
+
+  <hr style="border-color:black;max-width:100%">
+
+<div class="row">
+  <?php
+                   foreach ($this->vehicles as $vehicle) 
+                  {
+                    echo '<div class="col-md-4 admin-boxes clickable" id="add-vehicle">
+                  <div class="well dash-box">
+                    <img style="width:260px;height:195px" src="app/images/vehicles/'.$vehicle->image.'"></img>
+                    <h4>'.$vehicle->year.' '.$vehicle->make.' '.$vehicle->model.'</h4>
+                  </div>
+                </div>';
+                  }
+       ?>
+
+
+   </div>
 
   <hr style="border-color:black;max-width:100%">
 

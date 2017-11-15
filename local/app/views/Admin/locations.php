@@ -1,6 +1,5 @@
 <div class="home">
 <section id="main">
-<section id="main">
       <div class="container">
         <div class="row">
           <div class="col-md-3">
@@ -11,7 +10,10 @@
               <a href="<?php echo URL ?>Admin/index" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Customers </a>
               <a href=<?php echo URL ?>Admin/locations" class="list-group-item"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Locations </a>
               <a href="<?php echo URL ?>Admin/vehicles" class="list-group-item"><span class="fa fa-car" aria-hidden="true"></span> Vehicles </a>
-            </div>
+             
+             <?php include("config/inquirymenu.php"); ?>
+             
+                         </div>
 
             <div class="well">
               <h4>Disk Space Used</h4>

@@ -7,14 +7,14 @@ class Admin extends Controller
 
     public function index()
     { 
-      // if ($_SESSION['role'] == 1)
-      // {   
+      if ($_SESSION['type'] == '1')
+      {   
         $this->view('Admin/index', ['viewName' => 'Admin Dashboard']);
-      // }
-      // else
-      // {
-      //   header('location: '.URL.'Login');
-      // }
+      }
+      else
+      {
+        header('location: '.URL.'Login');
+      }
     }
 
     public function vehicles()
@@ -31,7 +31,14 @@ class Admin extends Controller
     $this->view('Admin/locations', ['viewName' => 'Admin Dashboard']);    
   }
 
- 
+  public function inquiries()
+  {
+
+
+    include("config/inquirycontroller.php");
+    
+  }
+
     public function getLocations()
     {
       $locationsModel = $this->model('Location');
@@ -46,6 +53,7 @@ class Admin extends Controller
 
      public function addVehicle()
   { 
+
      $vehicleModel = $this->model('Vehicle');
 
           $vehicleModel->addVehicle($_POST);
