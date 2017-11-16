@@ -12,13 +12,13 @@
                 </a></li>
                 <li class="disabled"><a href="#step-3">
                     <h4 class="list-group-item-heading">Step 3</h4>
-                    <p class="list-group-item-text">Aggrement</p>
+                    <p class="list-group-item-text">Aggrement & Commit</p>
                 </a></li>
 
-                <li class="disabled"><a href="#step-4">
+                <!--<li class="disabled"><a href="#step-4">
                     <h4 class="list-group-item-heading">Step 4</h4>
                     <p class="list-group-item-text">Complete</p>
-                </a></li>
+                </a></li>-->
 
             </ul>
         </div>
@@ -31,22 +31,26 @@
                     <h1> Customer information:</h1>
                     <div class="form-group">
 						<label for="FirstName" class="control-label">First name:</label>
-						<input name="FirstName" type="text" id="FirstName" class="form-control" required="required">
+						<input name="FirstName" type="text" id="step1-firstname" class="form-control" required="required">
 					</div>
 
 					<div class="form-group">
 						<label for="LastName" class="control-label">Last name:</label>
-						<input name="LastName" type="text" id="LastName" class="form-control" required="required">
+						<input name="LastName" type="text" id="step1-lastname" class="form-control" required="required">
 					</div>
 
                     <div class="form-group">
 						<label for="suffix" class="control-label">Suffix:</label>
-						<input name="suffix" type="text" id="suffix" class="form-control" required="required">
+                        <select name="suffix" id="step1-suffix" class="form-control" required="required">
+								<option value="1">Mr.</option>
+                                <option value="2">Ms</option>
+                                <option value="3">Miss</option>    
+						</select>
 					</div>
 
                     <div class="form-group">
 						<label for="countries" class="control-label">Your role: </label>
-						<select name="countries" id="countries" class="form-control" required="required">
+						<select name="countries" id="step1-role" class="form-control" required="required">
 								<option value="1">Antigua and Barbuda</option>
                                 <option value="2">Australia</option>
                                 <option value="3">The Bahamas</option>
@@ -58,12 +62,12 @@
 
 					<div class="form-group">
 						<label for="Email" class="control-label">Your E-mail:</label>
-						<input name="Email" id="Email" class="form-control" type="email" required="required">
+						<input name="Email" id="step1-email" class="form-control" type="email" required="required">
 					</div>
 
 					<div class="form-group">
 						<label for="Phone" class="control-label">Your phone:</label>
-						<input name="Phone" id="Phone" class="form-control" type="tel" required="required">
+						<input name="Phone" id="step1-phone" class="form-control" type="tel" required="required">
 					</div>	
 				
                 </form>
@@ -71,21 +75,16 @@
                     <h1> Company information:</h1>
                     <div class="form-group">
 						<label for="companyName" class="control-label">Company name:</label>
-						<input name="companyName" type="text" id="companyName" class="form-control" required="required">
+						<input name="companyName" type="text" id="step1-companyName" class="form-control" required="required">
 					</div>
                     <div class="form-group">
 						<label for="websiteName" class="control-label">Website name:</label>
-						<input name="websiteName" type="text" id="websiteName" class="form-control" required="required">
+						<input name="websiteName" type="text" id="step1-websiteName" class="form-control" required="required">
 					</div>
-                    <div class="form-group">
-						<label for="countries" class="col-sm-4 control-label">Fleet size: <span>*</span> </label>
-						<select name="countries" id="countries" class="form-control" required="required" disabled="">
-								<option value="1">1-499</option>
-						</select>
-					</div>
+
                     <div class="form-group">
 						<label for="countries" class="col-sm-4 control-label">Country: <span>*</span> </label>
-						<select name="countries" id="countries" class="form-control" required="required">
+						<select name="countries" id="step1-countries" class="form-control" required="required">
 								<option value="1">Antigua and Barbuda</option>
                                 <option value="2">Australia</option>
                                 <option value="3">The Bahamas</option>
@@ -96,12 +95,12 @@
 					</div>
                     <div class="form-group">
 						<label for="Email" class="control-label">Company E-mail:</label>
-						<input name="Email" id="Email" class="form-control" type="email" required="required">
+						<input name="Email" id="step1-companyemail" class="form-control" type="email" required="required">
 					</div>
 
 					<div class="form-group">
 						<label for="Phone" class="control-label">Company phone:</label>
-						<input name="Phone" id="Phone" class="form-control" type="tel" required="required">
+						<input name="Phone" id="step1-companyphone" class="form-control" type="tel" required="required">
 					</div>
                 </form>                
             </div>
@@ -111,7 +110,7 @@
 
     <div class="row setup-content" id="step-2">
         <div class="col-xs-12">
-            <div class="col-md-12 text-center">
+            <div class="col-md-12">
                 
                 <div class="col-md-3">
                 </div>
@@ -125,16 +124,16 @@
                             <div class="panel panel-default credit-card-box">
                                 <div class="panel-heading display-table" >
                                     <div class="row display-tr" >
-                                        <h2 class="panel-title display-td" >Payment Details</h2>
+                                        <h2 class="panel-title display-td text-center" >Payment Details</h2>
                                         <div class="display-td" >                            
                                             <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
                                         </div>
                                     </div>                    
                                 </div>
                                 <div class="panel-body">
-                                    <form role="form" id="payment-form" method="POST" action="javascript:void(0);">
+                                    <form role="form" id="payment-form">
                                         <div class="row">
-                                            <div class="col-xs-12">
+                                            <div class="col-md-8">
                                                 <div class="form-group">
                                                     <label for="cardNumber">CARD NUMBER</label>
                                                     <div class="input-group">
@@ -142,36 +141,55 @@
                                                             type="tel"
                                                             class="form-control"
                                                             name="cardNumber"
+                                                            id="step2-cardNumber"
                                                             placeholder="Valid Card Number"
                                                             autocomplete="cc-number"
                                                             required autofocus 
                                                         />
-                                                        <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                                                        
                                                     </div>
                                                 </div>                            
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-xs-7 col-md-7">
+                                            <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
+                                                    <label for="cardExpiry"><span class="hidden-xs">EXPIRATION MONTH</label>
                                                     <input 
                                                         type="tel" 
                                                         class="form-control" 
                                                         name="cardExpiry"
-                                                        placeholder="MM / YY"
+                                                        id="step2-cardExpiryMM"
+                                                        placeholder="MM"
                                                         autocomplete="cc-exp"
                                                         required 
                                                     />
                                                 </div>
                                             </div>
-                                            <div class="col-xs-5 col-md-5 pull-right">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="cardExpiry"><span class="hidden-xs">EXPIRATION YEAR</label>
+                                                    <input 
+                                                        type="tel" 
+                                                        class="form-control" 
+                                                        name="cardExpiry"
+                                                        id="step2-cardExpiryYY"
+                                                        placeholder="YY"
+                                                        autocomplete="cc-exp"
+                                                        required 
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-5 col-md-5">
                                                 <div class="form-group">
                                                     <label for="cardCVC">CV CODE</label>
                                                     <input 
                                                         type="tel" 
                                                         class="form-control"
                                                         name="cardCVC"
+                                                        id="step2-cardCVC"
                                                         placeholder="CVC"
                                                         autocomplete="cc-csc"
                                                         required
@@ -256,7 +274,7 @@
                         <div class="">
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="agree" value="agree" /> Agree with the terms and conditions
+                                    <input type="checkbox" id="step3-agree" name="agree" value="agree" /> Agree with the terms and conditions
                                 </label>
                             </div>
                         </div>
@@ -270,19 +288,19 @@
                 </form>
 
             </div>
-            <button id="activate-step-4" class="btn btn-primary btn-md pull-right">Next Step</button>
+            <button id="last-step" class="btn btn-primary btn-md pull-right" onclick="purchase_product();">Complete</button>
             
         </div>
     </div>
 
-    <div class="row setup-content" id="step-4">
+    <!--<div class="row setup-content" id="step-4">
         <div class="col-xs-12">
             <div class="col-md-12">
 
-            <?php require_once('invoice.php'); ?>
+            <?php //require_once('invoice.php'); ?>
 
             </div>
         </div>
-    </div>
+    </div>-->
 
 </div>

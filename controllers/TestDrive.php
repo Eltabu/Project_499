@@ -148,7 +148,7 @@ class TestDrive extends Controller
           $_POST['WebsiteName'] = URL.$_POST['WebsiteName']; //Update the path with the full link
           //$customerModel->testDrive($_POST);
 
-          header('location: '.URL.'Congratulation?variable='.URL.$_POST['WebsiteName'].'/');
+          header('location: '.URL.'Congratulation?variable='.$_POST['WebsiteName'].'/');
       
       }
       else{

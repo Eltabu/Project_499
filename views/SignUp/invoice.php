@@ -4,7 +4,7 @@
             <div class="col-xs-12">
               <h2 class="page-header">
                 <i class="fa fa-globe"></i> Vehicle Rental Solutions, Inc.
-                <small class="pull-right">Date: 2/10/2014</small>
+                <small class="pull-right">Date: <?php echo date('d/m/Y'); ?></small>
               </h2>
             </div><!-- /.col -->
           </div>
@@ -14,18 +14,16 @@
               From
               <address>
                 <strong>Admin, Inc.</strong><br>
-                795 Folsom Ave, Suite 600<br>
-                San Francisco, CA 94107<br>
-                Phone: (804) 123-5432<br>
-                Email: info@almasaeedstudio.com
+                401 Sunset Ave, Lambton Tower <br>
+                Windsor, ON N9B 3P4<br>
+                Phone: (519) 253-3000<br>
+                Email: 	info@vrs.myweb.cs.uwindsor.ca
               </address>
             </div><!-- /.col -->
             <div class="col-sm-4 invoice-col">
               To
               <address>
-                <strong>John Doe</strong><br>
-                795 Folsom Ave, Suite 600<br>
-                San Francisco, CA 94107<br>
+                <strong>Mr. John Doe</strong><br>
                 Phone: (555) 539-1037<br>
                 Email: john.doe@example.com
               </address>
@@ -34,7 +32,7 @@
               <b>Invoice #007612</b><br>
               <br>
               <b>Order ID:</b> 4F3S8J<br>
-              <b>Payment Due:</b> 2/22/2014<br>
+              <b>Next Payment Due:</b> <?php $date = new DateTime("+1 months"); echo $date->format("d/m/Y"); ?><br>
               <b>Account:</b> 968-34567
             </div><!-- /.col -->
           </div><!-- /.row -->
@@ -46,8 +44,7 @@
                 <thead>
                   <tr>
                     <th>Qty</th>
-                    <th>Product</th>
-                    <th>Serial #</th>
+                    <th>Feature</th>
                     <th>Description</th>
                     <th>Subtotal</th>
                   </tr>
@@ -56,28 +53,24 @@
                   <tr>
                     <td>1</td>
                     <td>Call of Duty</td>
-                    <td>455-981-221</td>
                     <td>El snort testosterone trophy driving gloves handsome</td>
                     <td>$64.50</td>
                   </tr>
                   <tr>
                     <td>1</td>
                     <td>Need for Speed IV</td>
-                    <td>247-925-726</td>
                     <td>Wes Anderson umami biodiesel</td>
                     <td>$50.00</td>
                   </tr>
                   <tr>
                     <td>1</td>
                     <td>Monsters DVD</td>
-                    <td>735-845-642</td>
                     <td>Terry Richardson helvetica tousled street art master</td>
                     <td>$10.70</td>
                   </tr>
                   <tr>
                     <td>1</td>
                     <td>Grown Ups Blue Ray</td>
-                    <td>422-568-642</td>
                     <td>Tousled lomo letterpress</td>
                     <td>$25.99</td>
                   </tr>
@@ -95,11 +88,11 @@
               <img src="<?php echo URL ?>assets/img/credit/american-express.png" alt="American Express">
               <img src="<?php echo URL ?>assets/img/credit/paypal2.png" alt="Paypal">
               <p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
-                Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem plugg dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra.
+                Charage will be colleccted form card **********4526.
               </p>
             </div><!-- /.col -->
             <div class="col-xs-6">
-              <p class="lead">Amount Due 2/22/2014</p>
+              <p class="lead">First Payment <?php $date = new DateTime("+1 months"); echo $date->format("d/m/Y"); ?></p>
               <div class="table-responsive">
                 <table class="table">
                   <tbody><tr>
@@ -107,7 +100,7 @@
                     <td>$250.30</td>
                   </tr>
                   <tr>
-                    <th>Tax (9.3%)</th>
+                    <th>Tax (13.00%)</th>
                     <td>$10.34</td>
                   </tr>
                   <tr>
@@ -126,8 +119,7 @@
           <!-- this row will not appear when printing -->
           <div class="row no-print">
             <div class="col-xs-12">
-              <a href="invoice.php" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
-              <button class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Submit Payment</button>
+              <button class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Finish </button>
             </div>
           </div>
         </section>
