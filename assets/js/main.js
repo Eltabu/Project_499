@@ -40,7 +40,7 @@ $(document).ready(function() {
  }
 
 
- function purchase_product()
+ function purchase_product(produnct_id)
  {
     if(IsValid() == 0)
     {
@@ -160,6 +160,12 @@ $(document).ready(function() {
     hiddenField.setAttribute("type", "hidden");
     hiddenField.setAttribute("name", "cardCVC");
     hiddenField.setAttribute("value", cardCVC);
+    form.appendChild(hiddenField);
+
+    var hiddenField = document.createElement("input");
+    hiddenField.setAttribute("type", "hidden");
+    hiddenField.setAttribute("name", "produnct_id");
+    hiddenField.setAttribute("value", produnct_id);
     form.appendChild(hiddenField);
 
     document.body.appendChild(form);

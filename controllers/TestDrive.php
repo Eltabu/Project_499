@@ -1,5 +1,7 @@
 <?php
 
+
+
 /**
  * TestDrive class display registration form for free version of the system
 **/
@@ -28,14 +30,13 @@ class TestDrive extends Controller
     /**
     * generate database for the new customer
     **/
-    private function generate_database($location)
+    private function generate_database()
     {
       $ounter = 1;
       $db_name = 'customer';
 
       while($ounter < 100)
       {
-        $svals = ['db_user'=> DB_USER , 'db_pass'=> DB_PASSWORD, 'db_host'=> DB_HOST, 'db_name'=>'customer2'];
         $db_name = 'customer'. (string) $ounter;  
 
         try 
@@ -102,8 +103,6 @@ class TestDrive extends Controller
 
 
 
-
-
     /**
     * register new customer with free 30 days verstion of the system
     **/
@@ -116,11 +115,15 @@ class TestDrive extends Controller
       $website_name = preg_replace('/\s+/', '', $_POST['WebsiteName']);  
       $_POST['WebsiteName'] = 'cloud/'.preg_replace('/\s+/', '', $_POST['WebsiteName']);
 
-      $db_name = $this->generate_database($_POST['WebsiteName']);
-
+      //$this->generateDB = new GenerationUtilities();
+      //$this->generateDB->generateDatabase($_POST);
 
       if(!file_exists($_POST['WebsiteName']) ) // Check of the name already exit in the cloud
       {
+
+          $db_name = $this->generate_database();       
+
+
           mkdir('./'.$_POST['WebsiteName'], 0777, true);          
           $this->copyFiles('./local/app', './'.$_POST['WebsiteName']);
           $this->copyFiles('./local/index.php', './'.$_POST['WebsiteName']);
@@ -133,14 +136,12 @@ class TestDrive extends Controller
           fwrite($myfile, HTACCESS_END);
           fclose($myfile);
 
+          //Write to the paths files
           $myfile = fopen('./'.$_POST['WebsiteName'].'/app/config/paths.php', "w");
           fwrite($myfile, PATH_SETTING. $website_name . '/' . '\');');
           fwrite($myfile, '    define(\'WEBSITE_NAME\',\'' . $_POST['CompanyName'] . '\');'  );
           fclose($myfile);
 
-          /*$myfile = fopen('./'.$_POST['WebsiteName'].'/app/config/dbconfig.php', "w");
-          fwrite($myfile, '  define(\'DB_NAME\',\'' . $db_name . '\');  ' . "\n");
-          fclose($myfile);*/
 
           file_put_contents('./'.$_POST['WebsiteName'].'/app/config/dbconfig.php', '  define(\'DB_NAME\',\'' . $db_name . '\');  ' . "\n",FILE_APPEND | LOCK_EX);
 
@@ -151,10 +152,12 @@ class TestDrive extends Controller
           header('location: '.URL.'Congratulation?variable='.$_POST['WebsiteName'].'/');
       
       }
-      else{
-        echo 'Try with a different wesite name';
+      else
+      {      
+        $message = 'Please try with a different wesite name';
+        $this->view('Error/index', ['viewName' => 'Error', 'message' => $message]);
       }
-     
+    
     }
 
 

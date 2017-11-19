@@ -288,7 +288,7 @@
                 </form>
 
             </div>
-            <button id="last-step" class="btn btn-primary btn-md pull-right" onclick="purchase_product();">Complete</button>
+            <button id="last-step" class="btn btn-primary btn-md pull-right" onclick="purchase_product('<?php echo $data['produnct_id']; ?>');">Complete</button>
             
         </div>
     </div>

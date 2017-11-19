@@ -23,17 +23,16 @@
             <div class="col-sm-4 invoice-col">
               To
               <address>
-                <strong>Mr. John Doe</strong><br>
-                Phone: (555) 539-1037<br>
-                Email: john.doe@example.com
+                <strong><?php echo $data['customerName']; ?></strong><br>
+                Phone: <?php echo $data['phone']; ?><br>
+                Email: <?php echo $data['email']; ?><br>
+                Company Name: <?php echo $data['companyName']; ?>
               </address>
             </div><!-- /.col -->
             <div class="col-sm-4 invoice-col">
-              <b>Invoice #007612</b><br>
-              <br>
+              <b>Invoice #<?php echo $data['InvoiceNumber']; ?></b><br>
               <b>Order ID:</b> 4F3S8J<br>
               <b>Next Payment Due:</b> <?php $date = new DateTime("+1 months"); echo $date->format("d/m/Y"); ?><br>
-              <b>Account:</b> 968-34567
             </div><!-- /.col -->
           </div><!-- /.row -->
 
@@ -43,33 +42,28 @@
               <table class="table table-striped">
                 <thead>
                   <tr>
-                    <th>Qty</th>
                     <th>Feature</th>
                     <th>Description</th>
-                    <th>Subtotal</th>
+                    <th>Monthly Price</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>1</td>
                     <td>Call of Duty</td>
                     <td>El snort testosterone trophy driving gloves handsome</td>
                     <td>$64.50</td>
                   </tr>
                   <tr>
-                    <td>1</td>
                     <td>Need for Speed IV</td>
                     <td>Wes Anderson umami biodiesel</td>
                     <td>$50.00</td>
                   </tr>
                   <tr>
-                    <td>1</td>
                     <td>Monsters DVD</td>
                     <td>Terry Richardson helvetica tousled street art master</td>
                     <td>$10.70</td>
                   </tr>
                   <tr>
-                    <td>1</td>
                     <td>Grown Ups Blue Ray</td>
                     <td>Tousled lomo letterpress</td>
                     <td>$25.99</td>
@@ -88,28 +82,24 @@
               <img src="<?php echo URL ?>assets/img/credit/american-express.png" alt="American Express">
               <img src="<?php echo URL ?>assets/img/credit/paypal2.png" alt="Paypal">
               <p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
-                Charage will be colleccted form card **********4526.
+                Charage will be colleccted form card **********<?php echo $data['cardLastDigit']; ?>
               </p>
             </div><!-- /.col -->
             <div class="col-xs-6">
-              <p class="lead">First Payment <?php $date = new DateTime("+1 months"); echo $date->format("d/m/Y"); ?></p>
+              <p class="lead">Next Payment due: <?php $date = new DateTime("+1 months"); echo $date->format("d/m/Y"); ?></p>
               <div class="table-responsive">
                 <table class="table">
                   <tbody><tr>
                     <th style="width:50%">Subtotal:</th>
-                    <td>$250.30</td>
+                    <td>$<?php echo $data['subtotal']; ?></td>
                   </tr>
                   <tr>
                     <th>Tax (13.00%)</th>
-                    <td>$10.34</td>
-                  </tr>
-                  <tr>
-                    <th>Shipping:</th>
-                    <td>$5.80</td>
+                    <td>$<?php echo $data['subtotal'] * 0.13; ?></td>
                   </tr>
                   <tr>
                     <th>Total:</th>
-                    <td>$265.24</td>
+                    <td>$<?php echo $data['subtotal'] * 1.13; ?></td>
                   </tr>
                 </tbody></table>
               </div>
