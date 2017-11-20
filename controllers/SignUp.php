@@ -32,10 +32,10 @@ class SignUp extends Controller
       $this->generateDB = new GenerationUtilities();
 
       //generate the database
-      //$db_name = $this->generateDB->generateDatabase($_POST);
+      $db_name = $this->generateDB->generateDatabase($_POST);
 
       //generate the core files
-      //$db_name = $this->generateDB->generateCoreFiles($_POST);
+      $this->generateDB->generateCoreFiles($_POST, $db_name);
 
 
       if($_POST['produnct_id'] == 2)// Standard Product
@@ -48,8 +48,8 @@ class SignUp extends Controller
       }
 
       //save cusotmer info, credit card, and company to the database
-      //$nextPayment = new DateTime("+1 months");
-      //$customerID = $SignUpModel->purchaseProduct($_POST, $nextPayment->format("Y-m-d"));
+      $nextPayment = new DateTime("+1 months");
+      $customerID = $SignUpModel->purchaseProduct($_POST, $nextPayment->format("Y-m-d"));
 
 
       //display the invoice
@@ -68,6 +68,11 @@ class SignUp extends Controller
   private function invoice($data, $customerID)
   {
 
+    //get product features from the database
+    $FeatureModel = $this->model('FeatureModel');
+    $this->productFeatures = $FeatureModel->getFeatureFor($data['produnct_id']);
+
+    //calcualte the the total price
     ($data['produnct_id'] == 3) ? $subtotal = 399.99: $subtotal = 199.99;
 
     //calll the database to save the transaction and get InvoiceNumber

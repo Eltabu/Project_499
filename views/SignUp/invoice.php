@@ -48,26 +48,16 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Call of Duty</td>
-                    <td>El snort testosterone trophy driving gloves handsome</td>
-                    <td>$64.50</td>
-                  </tr>
-                  <tr>
-                    <td>Need for Speed IV</td>
-                    <td>Wes Anderson umami biodiesel</td>
-                    <td>$50.00</td>
-                  </tr>
-                  <tr>
-                    <td>Monsters DVD</td>
-                    <td>Terry Richardson helvetica tousled street art master</td>
-                    <td>$10.70</td>
-                  </tr>
-                  <tr>
-                    <td>Grown Ups Blue Ray</td>
-                    <td>Tousled lomo letterpress</td>
-                    <td>$25.99</td>
-                  </tr>
+                      <?php //print_r($this->countries); 
+                        foreach ($this->productFeatures as $item) 
+                        {
+                          echo "<tr> 
+                                  <td> $item->name </td>  
+                                  <td> $item->description </td>  
+                                  <td> $item->monthly_price </td> 
+                                </tr>";
+                        }
+                      ?>
                 </tbody>
               </table>
             </div><!-- /.col -->
