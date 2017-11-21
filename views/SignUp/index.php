@@ -26,7 +26,7 @@
     <div class="row setup-content" id="step-1">
         <div class="col-xs-12">
             <div class="col-md-12 well">
-                
+
                 <form class="col-md-6">
                     <h1> Customer information:</h1>
                     <div class="form-group">
@@ -41,22 +41,23 @@
 
                     <div class="form-group">
 						<label for="suffix" class="control-label">Suffix:</label>
-                        <select name="suffix" id="step1-suffix" class="form-control" required="required">
-								<option value="1">Mr.</option>
-                                <option value="2">Ms</option>
-                                <option value="3">Miss</option>    
+            <select name="suffix" id="step1-suffix" class="form-control" required="required">
+								<option value="Mr">Mr</option>
+                <option value="Ms">Ms</option>
+                <option value="Miss">Miss</option>
 						</select>
 					</div>
 
                     <div class="form-group">
 						<label for="countries" class="control-label">Your role: </label>
 						<select name="countries" id="step1-role" class="form-control" required="required">
-								<option value="1">Antigua and Barbuda</option>
-                                <option value="2">Australia</option>
-                                <option value="3">The Bahamas</option>
-                                <option value="4">Barbados</option>
-                                <option value="5">Belize</option>
-                                <option value="6">Canada</option>
+							<option value="1">Station manager</option>
+							<option value="2">Fleet manager</option>
+							<option value="3">Operations manager</option>
+							<option value="4">Franchise manager</option>
+							<option value="5">Reservations manager</option>
+							<option value="6">IT manager</option>
+							<option value="7">Upper management (CEO, CFO)</option>
 						</select>
 					</div>
 
@@ -68,8 +69,8 @@
 					<div class="form-group">
 						<label for="Phone" class="control-label">Your phone:</label>
 						<input name="Phone" id="step1-phone" class="form-control" type="tel" required="required">
-					</div>	
-				
+					</div>
+
                 </form>
                 <form class="col-md-6">
                     <h1> Company information:</h1>
@@ -82,15 +83,15 @@
 						<input name="websiteName" type="text" id="step1-websiteName" class="form-control" required="required">
 					</div>
 
-                    <div class="form-group">
-						<label for="countries" class="col-sm-4 control-label">Country: <span>*</span> </label>
+          <div class="form-group">
+						<label for="countries" class="col-sm-4 control-label">Country:</label>
 						<select name="countries" id="step1-countries" class="form-control" required="required">
-								<option value="1">Antigua and Barbuda</option>
-                                <option value="2">Australia</option>
-                                <option value="3">The Bahamas</option>
-                                <option value="4">Barbados</option>
-                                <option value="5">Belize</option>
-                                <option value="6">Canada</option>
+							<?php //print_r($this->countries);
+								foreach ($this->countries as $country)
+								{
+									echo "<option value=\"$country->id\">$country->name</option>";
+								}
+							?>
 						</select>
 					</div>
                     <div class="form-group">
@@ -102,7 +103,7 @@
 						<label for="Phone" class="control-label">Company phone:</label>
 						<input name="Phone" id="step1-companyphone" class="form-control" type="tel" required="required">
 					</div>
-                </form>                
+                </form>
             </div>
             <button id="activate-step-2" class="btn btn-primary btn-md pull-right">Next Step</button>
         </div>
@@ -111,24 +112,24 @@
     <div class="row setup-content" id="step-2">
         <div class="col-xs-12">
             <div class="col-md-12">
-                
+
                 <div class="col-md-3">
                 </div>
 
                 <form class="col-md-6" >
 
                         <!-- You can make it whatever width you want. I'm making it full width
-                            on <= small devices and 4/12 page width on >= medium devices -->                        
-                        
+                            on <= small devices and 4/12 page width on >= medium devices -->
+
                             <!-- CREDIT CARD FORM STARTS HERE -->
                             <div class="panel panel-default credit-card-box">
                                 <div class="panel-heading display-table" >
                                     <div class="row display-tr" >
                                         <h2 class="panel-title display-td text-center" >Payment Details</h2>
-                                        <div class="display-td" >                            
+                                        <div class="display-td" >
                                             <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
                                         </div>
-                                    </div>                    
+                                    </div>
                                 </div>
                                 <div class="panel-body">
                                     <form role="form" id="payment-form">
@@ -137,46 +138,78 @@
                                                 <div class="form-group">
                                                     <label for="cardNumber">CARD NUMBER</label>
                                                     <div class="input-group">
-                                                        <input 
+                                                        <input
                                                             type="tel"
                                                             class="form-control"
                                                             name="cardNumber"
                                                             id="step2-cardNumber"
                                                             placeholder="Valid Card Number"
                                                             autocomplete="cc-number"
-                                                            required autofocus 
+                                                            required autofocus
                                                         />
-                                                        
+
                                                     </div>
-                                                </div>                            
+                                                </div>
+                                            </div>
+                                        </div>
+																				<div class="row">
+                                            <div class="col-md-8">
+                                                <div class="form-group">
+                                                    <label for="cardHolderName">HOLDER NAME</label>
+                                                    <div class="input-group">
+                                                        <input
+                                                            type="tel"
+                                                            class="form-control"
+                                                            name="cardHolderName"
+                                                            id="step2-cardHolderName"
+                                                            placeholder="Card Holder Number"
+                                                            required autofocus
+                                                        />
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+																				<div class="row">
+                                            <div class="col-md-8">
+                                                <div class="form-group">
+                                                    <label for="cardType">CARD TYPE</label>
+                                                    <div class="input-group">
+																											<select name="cardType" id="step2-cardType" class="form-control" required="required">
+																					                <option value="1">Master Card</option>
+																					                <option value="2">Visa</option>
+																											</select>
+
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="cardExpiry"><span class="hidden-xs">EXPIRATION MONTH</label>
-                                                    <input 
-                                                        type="tel" 
-                                                        class="form-control" 
+                                                    <input
+                                                        type="tel"
+                                                        class="form-control"
                                                         name="cardExpiry"
                                                         id="step2-cardExpiryMM"
                                                         placeholder="MM"
                                                         autocomplete="cc-exp"
-                                                        required 
+                                                        required
                                                     />
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="cardExpiry"><span class="hidden-xs">EXPIRATION YEAR</label>
-                                                    <input 
-                                                        type="tel" 
-                                                        class="form-control" 
+                                                    <input
+                                                        type="tel"
+                                                        class="form-control"
                                                         name="cardExpiry"
                                                         id="step2-cardExpiryYY"
                                                         placeholder="YY"
                                                         autocomplete="cc-exp"
-                                                        required 
+                                                        required
                                                     />
                                                 </div>
                                             </div>
@@ -185,8 +218,8 @@
                                             <div class="col-xs-5 col-md-5">
                                                 <div class="form-group">
                                                     <label for="cardCVC">CV CODE</label>
-                                                    <input 
-                                                        type="tel" 
+                                                    <input
+                                                        type="tel"
                                                         class="form-control"
                                                         name="cardCVC"
                                                         id="step2-cardCVC"
@@ -197,11 +230,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-xs-12">
-                                                <button class="subscribe btn btn-success btn-lg btn-block" type="button">Validate</button>
-                                            </div>
-                                        </div>
                                         <div class="row" style="display:none;">
                                             <div class="col-xs-12">
                                                 <p class="payment-errors"></p>
@@ -209,16 +237,16 @@
                                         </div>
                                     </form>
                                 </div>
-                            </div>            
-                            <!-- CREDIT CARD FORM ENDS HERE -->   
-                
-                
+                            </div>
+                            <!-- CREDIT CARD FORM ENDS HERE -->
+
+
                 </form>
 
 
             </div>
             <button id="activate-step-3" class="btn btn-primary btn-md pull-right">Next Step</button>
-            
+
         </div>
     </div>
     <div class="row setup-content" id="step-3">
@@ -289,7 +317,7 @@
 
             </div>
             <button id="last-step" class="btn btn-primary btn-md pull-right" onclick="purchase_product('<?php echo $data['produnct_id']; ?>');">Complete</button>
-            
+
         </div>
     </div>
 

@@ -85,7 +85,7 @@ class GenerationUtilities
     }//end generateDatabase method
 
 
-    public function generateCoreFiles($data)
+    public function generateCoreFiles($data, $db_name)
     {
         //website name without sapces
         $website_name = preg_replace('/\s+/', '', $data['companywebsiteName']);
@@ -107,7 +107,7 @@ class GenerationUtilities
         //Modify to the paths files
         $myfile = fopen('./'.$data['WebsiteURL'].'/app/config/paths.php', "w");
         fwrite($myfile, PATH_SETTING. $website_name . '/' . '\');');
-        fwrite($myfile, '    define(\'WEBSITE_NAME\',\'' . $data['WebsiteURL'] . '\');'  );
+        fwrite($myfile, '    define(\'WEBSITE_NAME\',\'' . $data['companywebsiteName'] . '\');'  );
         fclose($myfile);
 
 

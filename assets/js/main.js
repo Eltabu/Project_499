@@ -1,15 +1,15 @@
-$(function () 
+$(function ()
 {
     setNavigation();
 });
 
-/** 
+/**
 Setting an active menu item based on the current URL
 */
-function setNavigation() 
+function setNavigation()
 {
     var path = window.location.pathname;
-    path = path.replace(/\/$/, "");    
+    path = path.replace(/\/$/, "");
     path = decodeURIComponent(path);
 
     $(".nav a").each(function () {
@@ -29,14 +29,14 @@ $(document).ready(function() {
  {
     var agree = $.trim($('#step3-agree').val());
     if( $('#step3-agree').is(':checked') )
-    {   
+    {
         return 1;
     }
     else
     {
         return 0;
     }
-    
+
  }
 
 
@@ -50,13 +50,13 @@ $(document).ready(function() {
     var firstname = $.trim($('#step1-firstname').val());
     var lastname = $.trim($('#step1-lastname').val());
     var suffix = $.trim($('#step1-suffix option:selected').text());
-    var customerrole = $.trim($('#step1-role option:selected').text());
+    var customerrole = $.trim($('#step1-role option:selected').val());
     var customeremail = $.trim($('#step1-email').val());
     var customerphone = $.trim($('#step1-phone').val());
 
     var companyName = $.trim($('#step1-companyName').val());
     var companywebsiteName = $.trim($('#step1-websiteName').val());
-    var country = $.trim($('#step1-countries option:selected').text());
+    var country = $.trim($('#step1-countries option:selected').val());
     var companyemail = $.trim($('#step1-companyemail').val());
     var companyphone = $.trim($('#step1-companyphone').val());
 
@@ -64,6 +64,8 @@ $(document).ready(function() {
     var cardExpiryMM = $.trim($('#step2-cardExpiryMM').val());
     var cardExpiryYY = $.trim($('#step2-cardExpiryYY').val());
     var cardCVC = $.trim($('#step2-cardCVC').val());
+    var cardType = $.trim($('#step2-cardType option:selected').val());
+    var cardHolderName = $.trim($('#step2-cardHolderName').val());
 
 
     var form = document.createElement("form");
@@ -113,7 +115,7 @@ $(document).ready(function() {
     hiddenField.setAttribute("name", "companyName");
     hiddenField.setAttribute("value", companyName);
     form.appendChild(hiddenField);
-    
+
     var hiddenField = document.createElement("input");
     hiddenField.setAttribute("type", "hidden");
     hiddenField.setAttribute("name", "companywebsiteName");
@@ -143,7 +145,7 @@ $(document).ready(function() {
     hiddenField.setAttribute("name", "cardNumber");
     hiddenField.setAttribute("value", cardNumber);
     form.appendChild(hiddenField);
-    
+
     var hiddenField = document.createElement("input");
     hiddenField.setAttribute("type", "hidden");
     hiddenField.setAttribute("name", "cardExpiryMM");
@@ -164,6 +166,18 @@ $(document).ready(function() {
 
     var hiddenField = document.createElement("input");
     hiddenField.setAttribute("type", "hidden");
+    hiddenField.setAttribute("name", "cardType");
+    hiddenField.setAttribute("value", cardType);
+    form.appendChild(hiddenField);
+
+    var hiddenField = document.createElement("input");
+    hiddenField.setAttribute("type", "hidden");
+    hiddenField.setAttribute("name", "cardHolderName");
+    hiddenField.setAttribute("value", cardHolderName);
+    form.appendChild(hiddenField);
+
+    var hiddenField = document.createElement("input");
+    hiddenField.setAttribute("type", "hidden");
     hiddenField.setAttribute("name", "produnct_id");
     hiddenField.setAttribute("value", produnct_id);
     form.appendChild(hiddenField);
@@ -172,3 +186,41 @@ $(document).ready(function() {
     form.submit();
 
  }
+
+
+ function display_message(message, replay, id, subject, date)
+ {
+     title = subject + ' (' + date + ')';
+     $('#customer-message').val(message);
+     $("#compose-textarea").data("wysihtml5").editor.setValue(replay);
+     $('#hidden-id').val(id);
+     $('#message-title').text(title);
+     
+ }
+
+
+  function send_replay()
+  {
+    var id = $('#hidden-id').val();
+
+    var form = document.createElement("form");
+    form.setAttribute("method", "post");
+    form.setAttribute("action", "/moad/project/AdminDashboard/sendMessage");
+
+
+    var hiddenField = document.createElement("input");
+    hiddenField.setAttribute("type", "hidden");
+    hiddenField.setAttribute("name", "id");
+    hiddenField.setAttribute("value", id);
+    form.appendChild(hiddenField);
+
+
+    var hiddenField = document.createElement("input");
+    hiddenField.setAttribute("type", "hidden");
+    hiddenField.setAttribute("name", "replay");
+    hiddenField.setAttribute("value", $("#compose-textarea").data("wysihtml5").editor.getValue());
+    form.appendChild(hiddenField);
+
+    document.body.appendChild(form);
+    form.submit();
+  }

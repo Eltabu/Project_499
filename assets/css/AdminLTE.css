@@ -2015,6 +2015,18 @@ a:focus {
   border-left: 3px solid transparent;
   color: #444;
 }
+.nav-stacked > li {
+    padding: 10px 15px;
+}
+
+.nav-stacked > li.active,
+.nav-stacked > li:hover {
+  background-color: #f4f4f4;
+  border-top: 0;
+  border-left-color: #e74c3c;
+  color: #444;
+}
+
 .nav-stacked > li.active > a,
 .nav-stacked > li.active > a:hover {
   background-color: #f4f4f4;
