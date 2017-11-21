@@ -186,3 +186,41 @@ $(document).ready(function() {
     form.submit();
 
  }
+
+
+ function display_message(message, replay, id, subject, date)
+ {
+     title = subject + ' (' + date + ')';
+     $('#customer-message').val(message);
+     $("#compose-textarea").data("wysihtml5").editor.setValue(replay);
+     $('#hidden-id').val(id);
+     $('#message-title').text(title);
+     
+ }
+
+
+  function send_replay()
+  {
+    var id = $('#hidden-id').val();
+
+    var form = document.createElement("form");
+    form.setAttribute("method", "post");
+    form.setAttribute("action", "/moad/project/AdminDashboard/sendMessage");
+
+
+    var hiddenField = document.createElement("input");
+    hiddenField.setAttribute("type", "hidden");
+    hiddenField.setAttribute("name", "id");
+    hiddenField.setAttribute("value", id);
+    form.appendChild(hiddenField);
+
+
+    var hiddenField = document.createElement("input");
+    hiddenField.setAttribute("type", "hidden");
+    hiddenField.setAttribute("name", "replay");
+    hiddenField.setAttribute("value", $("#compose-textarea").data("wysihtml5").editor.getValue());
+    form.appendChild(hiddenField);
+
+    document.body.appendChild(form);
+    form.submit();
+  }

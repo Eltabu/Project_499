@@ -83,7 +83,10 @@ class AdminDashboard extends Controller
   public function inquiries()
   {
     if ($_SESSION['role'] == 1)
-    {   
+    { 
+      //get tickets info features from the database
+      $TicketModel = $this->model('TicketModel');
+      $this->tickets = $TicketModel->getTickets();  
       $this->view('AdminDashboard/inquiries', ['viewName' => 'Dashboard - Inquiries']);
     }
     else
@@ -91,6 +94,26 @@ class AdminDashboard extends Controller
       header('location: '.URL.'Login');
     }
   }
+
+  public function sendMessage()
+  {
+    $TicketModel = $this->model('TicketModel');
+    $TicketModel->saveReplay($_POST, date("Y-m-d H:i:s"), $_SESSION['id']);  
+    //print_r($_POST);
+
+    $this->inquiries();
+  }
+
+
+
+
+
+
+
+
+
+
+  
 /*******************************************
 /       The products page methods         *
 /******************************************/
