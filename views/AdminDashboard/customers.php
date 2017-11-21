@@ -44,119 +44,55 @@
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Age</th>
-                        <th>Start date</th>
+                        <th>Product</th>
+                        <th>Company name</th>
+                        <th>Website URL</th>
+                        <th>Customer phone</th>
+                        <th>Customer email</th>
                         <th>Function</th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
                         <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Age</th>
-                        <th>Start date</th>
+                        <th>Product</th>
+                        <th>Company name</th>
+                        <th>Website URL</th>
+                        <th>Customer phone</th>
+                        <th>Customer email</th>
                         <th>Function</th>
                     </tr>
                 </tfoot>
                 <tbody>
-                                    <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <<td><a class="btn btn-danger" href="#">Disable</a></td>
-                    </tr>
-                    <tr>
-                        <td>Garrett Winters</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>63</td>
-                        <td>2011/07/25</td>
-                        <td><a class="btn btn-danger" href="#">Disable</a></td>
-                    </tr>
-                    <tr>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009/01/12</td>
-                        <td><a class="btn btn-danger" href="#">Disable</a></td>
-                    </tr>
-                    <tr>
-                        <td>Cedric Kelly</td>
-                        <td>Senior Javascript Developer</td>
-                        <td>Edinburgh</td>
-                        <td>22</td>
-                        <td>2012/03/29</td>
-                        <td><a class="btn btn-danger" href="#">Disable</a></td>
-                    </tr>
-                    <tr>
-                        <td>Airi Satou</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>33</td>
-                        <td>2008/11/28</td>
-                        <td><a class="btn btn-danger" href="#">Disable</a></td>
-                    </tr>
-                    <tr>
-                        <td>Brielle Williamson</td>
-                        <td>Integration Specialist</td>
-                        <td>New York</td>
-                        <td>61</td>
-                        <td>2012/12/02</td>
-                        <td><a class="btn btn-danger" href="#">Disable</a></td>
-                    <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <td><a class="btn btn-danger" href="#">Disable</a></td>
-                    </tr>
-                    <tr>
-                        <td>Garrett Winters</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>63</td>
-                        <td>2011/07/25</td>
-                        <td><a class="btn btn-danger" href="#">Disable</a></td>
-                    </tr>
-                    <tr>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009/01/12</td>
-                        <td><a class="btn btn-danger" href="#">Disable</a></td>
-                    </tr>
-                    <tr>
-                        <td>Cedric Kelly</td>
-                        <td>Senior Javascript Developer</td>
-                        <td>Edinburgh</td>
-                        <td>22</td>
-                        <td>2012/03/29</td>
-                        <td><a class="btn btn-danger" href="#">Disable</a></td>
-                    </tr>
-                    <tr>
-                        <td>Airi Satou</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>33</td>
-                        <td>2008/11/28</td>
-                        <td><a class="btn btn-danger" href="#">Disable</a></td>
-                    </tr>
-                    <tr>
-                        <td>Brielle Williamson</td>
-                        <td>Integration Specialist</td>
-                        <td>New York</td>
-                        <td>61</td>
-                        <td>2012/12/02</td>
-                        <td><a class="btn btn-danger" href="#">Disable</a></td>
-                    </tr>
+                    <?php //loop through the products
+                    foreach ($this->customers as $item) 
+                    { 
+
+                    $linkDisable =  URL.'AdminDashboard/disablecustoemr'.'?customer_id='.$item->id;
+                    $linkEnable = URL.'AdminDashboard/enablecustoemr'.'?customer_id='.$item->id;
+                        echo "<tr>
+                                <td>$item->customer_name </td>
+                                <td>$item->product_name </td>
+                                <td>$item->name </td>
+                                <td>$item->WebsiteURL </td>
+                                <td>$item->phone </td>
+                                <td>$item->email </td>
+                              ";
+                              if ($item->status == 1)
+                              {
+                                echo "
+                                      <td><a class=\"btn btn-danger\" href=\"$linkDisable\">Disable</a></td>
+                                      </tr>";
+                              }
+                              else
+                              {
+                                  echo "
+                                       <td><a class=\"btn btn-danger\" href=\"$linkEnable\">Enable</a></td>
+                                       </tr>";
+                              }  
+                               
+                    }
+                    ?>
                 </tbody>
               </table>
 
