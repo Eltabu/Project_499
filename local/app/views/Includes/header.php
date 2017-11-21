@@ -51,6 +51,7 @@
 
                         <li><a href="<?php echo URL ?>Home">Home</a></li>                        
                         <li><a href="<?php echo URL ?>AboutUs">About Us</a></li> 
+                        <li><a href="<?php echo URL ?>ContactUs">Contact Us</a></li>
 
                                <?php
                                 

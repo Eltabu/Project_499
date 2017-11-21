@@ -12,8 +12,9 @@ class Reservation extends Model{
       }
 
       $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $charactersLength = strlen($characters);
-    $resId = '';
+	    $charactersLength = strlen($characters);
+	    $resId = '';
+
     for ($i = 0; $i < 7; $i++) {
         $resId .= $characters[rand(0, $charactersLength - 1)];
     }
@@ -72,15 +73,26 @@ class Reservation extends Model{
     
     public function getReservations()
     {
-    	 $user=1;
     	 
          $stmt = $this->db->prepare("CALL sp_get_reservations(?)");
 
-         $stmt->bindParam(1, $user, PDO::PARAM_STR);
+         $stmt->bindParam(1, $_SESSION['user_id'], PDO::PARAM_STR);
 
          $stmt->execute();
          $result = $stmt->fetchAll(PDO::FETCH_OBJ);
          return $result;
+    }
+
+        public function cancelReservation($resid)
+    {
+    	 echo "<script>debugger;</script>";
+    	 echo "<script>console.log('".$resid."');</script>";
+         $stmt = $this->db->prepare("CALL sp_cancel_reservation(?, ?)");
+
+         $stmt->bindParam(1, $_SESSION['user_id'], PDO::PARAM_STR);
+         $stmt->bindParam(2, $resid, PDO::PARAM_STR);
+
+         $stmt->execute();
     }
 
 

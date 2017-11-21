@@ -131,8 +131,7 @@
                 </div><!--/.services-->
 
                 <div class="center">                
-                  <button type="submit" class="btn btn-danger btn-lg">Start a Reservation</button>
-                  <button class="btn btn-danger btn-lg" type="button">Manage a Reservation</button>
+                  <button type="submit" class="btn btn-danger btn-lg">Make a Reservation</button>
                 </div>
 
 
@@ -161,7 +160,31 @@
 
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 center" >
 
-  <?php include(dirname(__DIR__)."\Home\config\map.php") ?>
+  <?php
+
+   include(dirname(__DIR__)."\Home\config\map.php") ;
+   ?>
+
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 center" >
+
+  <?php
+ foreach ($this->locations as $location) 
+                  {
+
+                    echo '<a onclick="animateMap('.$location->latitude.','.$location->longitude.')"><div class="col-md-6 admin-boxes clickable" id="loc'.$location->location_id.'" style="margin-bottom:10px;min-height:154px;max-height:154px">
+                  <div class="well dash-box">
+                    <h4>'.$location->name.'</h4>
+                    <h5>'.$location->city.', '.$location->province.'</h5>
+                    <h5>'.$location->address.'</h5>
+                    <h5> '.substr($location->phone, 0, 3).'-'.substr($location->phone, 4, 3).'-'.substr($location->phone,6,4).'</h4>
+                  </div>
+                </div></a>';
+                  }
+
+   ?>
+
+
 
    </div> 
         </div><!--/.container-->
@@ -174,6 +197,11 @@
 <!-- End of Content -->
 
 <script type="text/javascript">
+
+function animateMap(lat, long)
+{
+    alert(lat + " " + long);
+}
 
 function initMap(){
     var locations = [

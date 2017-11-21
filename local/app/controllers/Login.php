@@ -23,17 +23,15 @@ class Login extends Controller
       $userModel = $this->model('User');
       $result = $userModel->isUser($_POST['username'], $_POST['password']);  
 
-      if($result[0]->type == 2)
+      if($result[0]->type == 1)
       {
-        //go to dashboard if the user is admin
         Session::set('user_id', $result[0]->user_id);
         Session::set('username', $result[0]->username);
         Session::set('type', $result[0]->type); 
         header('location: '.URL.'Admin');
       }
-      else if($result[0]->type == 1)
+      else if($result[0]->type == 2)
       {
-        //go to dashboard if the user is admin
         Session::set('user_id', $result[0]->user_id);
         Session::set('username', $result[0]->username);
         Session::set('type', $result[0]->type);  
