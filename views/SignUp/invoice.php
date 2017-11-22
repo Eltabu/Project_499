@@ -26,7 +26,9 @@
                 <strong><?php echo $data['customerName']; ?></strong><br>
                 Phone: <?php echo $data['phone']; ?><br>
                 Email: <?php echo $data['email']; ?><br>
-                Company Name: <?php echo $data['companyName']; ?>
+                Company Name: <?php echo $data['companyName']; ?><br>
+                Website link <a href="<?php echo $data['websiteURL']; ?>"> click here </a>.
+
               </address>
             </div><!-- /.col -->
             <div class="col-sm-4 invoice-col">

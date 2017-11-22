@@ -68,8 +68,8 @@
                     foreach ($this->customers as $item) 
                     { 
 
-                    $linkDisable =  URL.'AdminDashboard/disablecustoemr'.'?customer_id='.$item->id;
-                    $linkEnable = URL.'AdminDashboard/enablecustoemr'.'?customer_id='.$item->id;
+                    $linkDisable =  URL.'AdminDashboard/disablecustoemr'.'?customer_id='.$item->id.'&WebsiteURL='.$item->WebsiteURL;
+                    $linkEnable = URL.'AdminDashboard/enablecustoemr'.'?customer_id='.$item->id.'&WebsiteURL='.$item->WebsiteURL;
                         echo "<tr>
                                 <td>$item->customer_name </td>
                                 <td>$item->product_name </td>

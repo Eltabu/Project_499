@@ -83,7 +83,10 @@ class CustomerDashboard extends Controller
   public function support()
   {
     if ($_SESSION['role'] == 2)
-    {   
+    { 
+      //get tickets info features from the database
+      $TicketModel = $this->model('TicketModel');
+      $this->tickets = $TicketModel->getTicketsForCustomer($_SESSION['id']);   
       $this->view('CustomerDashboard/support', ['viewName' => 'Dashboard - Support']);
     }
     else
@@ -91,6 +94,24 @@ class CustomerDashboard extends Controller
       header('location: '.URL.'Login');
     }
   }
+
+
+  public function sendMessage()
+  {
+    if ($_SESSION['role'] == 2)
+    { 
+      //get tickets info features from the database
+      $TicketModel = $this->model('TicketModel');
+      $TicketModel->customerSendMessage($_SESSION['id'], $_POST['message'], $_POST['subject']);
+
+
+
+      $this->view('CustomerDashboard/support', ['viewName' => 'Dashboard - Support']);
+    }
+  }
+
+
+
 
 
     /*******************************************

@@ -87,6 +87,11 @@ class AdminDashboard extends Controller
     { 
       //remove the .htaccess from the customer file
 
+      $myfile = fopen('./'.$_GET['WebsiteURL'].'/.htaccess', "w");
+      fwrite($myfile, "");
+      fclose($myfile);
+
+      //print_r($_GET);
 
       //get disable customers in the database
       $Customer = $this->model('Customer');
@@ -104,6 +109,11 @@ class AdminDashboard extends Controller
     { 
       //remove the .htaccess from the customer file
 
+      $myfile = fopen('./'.$_GET['WebsiteURL'].'/.htaccess', "w");
+      fwrite($myfile, HTACCESS_BEGINNING."\n");
+      fwrite($myfile, 'RewriteBase /moad/project/'.$_GET['WebsiteURL'].'/'."\n");//Don't forget ot change
+      fwrite($myfile, HTACCESS_END);
+      fclose($myfile);
 
       //get enable customer the database
       $Customer = $this->model('Customer');

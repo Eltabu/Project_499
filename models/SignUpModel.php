@@ -41,9 +41,10 @@ class SignUpModel extends Model
         $customerphone = $data_fields['customerphone'];
         $productId = (int)$data_fields['produnct_id'];
         $passsword = md5($lastname);
+        $status = 1;
 
 
-        $stmt = $this->db->prepare("CALL sp_purchase_product(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        $stmt = $this->db->prepare("CALL sp_purchase_product(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 
         $stmt->bindParam(1, $companyName, PDO::PARAM_STR);
         $stmt->bindParam(2, $companywebsiteName, PDO::PARAM_STR);
@@ -69,7 +70,8 @@ class SignUpModel extends Model
         $stmt->bindParam(20, $productId, PDO::PARAM_INT);
         $stmt->bindParam(21, $WebsiteURL, PDO::PARAM_STR);
         $stmt->bindParam(22, $nextPayment, PDO::PARAM_STR);
-
+        $stmt->bindParam(23, $status, PDO::PARAM_INT);
+        
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_OBJ);
 
