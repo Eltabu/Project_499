@@ -388,7 +388,6 @@ ul.social-share li a {
   transition: 500ms;
   margin-right: 25px;
 }
-
 .feature-wrap i:hover {
   background: #c52d2f;
   color: #fff;
@@ -402,7 +401,6 @@ ul.social-share li a {
   padding:5px;
   color:gray;
   font-weight: 700;
-  border-radius: 200px;
   border:solid 2px #2e2e2e;
   width:70%;
   cursor:pointer;
