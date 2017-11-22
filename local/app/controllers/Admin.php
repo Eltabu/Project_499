@@ -3,7 +3,7 @@
 class Admin extends Controller
 {        
 
-    public $locations,$vehicles;
+    public $locations,$vehicles, $user;
 
     public function index()
     { 
@@ -22,6 +22,13 @@ class Admin extends Controller
     $this->getVehicles();
     //Loading the about us page
     $this->view('Admin/vehicles', ['viewName' => 'Admin Dashboard']);    
+  }
+
+    public function account()
+  { 
+    $this->getVehicles();
+    //Loading the about us page
+    $this->view('Admin/account', ['viewName' => 'Admin Dashboard']);    
   }
 
      public function locations()
@@ -59,6 +66,16 @@ class Admin extends Controller
           $vehicleModel->addVehicle($_POST);
 
           header('location: '.URL.'Admin/vehicles');  
+  }
+
+   public function addAdmin()
+  { 
+
+          $userModel = $this->model('User');
+
+          $result = $userModel->addAdmin($_POST);
+
+          header('location: '.URL.'Admin/account');  
   }
 
    public function addLocation()

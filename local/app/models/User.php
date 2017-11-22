@@ -26,16 +26,44 @@ class User extends Model
 
     public function register($userInfo = [])
     {
+
+      
+        $password = md5($userInfo['password']);
+
+        $userInfo['password'] = $password;
+
+        $type = 2;
+
         $stmt = $this->db->prepare("CALL sp_register(?,?,?,?,?,?,?)");
 
         // add parameters
         $stmt->bindParam(1, $userInfo['username'], PDO::PARAM_STR);
-        $stmt->bindParam(2, md5($userInfo['password']), PDO::PARAM_STR);
+        $stmt->bindParam(2, $password, PDO::PARAM_STR);
         $stmt->bindParam(3, $userInfo['firstname'], PDO::PARAM_STR);
         $stmt->bindParam(4, $userInfo['lastname'], PDO::PARAM_STR);
         $stmt->bindParam(5, $userInfo['email'], PDO::PARAM_STR);
         $stmt->bindParam(6, $userInfo['phone'], PDO::PARAM_STR);
-        $stmt->bindParam(7, 2, PDO::PARAM_STR);  
+        $stmt->bindParam(7, $type, PDO::PARAM_STR);  
+
+        $stmt->execute();
+    }
+
+     public function addAdmin($userInfo = [])
+    {
+
+        $password = md5($userInfo['password']);
+        $type = 1;
+
+        $stmt = $this->db->prepare("CALL sp_register(?,?,?,?,?,?,?)");
+
+        // add parameters
+        $stmt->bindParam(1, $userInfo['username'], PDO::PARAM_STR);
+        $stmt->bindParam(2, $password, PDO::PARAM_STR);
+        $stmt->bindParam(3, " ", PDO::PARAM_STR);
+        $stmt->bindParam(4, " ", PDO::PARAM_STR);
+        $stmt->bindParam(5, $userInfo['email'], PDO::PARAM_STR);
+        $stmt->bindParam(6, " ", PDO::PARAM_STR);
+        $stmt->bindParam(7, $type, PDO::PARAM_STR);  
 
         $stmt->execute();
     }
