@@ -32,10 +32,10 @@ class SignUp extends Controller
       $this->generateDB = new GenerationUtilities();
 
       //generate the database
-      $db_name = $this->generateDB->generateDatabase($_POST);
+      //$db_name = $this->generateDB->generateDatabase($_POST);
 
       //generate the core files
-      $this->generateDB->generateCoreFiles($_POST, $db_name);
+      $this->generateDB->generateCoreFiles($_POST, $db_name= 'customer2');
 
 
       if($_POST['produnct_id'] == 2)// Standard Product
@@ -44,16 +44,29 @@ class SignUp extends Controller
       }
       elseif ($_POST['produnct_id'] == 3)//Ultimate Product
       {
-        //echo 'Ultimate';
+        //map feature
+        echo $_POST['WebsiteURL'];
+        $fp = fopen($_POST['WebsiteURL']."/app/views/Home/map.php", "w+");
+        fwrite($fp, ' <div style="min-height:400px" id="map"></div>');
+        fclose($fp);
+
+
+        //support stream
+        $fp = fopen($_POST['WebsiteURL']."/app/views/Admin/inquirymenu.php", "w+");
+        fwrite($fp, ' <a href="<?php echo URL ?>Admin/inquiries" class="list-group-item"><span class="fa fa-question" aria-hidden="true"></span> Inquiries </a>');
+        fclose($fp);
+        $fp2 = fopen($_POST['WebsiteURL']."/app/controllers/config/inquirycontroller.php", "w+");
+        fwrite($fp2, '<?php $this->view(\'Admin/inquiries\', [\'viewName\' => \'Admin Inquiries\']); ?>');
+        fclose($fp2);
       }
 
       //save cusotmer info, credit card, and company to the database
-      $nextPayment = new DateTime("+1 months");
-      $customerID = $SignUpModel->purchaseProduct($_POST, $nextPayment->format("Y-m-d"));
+      //$nextPayment = new DateTime("+1 months");
+      //$customerID = $SignUpModel->purchaseProduct($_POST, $nextPayment->format("Y-m-d"));
 
 
       //display the invoice
-      $this->invoice($_POST, $customerID = 2);
+      //$this->invoice($_POST, $customerID = 2);
 
 
     }

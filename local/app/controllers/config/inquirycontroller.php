@@ -1,1 +1,1 @@
-<?php $this->view('Admin/index', ['viewName' => 'Admin Dashboard']); ?>
+<?php  $this->view('Admin/index', ['viewName' => 'Admin Dashboard']); ?>
