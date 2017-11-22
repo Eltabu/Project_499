@@ -8,11 +8,12 @@
                 <span aria-hidden="true"></span>
               </a>
               <a href="<?php echo URL ?>Admin/index" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Customers </a>
-              <a href=<?php echo URL ?>Admin/locations" class="list-group-item"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Locations </a>
+              <a href="<?php echo URL ?>Admin/locations" class="list-group-item"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Locations </a>
               <a href="<?php echo URL ?>Admin/vehicles" class="list-group-item"><span class="fa fa-car" aria-hidden="true"></span> Vehicles </a>
               <a href="<?php echo URL ?>Admin/account" class="list-group-item"><span class="fa fa-user" aria-hidden="true"></span> Account </a>
                 
-                <?php include("config/inquirymenu.php"); ?>
+
+                <?php include("inquirymenu.php"); ?>
             </div>
 
             <div class="well">
@@ -38,7 +39,7 @@
               </div>
               <div class="panel-body">
                     <div class="row">
-                        <div class="col-md-4">                            
+                        <div class="col-md-4">
 
                             <div class="box box-solid ">
                                 <div class="box-header with-border">
@@ -68,7 +69,7 @@
 
                         </div>
                         <div class="col-md-8">
-                             
+
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     Login Issue (2017-11-24)
@@ -112,11 +113,11 @@
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="pwd">Replay:</label>
-                                            <div class="col-sm-10">          
+                                            <div class="col-sm-10">
                                                 <textarea class="form-control" rows="7" id="comment"></textarea>
                                             </div>
                                         </div>
-                                        <div class="form-group">        
+                                        <div class="form-group">
                                             <div class="col-sm-offset-2 col-sm-10">
                                                 <button type="submit" class="btn btn-default">Submit</button>
                                             </div>
@@ -131,7 +132,7 @@
                         </div>
 
                     </div>
-                
+
 
               </div>
               </div>

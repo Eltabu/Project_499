@@ -62,5 +62,27 @@ class Customer extends Model
          $result = $stmt->fetchAll(PDO::FETCH_OBJ);
          return $result;
     }
+
+
+        /*
+    /* function to retrieve the Customers data form the dtatbase 
+    */
+    public function adminGetCustomers()
+    {
+         $stmt = $this->db->prepare("CALL sp_admin_get_customers()");
+         $stmt->execute();
+         $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+         return $result;
+    }
+
+    public function adminUpdateCustomerStatus($customerID, $status)
+    {
+        $stmt = $this->db->prepare("CALL sp_admin_update_customer_status(?,?)");
+
+        $stmt->bindParam(1, $customerID, PDO::PARAM_INT);
+        $stmt->bindParam(2, $status, PDO::PARAM_INT);
+
+        $stmt->execute();
+    }
 }
 

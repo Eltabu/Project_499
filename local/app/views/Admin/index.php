@@ -14,7 +14,7 @@
              <!--  <a href="users.html" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Agreements </a>
               <a href="users.html" class="list-group-item"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Finanaces </a>
               <a href="users.html" class="list-group-item"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings </a> -->
-              <?php include("config/inquirymenu.php"); ?>
+              <?php include("inquirymenu.php"); ?>
             </div>
 
             <div class="well">
@@ -45,7 +45,7 @@
                     <h4>Users</h4>
                   </div>
                 </div>
-               
+
                 <div class="col-md-3">
                   <div class="well dash-box admin-boxes">
                     <h2><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> 12,334</h2>

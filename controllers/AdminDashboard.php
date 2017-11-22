@@ -67,7 +67,10 @@ class AdminDashboard extends Controller
   public function customers()
   {
     if ($_SESSION['role'] == 1)
-    {   
+    { 
+      //get customers info from the database
+      $Customer = $this->model('Customer');
+      $this->customers = $Customer->adminGetCustomers();      
       $this->view('AdminDashboard/customers', ['viewName' => 'Dashboard - Customers']);
     }
     else
@@ -75,6 +78,39 @@ class AdminDashboard extends Controller
       header('location: '.URL.'Login');
     }
 
+  }
+
+
+  public function disablecustoemr()
+  {
+    if ($_SESSION['role'] == 1)
+    { 
+      //remove the .htaccess from the customer file
+
+
+      //get disable customers in the database
+      $Customer = $this->model('Customer');
+      $Customer->adminUpdateCustomerStatus($_GET['customer_id'], 0);
+
+
+      $this->customers();
+    }
+  }
+
+
+  public function enablecustoemr()
+  {
+    if ($_SESSION['role'] == 1)
+    { 
+      //remove the .htaccess from the customer file
+
+
+      //get enable customer the database
+      $Customer = $this->model('Customer');
+      $Customer->adminUpdateCustomerStatus($_GET['customer_id'], 1);
+           
+      $this->customers();
+    }
   }
 
 /*******************************************
@@ -120,7 +156,10 @@ class AdminDashboard extends Controller
   public function products()
   {
     if ($_SESSION['role'] == 1)
-    {   
+    { 
+      //get tickets info features from the database
+      $ProductModel = $this->model('ProductModel');
+      $this->products = $ProductModel->adminGetProducts();    
       $this->view('AdminDashboard/products', ['viewName' => 'Dashboard - Products']);
     }
     else
