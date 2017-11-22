@@ -1,3 +1,7 @@
 .vscode/*
 config/*
 config/dbconfig.php
+
+config/dbconfig.php
+
+local/app/config/dbconfig.php
