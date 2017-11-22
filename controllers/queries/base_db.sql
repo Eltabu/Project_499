@@ -91,13 +91,6 @@ CREATE TABLE `location` (
   `postal` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `location`
---
-
-INSERT INTO `location` (`location_id`, `city`, `province`, `address`, `phone`, `longitude`, `latitude`, `name`, `postal`) VALUES
-(1, 'Windsor', 'Ontario', '456 Sunset Ave', '5199990001', 45, 45, 'Windsor - Sunset', ''),
-(3, 'Windsor', 'Ontario', '890 Howard Avenue', '5199090909', 56, 45, 'Windsor - Howard', 'n7h 6h7');
 
 -- --------------------------------------------------------
 
@@ -133,14 +126,6 @@ CREATE TABLE `model` (
   `model_name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `model`
---
-
-INSERT INTO `model` (`model_id`, `make_id`, `model_name`) VALUES
-(1, 3, 'Civic'),
-(2, 2, 'Focus'),
-(4, 1, 'Silverado');
 
 -- --------------------------------------------------------
 
@@ -160,13 +145,6 @@ CREATE TABLE `reservation` (
   `droptime` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `reservation`
---
-
-INSERT INTO `reservation` (`resid`, `userid`, `vehid`, `pick_loc`, `pickdate`, `picktime`, `drop_loc`, `dropdate`, `droptime`) VALUES
-('b9p6uGH', 1, 2, '1', '2017-11-15', '14:50:00.00', 3, '2017-11-15', '15:35:00.00'),
-('TjP7CJq', 1, 2, '1', '2017-11-15', '14:50:00.00', 3, '2017-11-15', '15:35:00.00');
 
 -- --------------------------------------------------------
 
@@ -182,16 +160,6 @@ CREATE TABLE `transaction` (
   `card_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `transaction`
---
-
-INSERT INTO `transaction` (`trans_id`, `user_id`, `cardnum`, `total`, `card_id`) VALUES
-(1, 1, '2147483647', 19.99, 2),
-(2, 1, '2147483647', 19.99, 3),
-(3, 1, '2147483647', 19.99, 3),
-(4, 1, '2147483647', 19.99, 1),
-(5, 1, '2147483647', 19.99, 1);
 
 -- --------------------------------------------------------
 
@@ -210,12 +178,6 @@ CREATE TABLE `user` (
   `type` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`user_id`, `username`, `password`, `firstname`, `lastname`, `city`, `province`, `type`) VALUES
-(1, 'fecteauc', 'uwindsor', 'Cooper\r\n', 'Fecteau', 'Windsor', 'Ontario', 1);
 
 -- --------------------------------------------------------
 
@@ -235,14 +197,6 @@ CREATE TABLE `vehicle` (
   `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `vehicle`
---
-
-INSERT INTO `vehicle` (`vid`, `class`, `year`, `make`, `model`, `seats`, `mileage`, `location`, `image`) VALUES
-(2, 1, 2017, 'Ford', 'Focus', 4, '57000', 1, 'focus2017.png'),
-(4, 2, 2016, 'Chevrolet', 'Silverado', 4, '91000', 1, '2016silverado.jpg'),
-(5, 1, 2015, 'Toyota', 'Corolla', 5, '79000', 2, 'corolla2015.png');
 
 -- --------------------------------------------------------
 

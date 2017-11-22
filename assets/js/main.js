@@ -224,3 +224,35 @@ $(document).ready(function() {
     document.body.appendChild(form);
     form.submit();
   }
+
+
+  function send_message()
+  {
+
+    var subject = $('#message-subject').val();
+ 
+
+    var form = document.createElement("form");
+    form.setAttribute("method", "post");
+    form.setAttribute("action", "/moad/project/CustomerDashboard/sendMessage");
+
+    var hiddenField = document.createElement("input");
+    hiddenField.setAttribute("type", "hidden");
+    hiddenField.setAttribute("name", "subject");
+    hiddenField.setAttribute("value", subject);
+    form.appendChild(hiddenField);
+
+
+
+    var hiddenField = document.createElement("input");
+    hiddenField.setAttribute("type", "hidden");
+    hiddenField.setAttribute("name", "message");
+    hiddenField.setAttribute("value", $("#customer-isssue").val());
+    form.appendChild(hiddenField);
+
+
+    document.body.appendChild(form);
+    form.submit();
+
+    
+  }

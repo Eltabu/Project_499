@@ -27,9 +27,10 @@ class Customer extends Model
         $theme = (int)$userInfo['theme'];
         $passsword = md5($LastName);
         $productId = 1;
+        $status = 1;
 
 
-        $stmt = $this->db->prepare("CALL sp_test_drive(?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        $stmt = $this->db->prepare("CALL sp_test_drive(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 
         $stmt->bindParam(1, $CompanyName, PDO::PARAM_STR);
         $stmt->bindParam(2, $FirstName, PDO::PARAM_STR);
@@ -44,6 +45,7 @@ class Customer extends Model
         $stmt->bindParam(11, $FirstName, PDO::PARAM_STR);
         $stmt->bindParam(12, $passsword, PDO::PARAM_STR);
         $stmt->bindParam(13, $productId, PDO::PARAM_INT);
+        $stmt->bindParam(14, $status, PDO::PARAM_INT);
        
 
         $stmt->execute();

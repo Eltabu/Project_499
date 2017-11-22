@@ -1,1 +1,0 @@
-<?php $this->view('Admin/inquiries', ['viewName' => 'Admin Inquiries']); ?>

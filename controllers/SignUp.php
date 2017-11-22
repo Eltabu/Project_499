@@ -32,10 +32,10 @@ class SignUp extends Controller
       $this->generateDB = new GenerationUtilities();
 
       //generate the database
-      //$db_name = $this->generateDB->generateDatabase($_POST);
+      $db_name = $this->generateDB->generateDatabase($_POST);
 
       //generate the core files
-      $this->generateDB->generateCoreFiles($_POST, $db_name= 'customer2');
+      $this->generateDB->generateCoreFiles($_POST, $db_name);
 
 
       if($_POST['produnct_id'] == 2)// Standard Product
@@ -45,7 +45,6 @@ class SignUp extends Controller
       elseif ($_POST['produnct_id'] == 3)//Ultimate Product
       {
         //map feature
-        echo $_POST['WebsiteURL'];
         $fp = fopen($_POST['WebsiteURL']."/app/views/Home/map.php", "w+");
         fwrite($fp, ' <div style="min-height:400px" id="map"></div>');
         fclose($fp);
@@ -61,12 +60,12 @@ class SignUp extends Controller
       }
 
       //save cusotmer info, credit card, and company to the database
-      //$nextPayment = new DateTime("+1 months");
-      //$customerID = $SignUpModel->purchaseProduct($_POST, $nextPayment->format("Y-m-d"));
+      $nextPayment = new DateTime("+1 months");
+      $customerID = $SignUpModel->purchaseProduct($_POST, $nextPayment->format("Y-m-d"));
 
 
       //display the invoice
-      //$this->invoice($_POST, $customerID = 2);
+      $this->invoice($_POST, $customerID = 2);
 
 
     }
@@ -103,7 +102,8 @@ class SignUp extends Controller
                                   , 'companyName' => $data['companyName']
                                   , 'cardLastDigit' => $cardLastDigit
                                   , 'subtotal' => $subtotal
-                                  , 'InvoiceNumber' => $InvoiceNumber ]);
+                                  , 'InvoiceNumber' => $InvoiceNumber
+                                  , 'websiteURL' => $data['WebsiteURL']]);
   }
 
 

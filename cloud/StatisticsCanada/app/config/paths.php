@@ -1,1 +1,0 @@
-<?php define('URL','/moad/project/cloud/StatisticsCanada/');    define('WEBSITE_NAME','Statistics Canada');
