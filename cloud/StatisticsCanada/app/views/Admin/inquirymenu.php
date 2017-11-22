@@ -1,1 +1,0 @@
- <a href="<?php echo URL ?>Admin/inquiries" class="list-group-item"><span class="fa fa-question" aria-hidden="true"></span> Inquiries </a>
