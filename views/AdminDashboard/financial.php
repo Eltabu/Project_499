@@ -63,9 +63,9 @@
         
         var data1 = google.visualization.arrayToDataTable([
           ['Products', 'Sells'],
-          ['Free Trial',     11],
-          ['Standard',      4],
-          ['Untimate',  2]
+          ['Free Trial',     <?php echo $this->products[0]->total; ?>],
+          ['Standard',      <?php echo $this->products[1]->total; ?>],
+          ['Untimate',  <?php echo $this->products[2]->total; ?>]
         ]);
 
         var options1 = {
@@ -73,11 +73,10 @@
           is3D: true,
         };
 
-
         var data2 = google.visualization.arrayToDataTable([
           ['Products', 'Sells'],
-          ['Standard',      21],
-          ['Untimate',  8]
+          ['Standard',      <?php echo $this->products[1]->total; ?>],
+          ['Untimate',  <?php echo $this->products[2]->total; ?>]
         ]);
 
         var options2 = {

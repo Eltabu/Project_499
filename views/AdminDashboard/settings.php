@@ -39,30 +39,6 @@
                 <div class="panel-heading">Manage Admins</div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="box box-danger">
-                                <div class="box-header">
-                                <h3 class="box-title">Update Admin Credential</h3>
-                                </div>
-                                <div class="box-body">
-                                    <form role="form">
-                                        <div class="box-body">
-                                            <div class="form-group">
-                                                <label for="username">Username:</label>
-                                                <input id="username" type="text" class="form-control" placeholder="Enter ...">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="userpassword">Password:</label>
-                                                <input type="password" class="form-control" id="userpassword" placeholder="Password">
-                                            </div>
-                                            <div class="form-group ">
-                                                <button type="submit" class="btn btn-primary">Update</button>
-                                            </div>
-                                        </div><!-- /.box-body -->
-                                    </form>
-                                </div><!-- /.box-body -->
-                            </div>
-                        </div>
 
                         <div class="col-md-6">
                             <div class="box box-danger">
@@ -70,24 +46,60 @@
                                     <h3 class="box-title">Create Admin</h3>
                                 </div>
                                 <div class="box-body">
-                                    <form role="form">
+                                    <form role="form" action="<?php echo URL ?>AdminDashboard/createAdmin" method="post">
                                         <div class="box-body">
                                             <div class="form-group">
+                                                <label for="firstname">First name:</label>
+                                                <input id="firstname" name="firstname" type="text" class="form-control" placeholder="Enter ...">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="lastname">Last name:</label>
+                                                <input id="lastname" name="lastname" type="text" class="form-control" placeholder="Enter ...">
+                                            </div>
+                                            <div class="form-group">
                                                 <label for="username">Username:</label>
-                                                <input id="username" type="text" class="form-control" placeholder="Enter ...">
+                                                <input id="username" name="username" type="text" class="form-control" placeholder="Enter ...">
                                             </div>
                                             <div class="form-group">
                                                 <label for="userpassword">Password:</label>
-                                                <input type="password" class="form-control" id="userpassword" placeholder="Password">
+                                                <input type="password" name="password" class="form-control" id="userpassword" placeholder="Password">
                                             </div>
                                             <div class="form-group ">
-                                                <button type="submit" class="btn btn-primary">Create</button>
+                                                <input  type="submit" class="btn btn-primary" value="Create">
                                             </div>
                                         </div><!-- /.box-body -->
                                     </form>
                                 </div><!-- /.box-body -->
                             </div>
-                        </div>      
+                        </div>   
+
+
+                        <div class="col-md-6">
+                            <div class="box box-danger">
+                                <div class="box-header">
+                                <h3 class="box-title">Update Admin Credential</h3>
+                                </div>
+                                <div class="box-body">
+                                    <form role="form" action="<?php echo URL ?>AdminDashboard/updateAdminCredential" method="post">
+                                        <div class="box-body">
+                                            <div class="form-group">
+                                                <label for="username">Username:</label>
+                                                <input id="username" name="username" type="text" class="form-control" placeholder="Enter ...">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="userpassword">Password:</label>
+                                                <input type="password" name="password" class="form-control" id="userpassword" placeholder="Password">
+                                            </div>
+                                            <div class="form-group ">
+                                                <input  type="submit" class="btn btn-primary" value="Update">
+                                            </div>
+                                        </div><!-- /.box-body -->
+                                    </form>
+                                </div><!-- /.box-body -->
+                            </div>
+                        </div>
+
+                           
                     </div>
                 </div>
                 </div>

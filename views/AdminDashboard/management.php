@@ -45,14 +45,14 @@
                                 <h3 class="box-title">Add Country</h3>
                                 </div>
                                 <div class="box-body">
-                                    <form role="form">
+                                    <form role="form" action="<?php echo URL ?>AdminDashboard/addCompanyName" method="post">
                                         <div class="box-body">
                                             <div class="form-group">
                                                 <label for="countryName">Country Name:</label>
-                                                <input id="countryName" type="text" class="form-control" placeholder="Enter ...">
+                                                <input id="countryName" name="countryName" type="text" class="form-control" placeholder="Enter ...">
                                             </div>
                                             <div class="form-group ">
-                                            <button type="submit" class="btn btn-primary">Add</button>
+                                                <input  type="submit" class="btn btn-primary" value="Add">
                                             </div>
                                         </div><!-- /.box-body -->
                                     </form>
@@ -66,14 +66,18 @@
                                 <h3 class="box-title">Add Fleet Size</h3>
                                 </div>
                                 <div class="box-body">
-                                    <form role="form">
+                                    <form role="form" action="<?php echo URL ?>AdminDashboard/addFleetSize" method="post">
                                         <div class="box-body">
+                                             <div class="form-group">
+                                                <label for="fleetname">Fleet Name:</label>
+                                                <input id="fleetname" name="fleetname" type="text" class="form-control" placeholder="Enter ...">
+                                            </div>
                                             <div class="form-group">
                                                 <label for="fleetSize">Fleet Size:</label>
-                                                <input id="fleetSize" type="text" class="form-control" placeholder="Enter ...">
+                                                <input id="fleetSize" name="fleetSize" type="text" class="form-control" placeholder="Enter ...">
                                             </div>
                                             <div class="form-group ">
-                                                <button type="submit" class="btn btn-primary">Add</button>
+                                                <input  type="submit" class="btn btn-primary" value="Add">
                                             </div>
                                         </div><!-- /.box-body -->
                                     </form>
@@ -86,7 +90,7 @@
             </div>
             
             <!-- Manage-->
-            <div class="row">
+            <!--<div class="row">
                 <div class="panel panel-default">
                 <div class="panel-heading">Create Product</div>
                 <div class="panel-body">
@@ -130,7 +134,7 @@
                     </div>
                 </div>
                 </div>           
-            </div>     
+            </div> -->    
 
         </div>
       </div>

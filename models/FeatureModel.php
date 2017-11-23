@@ -22,4 +22,14 @@ class FeatureModel extends Model
       return  $result;
     }
 
+    public function getAdminFeatures()
+    {
+      $stmt = $this->db->prepare("CALL sp_admin_get_features()");
+
+      $stmt->execute();
+      $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+
+      return  $result;
+    }
+
 }
