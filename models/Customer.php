@@ -26,9 +26,11 @@ class Customer extends Model
         $fleetsize = (int)$userInfo['fleetsize'];
         $theme = (int)$userInfo['theme'];
         $passsword = md5($LastName);
+        $productId = 1;
+        $status = 1;
 
 
-        $stmt = $this->db->prepare("CALL sp_test_drive(?,?,?,?,?,?,?,?,?,?,?,?)");
+        $stmt = $this->db->prepare("CALL sp_test_drive(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 
         $stmt->bindParam(1, $CompanyName, PDO::PARAM_STR);
         $stmt->bindParam(2, $FirstName, PDO::PARAM_STR);
@@ -42,10 +44,47 @@ class Customer extends Model
         $stmt->bindParam(10, $theme, PDO::PARAM_INT);
         $stmt->bindParam(11, $FirstName, PDO::PARAM_STR);
         $stmt->bindParam(12, $passsword, PDO::PARAM_STR);
+        $stmt->bindParam(13, $productId, PDO::PARAM_INT);
+        $stmt->bindParam(14, $status, PDO::PARAM_INT);
        
 
         $stmt->execute();
         
+    }
+
+
+
+    /*
+    /* function to retrieve the Customers data form the dtatbase 
+    */
+    public function getCustomers()
+    {
+         $stmt = $this->db->prepare("CALL sp_get_countries()");
+         $stmt->execute();
+         $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+         return $result;
+    }
+
+
+        /*
+    /* function to retrieve the Customers data form the dtatbase 
+    */
+    public function adminGetCustomers()
+    {
+         $stmt = $this->db->prepare("CALL sp_admin_get_customers()");
+         $stmt->execute();
+         $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+         return $result;
+    }
+
+    public function adminUpdateCustomerStatus($customerID, $status)
+    {
+        $stmt = $this->db->prepare("CALL sp_admin_update_customer_status(?,?)");
+
+        $stmt->bindParam(1, $customerID, PDO::PARAM_INT);
+        $stmt->bindParam(2, $status, PDO::PARAM_INT);
+
+        $stmt->execute();
     }
 }
 

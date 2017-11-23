@@ -1,25 +1,35 @@
-<?php 
-
+<?php
+/**
+ * class to allow us to load models and render view
+ */
 class Controller
 {
 
-	protected function loadModel($modelName = ''){
-		
-		//loads a model by name
-		require_once '../app/models/'.$modelName.'.php';
+  function __construct()
+  {
+    Session::int();
+  }
 
-		return new $modelName();
-	}
+  public function model($model)
+  {
+       require_once('Model.php');
+       require_once(__DIR__ .'/../models/' . $model . '.php');
+       return new $model();
+  }
 
-	 public function loadView($viewName, $viewData = [])
+  /**
+  * view function get called from the app.php file to load the view
+  */
+  public function view($view, $data = [])
   {   
+
       //load the header 
-      require_once (__DIR__ .'/../includes/Header.php');
+      require_once (__DIR__ .'/../views/Includes/header.php');
 
       //load the spesific view
-      require_once (__DIR__ .'/../views/' . $viewName . '.php');
+      require_once (__DIR__ .'/../views/' . $view . '.php');
 
       //load the footer
-      require_once (__DIR__ .'/../includes/Footer.php');
+      require_once (__DIR__ .'/../views/Includes/footer.php');
   }
 }

@@ -1,6 +1,6 @@
-        
-				
-		
+
+
+
 		<!-- FOOTER -->
 
 
@@ -16,14 +16,14 @@
 	        				<b>Fax:</b> +1 519-971-3650<br/>
 	        				<b>Email:</b> <a href="mailto:info@uwindsor.com">info@uwindsor.com</a>
 	        			</p>
-		    		</div>				
+		    		</div>
 		    		<div class="col-footer col-md-4 col-sm-4">
 		    			<h3>Our Social Networks</h3>
 						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.</p>
                         <ul class="social-share">
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                             <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
                             <li><a href="#"><i class="fa fa-skype"></i></a></li>
                         </ul>
@@ -35,7 +35,7 @@
 					<div class="footer-center">
 					<div class="row ">
 						<div class="col-lg-12 col-md-12 col-sm-12"><br><br>
-							&copy; 2017 Vehicle Rental Solutions. All rights reserved | Designed by : <a href="http://eltabu.myweb.cs.uwindsor.ca" target="_blank"  >  Project Team</a> 
+							&copy; 2017 Vehicle Rental Solutions. All rights reserved | Designed by : <a href="http://eltabu.myweb.cs.uwindsor.ca" target="_blank"  >  Project Team</a>
 						</div>
 					</div>
 					</div>
@@ -49,5 +49,15 @@
         <!-- BOOTSTRAP SCRIPTS  -->
         <script src="<?php echo URL ?>assets/js/bootstrap.js"></script>
 		<script src="<?php echo URL ?>assets/js/main.js"></script>
+		<script src="<?php echo URL ?>assets/js/jquery.dataTables.min.js"></script>
+		<script src="<?php echo URL ?>assets/js/dataTables.bootstrap.min.js"></script>
+    <script src="<?php echo URL ?>assets/js/stage-forms.js"></script>
+		<script src="<?php echo URL ?>assets/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+		<script>
+			$(function () {
+				//Add text editor
+				$("#compose-textarea").wysihtml5();
+			});
+		</script>
 </body>
 </html>

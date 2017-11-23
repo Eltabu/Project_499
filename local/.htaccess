@@ -1,1 +1,12 @@
-Options -Indexes
+Options -MultiViews
+RewriteEngine On
+
+RewriteBase /moad/project/local
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+
+php_value include_path '.;C:\xampp\php\PEAR;C:\xampp\htdocs\k2'

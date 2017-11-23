@@ -62,7 +62,7 @@
 				</ul>
 			</div>
 			<div class="wow-pricing-button">
-				<a href="#" class="wow-button buttonprice" target="_self" rel="nofollow"><span class="wow-button-inner">Sign Up</span></a>
+				<a href="<?php echo URL ?>SignUp?produnct_id=2" class="wow-button buttonprice" target="_self" rel="nofollow"><span class="wow-button-inner">Sign Up</span></a>
 			</div>
 		</div>
 	</div>
@@ -89,7 +89,7 @@
 				</ul>
 			</div>
 			<div class="wow-pricing-button">
-				<a href="#" class="wow-button buttonprice" target="_self" rel="nofollow"><span class="wow-button-inner">Sign Up</span></a>
+				<a href="<?php echo URL ?>SignUp?produnct_id=3" class="wow-button buttonprice" target="_self" rel="nofollow"><span class="wow-button-inner">Sign Up</span></a>
 			</div>
 		</div>
 	</div>
