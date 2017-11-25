@@ -22,4 +22,15 @@ class ProductModel extends Model
          return $result;
     }
 
+    public function getProductInfo($customerID)
+    {
+      $stmt = $this->db->prepare("CALL sp_customer_product_info(?)");
+      $stmt->bindParam(1, $customerID, PDO::PARAM_INT);
+
+      $stmt->execute();
+      $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+
+      return  $result;
+    }
+
 }

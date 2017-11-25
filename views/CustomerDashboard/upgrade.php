@@ -41,38 +41,36 @@
               <table class="table table-striped table-hover">
                       <tbody><tr>
                         <th>Name</th>
-                        <th>Published</th>
+                        <th>Monthly price</th>
                         <th>Release Date</th>
                         <th>Function</th>
-
-                        <th></th>
                       </tr>
-                      <tr>
-                        <td>Blog Post 1</td>
-                        <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                        <td>Dec 12, 2016</td>
-                        <td><a class="btn btn-danger" href="#">Update</a></td>
-                      </tr>
-                      <tr>
-                        <td>Blog Post 2</td>
-                        <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                        <td>Dec 13, 2016</td>
-                        <td><a class="btn btn-danger" href="#">Update</a></td>
-                      </tr>
-                      <tr>
-                        <td>Blog Post 3</td>
-                        <td><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
-                        <td>Dec 13, 2016</td>
-                        <td><a class="btn btn-danger" href="#">Update</a></td>
-                      </tr>
-                      <tr>
-                        <td>Blog Post 4</td>
-                        <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                        <td>Dec 14, 2016</td>
-                        <td><a class="btn btn-danger" href="#">Update</a></td>
-                      </tr>
+                      <?php //loop through the tickets 
+                        foreach ($this->featureUpgrade as $item) 
+                        { 
+                          $link = URL.'CustomerDashboard/upgradToFeature?feature_id='.$item->id;
+                          echo "<tr>
+                                <td>$item->name</td>
+                                <td>$item->monthly_price</td>
+                                <td>$item->modified_date</td>
+                                <td><a class=\"btn btn-danger\" href=\"$link\">Update</a></td>
+                               </tr>";
+                        }
+                      ?>
+                      <?php //loop through the tickets 
+                        foreach ($this->featureRemove as $item) 
+                        {
+                          $link = URL.'CustomerDashboard/upgradToFeature?feature_id='.$item->id;                           
+                          echo "<tr>
+                                <td>$item->name</td>
+                                <td>$item->monthly_price</td>
+                                <td>$item->modified_date</td>
+                                <td><a class=\"btn btn-danger\" href=\"$link\">Remove</a></td>
+                               </tr>";
+                        }
+                      ?>
                     </tbody>
-                </table>  
+              </table>
 
               </div>
               </div>

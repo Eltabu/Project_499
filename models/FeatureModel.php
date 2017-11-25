@@ -31,5 +31,39 @@ class FeatureModel extends Model
 
       return  $result;
     }
+    
+    public function getCustomerDashboardFeatures()
+    {
+      $stmt = $this->db->prepare("CALL sp_customer_get_features()");
+
+      $stmt->execute();
+      $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+
+      return  $result;
+    }
+    public function customerDashbardGetFeatureUpgrade($customerID)
+    {
+      $stmt = $this->db->prepare("CALL sp_customer_get_features_upgrade(?)");
+
+      $stmt->bindParam(1, $customerID, PDO::PARAM_INT);
+
+      $stmt->execute();
+      $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+
+      return  $result;
+    }
+
+    public function customerDashbardGetFeatureRemove($customerID)
+    {
+      $stmt = $this->db->prepare("CALL 	sp_customer_get_features_remove(?)");
+
+      $stmt->bindParam(1, $customerID, PDO::PARAM_INT);
+
+      $stmt->execute();
+      $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+
+      return  $result;
+    }
+
 
 }
