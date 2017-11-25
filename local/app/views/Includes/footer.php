@@ -36,6 +36,13 @@
 				</div>
 			</div>
 		</footer>
+
+		<script>
+			$(function () {
+				//Add text editor
+				$("#compose-textarea").wysihtml5();
+			});
+		</script>
     	<!-- END of FOOTER -->
 </body>
 </html>

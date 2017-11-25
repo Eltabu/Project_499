@@ -3,7 +3,8 @@
 class Admin extends Controller
 {
 
-    public $locations,$vehicles, $user;
+    public $locations,$vehicles, $user, $ticket;
+
 
     public function index()
     {
@@ -40,8 +41,22 @@ class Admin extends Controller
 
   public function inquiries()
   {
+    $ticketModel = $this->model('Ticket');
+    $this->tickets = $ticketModel->getTickets();  
     include("config/inquirycontroller.php");
   }
+
+  public function sendMessage()
+  {
+    $ticketModel = $this->model('Ticket');
+    $ticketModel->saveReplay($_POST, date("Y-m-d H:i:s"), $_SESSION['id']);  
+    //print_r($_POST);
+
+    $this->inquiries();
+  }
+
+
+
 
     public function getLocations()
     {

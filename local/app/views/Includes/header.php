@@ -13,6 +13,7 @@
         <link href="<?php echo URL ?>app/assets/css/icomoon-social.css" rel="stylesheet">
         <link href="<?php echo URL ?>app/assets/css/main.css" rel="stylesheet" />
         <link href="<?php echo URL ?>app/assets/datetime/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+        <link href="<?php echo URL ?>app/assets/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" />
         
         
 
@@ -102,6 +103,7 @@
         <script src="<?php echo URL ?>app/assets/js/bootstrap.js"></script>
         <script src="<?php echo URL ?>app/assets/js/main.js"></script>
         <script type="text/javascript" src="<?php echo URL ?>app/assets/datetime/js/bootstrap-datetimepicker.min.js"></script>
+         <script src="<?php echo URL ?>app/assets/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
     </header>
     <!--End Header-->
 
