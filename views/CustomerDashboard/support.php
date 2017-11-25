@@ -59,8 +59,7 @@
                     <div class="col-md-8">
                              
                         <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    Login Issue (2017-11-24)
+                                <div class="panel-heading" id="message-title">
                                 </div>
                                 <div class="panel-body">
                                     <form>

@@ -38,4 +38,29 @@ class User extends Model
             return ['role'=> 0, 'username'=> $result[0]->fname, 'id' => $result[0]->id];
         }
     }
+
+    public function updateUser($username, $password, $id)
+    {
+        $stmt = $this->db->prepare("CALL sp_admin_update_admin(?,?,?)");
+        $stmt->bindParam(1, $username, PDO::PARAM_STR);
+        $stmt->bindParam(2, $password, PDO::PARAM_STR);
+        $stmt->bindParam(3, $id, PDO::PARAM_INT);
+
+        $stmt->execute();
+
+    }
+
+    public function addUser($fname, $lname, $username, $password, $id)
+    {
+        $stmt = $this->db->prepare("CALL sp_admin_create_admin(?,?,?,?,?)");
+        $stmt->bindParam(1, $fname, PDO::PARAM_STR);
+        $stmt->bindParam(2, $lname, PDO::PARAM_STR);
+        $stmt->bindParam(3, $username, PDO::PARAM_STR);
+        $stmt->bindParam(4, $password, PDO::PARAM_STR);
+        $stmt->bindParam(5, $id, PDO::PARAM_INT);
+
+        $stmt->execute();
+
+    }
+
 }

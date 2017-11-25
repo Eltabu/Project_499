@@ -12,6 +12,10 @@ class TestDrive extends Controller
 
     public function index()
     {
+      //get fleet size from the database
+      $FleetSizeModel = $this->model('FleetSizeModel');
+      $this->fleetList = $FleetSizeModel->getFleetSize();  
+
       $this->getCountries();      
       $this->view('TestDrive/index', ['viewName' => 'Test Drive']);
     }

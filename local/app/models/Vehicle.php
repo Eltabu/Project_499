@@ -15,9 +15,9 @@ class Vehicle extends Model{
         $location = 1;
 		$image = $_FILES["image"]["name"];
 
-        // $directory = 'C:\xampp\htdocs\moad\project\local\app\images/vehicles/';
 
-        $directory = dirname(__FILE__, 2)."/images/vehicles/";
+        $directory = realpath(__DIR__ .'/..').'/images/vehicles/';
+
 
         if(move_uploaded_file($_FILES['image']['tmp_name'], $directory.$image))
             {

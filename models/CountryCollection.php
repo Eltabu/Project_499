@@ -22,4 +22,14 @@ class CountryCollection extends Model
          return $result;
     }
 
+    public function addCountryName($name, $id)
+    {
+        $stmt = $this->db->prepare("CALL sp_admin_add_country(?,?)");
+        $stmt->bindParam(1, $name, PDO::PARAM_STR);
+        $stmt->bindParam(2, $id, PDO::PARAM_INT);
+
+        $stmt->execute();
+
+    }
+
 }

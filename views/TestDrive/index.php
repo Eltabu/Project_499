@@ -98,10 +98,12 @@
 							<label for="fleetsize" class="col-sm-4 control-label">Fleet size: <span>*</span></label>
 							<div class="col-sm-8">
 								<select name="fleetsize" id="fleetsize" class="form-control" required="required">
-									<option value="1">1-499 cars</option>
-									<option value="2">500-999 cars</option>
-									<option value="3">1000-1999 cars</option>
-									<option value="4">2000+ cars</option>
+									<?php //loop through the fleet sizes 
+									foreach ($this->fleetList as $item) 
+									{ 
+										echo "<option value=\"$item->id\"> $item->name cars</option>";
+									}
+									?>
 								</select>
 							</div>
 						</div>

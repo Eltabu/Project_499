@@ -150,15 +150,6 @@ class AdminDashboard extends Controller
     $this->inquiries();
   }
 
-
-
-
-
-
-
-
-
-
   
 /*******************************************
 /       The products page methods         *
@@ -184,7 +175,10 @@ class AdminDashboard extends Controller
   public function features()
   {
     if ($_SESSION['role'] == 1)
-    {   
+    { 
+      //get features info from the database
+      $FeatureModel = $this->model('FeatureModel');
+      $this->featureList = $FeatureModel->getAdminFeatures();   
       $this->view('AdminDashboard/features', ['viewName' => 'Dashboard - Features']);
     }
     else
@@ -199,24 +193,11 @@ class AdminDashboard extends Controller
   public function financial()
   {
     if ($_SESSION['role'] == 1)
-    {   
+    { 
+      //get tickets info features from the database
+      $ProductModel = $this->model('ProductModel');
+      $this->products = $ProductModel->adminGetProducts();    
       $this->view('AdminDashboard/financial', ['viewName' => 'Dashboard - Financial']);
-    }
-    else
-    {
-      header('location: '.URL.'Login');
-    }
-  }
-
-
-/*******************************************
-/       The pages page methods          *
-/******************************************/
-  public function pages()
-  {
-    if ($_SESSION['role'] == 1)
-    {   
-      $this->view('AdminDashboard/pages', ['viewName' => 'Dashboard - Pages']);
     }
     else
     {
@@ -240,6 +221,33 @@ class AdminDashboard extends Controller
     }
   }
 
+  public function addFleetSize()
+  {
+    if ($_SESSION['role'] == 1)
+    { 
+      //save the info to the database
+      $FleetSizeModel = $this->model('FleetSizeModel');
+      $FleetSizeModel->addFleetSize($_POST['fleetname'], $_POST['fleetSize'], $_SESSION['id']);   
+
+
+      $this->management();
+    }
+  }
+
+  public function addCompanyName()
+  {
+    if ($_SESSION['role'] == 1)
+    { 
+      //save the info to the database
+      $CountryCollection = $this->model('CountryCollection');
+      $CountryCollection->addCountryName($_POST['countryName'], $_SESSION['id']);   
+
+
+      $this->management();
+    }
+  }
+
+
 
 /*******************************************
 /       The settings page methods          *
@@ -253,6 +261,32 @@ class AdminDashboard extends Controller
     else
     {
       header('location: '.URL.'Login');
+    }
+  }
+
+  public function updateAdminCredential()
+  {
+    if ($_SESSION['role'] == 1)
+    { 
+      //save the info to the database
+      $UserModel = $this->model('User');
+      $UserModel->updateUser($_POST['username'], md5($_POST['password']) , $_SESSION['id']);   
+
+
+      header('location: '.URL.'Login/logout');
+    }
+  }
+
+  public function createAdmin()
+  {
+    if ($_SESSION['role'] == 1)
+    { 
+      //save the info to the database
+      $UserModel = $this->model('User');
+      $UserModel->addUser($_POST['firstname'], $_POST['lastname'], $_POST['username'], md5($_POST['password']), $_SESSION['id']);   
+
+
+      $this->settings();
     }
   }
 
