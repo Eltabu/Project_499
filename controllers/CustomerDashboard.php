@@ -26,7 +26,11 @@ class CustomerDashboard extends Controller
     { 
       //get product features
       $ProductModel = $this->model('ProductModel');
-      $this->product_info = $ProductModel->getProductInfo($_SESSION['id']);   
+      $this->product_info = $ProductModel->getProductInfo($_SESSION['id']); 
+
+      $this->product_feature = $ProductModel->getProductFeatureCustomer($_SESSION['id']); 
+      
+        
       $this->view('CustomerDashboard/myProduct', ['viewName' => 'Dashboard - My Product']);
     }
     else
@@ -37,7 +41,7 @@ class CustomerDashboard extends Controller
 
 
   /*******************************************
-  /       The My Available Features page methods         *
+  /   The My Available Features page methods *
   /******************************************/
   public function availableFeatures()
   {

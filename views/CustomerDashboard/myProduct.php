@@ -50,11 +50,12 @@
                     <div class="form-group col-md-5">
                         <label>Features:</label>
                         <select multiple="" class="form-control select-meanu">
-                            <option>option 1</option>
-                            <option>option 2</option>
-                            <option>option 3</option>
-                            <option>option 4</option>
-                            <option>option 5</option>
+                            <?php //loop through the tickets 
+                            foreach ($this->product_feature as $item) 
+                            { 
+                              echo "<option>$item->name</option>";
+                            }
+                          ?>
                         </select>
                     </div>
                 </form>

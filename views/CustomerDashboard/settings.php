@@ -129,7 +129,7 @@
                                                 <input type="password" class="form-control" id="userpassword" placeholder="Password">
                                             </div>
                                             <div class="form-group ">
-                                                <button type="submit" class="btn btn-primary">Create</button>
+                                                <button type="submit" class="btn btn-primary">Update</button>
                                             </div>
                                         </div><!-- /.box-body -->
                                     </form>
