@@ -176,4 +176,47 @@ class CustomerDashboard extends Controller
       header('location: '.URL.'Login');
     }
   }
+
+  public function updateCreditCard()
+  {
+    if ($_SESSION['role'] == 2)
+    { 
+      //get tickets info features from the database
+      $CustomerDashboardModel = $this->model('CustomerDashboardModel');
+      //$CustomerDashboardModel->updateCustomerCreditCard($_SESSION['id'], $_POST);
+
+      
+
+      //$this->settings();
+    }
+  }
+
+  public function updateCredentials()
+  {
+    if ($_SESSION['role'] == 2)
+    { 
+      //get tickets info features from the database
+      $CustomerDashboardModel = $this->model('CustomerDashboardModel');
+      $CustomerDashboardModel->updateCusotmerCredential($_SESSION['id'], $_POST);
+
+
+      //$this->settings();
+    }
+  }
+
+  public function updateCustomerInfo()
+  {
+    if ($_SESSION['role'] == 2)
+    { 
+      
+      //get tickets info features from the database
+      $CustomerDashboardModel = $this->model('CustomerDashboardModel');
+      //$CustomerDashboardModel->updateCustomerInfo($_SESSION['id'], $_POST);
+
+      print_r($_POST);
+
+      //$this->settings();
+    }
+  }
+
 }
