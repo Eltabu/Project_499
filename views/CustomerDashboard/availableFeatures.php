@@ -37,22 +37,18 @@
                 <h3 class="panel-title">Features</h3>
               </div>
               <div class="panel-body">
-                <div class="panel panel-danger">
-                    <div class="panel-heading">Feature Name</div>
-                    <div class="panel-body">Provides hosting services such as domain and disk space, and database on the cloud.</div>
-                    <div class="panel-footer">Monthly Fees: $0.00</div>
-                </div>
-                <div class="panel panel-danger">
-                    <div class="panel-heading">Feature Name</div>
-                    <div class="panel-body">Provides hosting services such as domain and disk space, and database on the cloud.</div>
-                    <div class="panel-footer">Monthly Fees: $0.00</div>
-                </div>
-                <div class="panel panel-danger">
-                    <div class="panel-heading">Feature Name</div>
-                    <div class="panel-body">Provides hosting services such as domain and disk space, and database on the cloud.</div>
-                    <div class="panel-footer">Monthly Fees: $0.00</div>
-                </div>
-
+              <?php //loop through the tickets 
+                foreach ($this->info as $item) 
+                { 
+                  echo "
+                        <div class=\"panel panel-danger\">
+                            <div class=\"panel-heading\"> $item->name </div>
+                            <div class=\"panel-body\"> $item->description </div>
+                            <div class=\"panel-footer\">Monthly Fees: $item->monthly_price</div>
+                        </div>
+                       ";
+                }
+              ?>
               </div>
               </div>
 

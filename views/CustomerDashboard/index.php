@@ -39,22 +39,29 @@
               <div class="panel-body">
                 <div class="col-md-4">
                   <div class="well dash-box">
-                    <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 14</h2>
+                    <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 
+                      <?php  
+                        $d1 = new DateTime($this->info[0]->date); 
+                        $d2 = new DateTime('NOW'); 
+                        $diff=$d2->diff($d1); 
+                        echo $diff->format('%a'); 
+                      ?>
+                    </h2>
                     <h4> Days to next payment</h4>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="well dash-box">
-                    <h2><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> 2</h2>
+                    <h2><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> <?php echo $this->info[0]->tickets ?></h2>
                     <h4>Open tickets </h4>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <!--<div class="col-md-4">
                   <div class="well dash-box">
                     <h2><span class="glyphicon glyphicon-usd" aria-hidden="true"></span>29.99</h2>
                     <h4>Unpaid Fees</h4>
                   </div>
-                </div>
+                </div>-->
               </div>
               </div>
 

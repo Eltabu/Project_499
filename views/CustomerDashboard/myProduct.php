@@ -41,20 +41,21 @@
                 <form>
                     <div class="form-group form-inline">
                       <label>Product Name: </label>
-                      <input type="text" class="form-control" placeholder="Enter ..." disabled="">
+                      <label> <?php echo $this->product_info[0]->product_name; ?> </label>
                     </div>
                     <div class="form-group form-inline">
                       <label>Monthly Fees</label>
-                      <input type="text" class="form-control" placeholder="Enter ..." disabled="">
+                      <label> $<?php echo $this->product_info[0]->product_price + (int)$this->product_info[0]->features_price; ?> </label>
                     </div>
                     <div class="form-group col-md-5">
                         <label>Features:</label>
                         <select multiple="" class="form-control select-meanu">
-                            <option>option 1</option>
-                            <option>option 2</option>
-                            <option>option 3</option>
-                            <option>option 4</option>
-                            <option>option 5</option>
+                            <?php //loop through the tickets 
+                            foreach ($this->product_feature as $item) 
+                            { 
+                              echo "<option>$item->name</option>";
+                            }
+                          ?>
                         </select>
                     </div>
                 </form>

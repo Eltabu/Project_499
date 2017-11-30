@@ -2,7 +2,7 @@
 <section id="contact-info">
         <div class="center">                
             <h2>How to Reach Us?</h2>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+            <p class="lead">Here is a list of our contract information</p>
         </div>
         <div class="gmap-area">
             <div class="container">
@@ -62,7 +62,6 @@
         <div class="container">
             <div class="center">        
                 <h2>Drop Your Message</h2>
-                <p class="lead">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div> 
             <div class="row contact-wrap"> 
                 <div class="status alert alert-success" style="display: none"></div>

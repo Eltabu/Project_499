@@ -23,4 +23,16 @@ class TransactionModel extends Model
 
       return  $result[0]->transaction_id;
     }
+
+    public function customerGetPayments($customerID)
+    {
+      $stmt = $this->db->prepare("CALL 	sp_customer_get_payments(?)");
+
+      $stmt->bindParam(1, $customerID, PDO::PARAM_INT);
+
+      $stmt->execute();
+      $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+
+      return  $result;
+    }
 }

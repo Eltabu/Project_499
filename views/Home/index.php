@@ -24,8 +24,8 @@
         <div class="item">
           <div class="container">
             <div class="carousel-caption d-none d-md-block">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <h1>Variety of Products</h1>
+              <p>vehicle rentals solutions provide different product from free trial version can be used free of charge with of full features, beside Standard and and Ultimate version</p>
               <p><a class="btn btn-lg btn-danger" href="<?php echo URL ?>ProductInfo" role="button">Learn more</a></p>
             </div>
           </div>
@@ -101,7 +101,7 @@
                         <div class="feature-wrap">
                             <i class="fa fa-cogs"></i>
                             <h2>VRS Car Rental in the Cloud</h2>
-                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
+                            <h3>No need to pay extra fees for hosting services, Vehicle Rental Solution provide free hosting services</h3>
                         </div>
                     </div><!--/.col-md-4-->
 

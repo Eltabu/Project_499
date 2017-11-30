@@ -36,7 +36,7 @@
             <!-- Create -->
             <div class="row">
                 <div class="panel panel-default">
-                <div class="panel-heading">Create Elenments</div>
+                <div class="panel-heading">Create Elements</div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-6">

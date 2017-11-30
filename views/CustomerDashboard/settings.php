@@ -37,42 +37,6 @@
                 <div class="panel-heading">Manage Admins</div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="box box-danger">
-                                <div class="box-header">
-                                <h3 class="box-title">Update Customer Information</h3>
-                                </div>
-                                <div class="box-body">
-                                    <form role="form">
-                                        <div class="box-body">
-                                            <div class="form-group">
-                                                <label>First Name:</label>
-                                                <input type="text" class="form-control" placeholder="Enter ...">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Last Name</label>
-                                                <input type="text" class="form-control" placeholder="Enter ...">
-                                            </div>                                            
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Email Address</label>
-                                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Suffix</label>
-                                                <input type="text" class="form-control" placeholder="Enter ...">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Phone Number:</label>
-                                                <input type="text" class="form-control" placeholder="Enter ...">
-                                            </div>
-                                            <div class="form-group ">
-                                                <button type="submit" class="btn btn-primary">Update</button>
-                                            </div>
-                                        </div><!-- /.box-body -->
-                                    </form>
-                                </div><!-- /.box-body -->
-                            </div>
-                        </div>
 
                         <div class="col-md-6">
                             <div class="box box-danger">
@@ -80,36 +44,75 @@
                                     <h3 class="box-title">Credit Card</h3>
                                 </div>
                                 <div class="box-body">
-                                    <form role="form">
+                                    <form role="form" action="<?php echo URL ?>CustomerDashboard/updateCreditCard" method="post">
                                         <div class="box-body">
                                             <div class="form-group">
-                                                <label>Hoder Name:</label>
-                                                <input type="text" class="form-control" placeholder="Enter ...">
+                                                <label>Holder Name:</label>
+                                                <input type="text" name="holdername" class="form-control" placeholder="Enter ...">
                                             </div>
                                             <div class="form-group">
                                                 <label>Card Number:</label>
-                                                <input type="text" class="form-control" placeholder="Enter ...">
+                                                <input type="text" name="cardnumber" class="form-control" placeholder="Enter ...">
                                             </div>                                            
                                             <div class="form-group">
                                                 <label>Security Code</label>
-                                                <input type="text" class="form-control" placeholder="Enter ...">
+                                                <input type="text" name="securitycode" class="form-control" placeholder="Enter ...">
                                             </div>
                                             <div class="form-group">
                                                 <label>Expired Year:</label>
-                                                <input type="text" class="form-control" data-inputmask="&quot;mask&quot;: &quot;(999) 999-9999&quot;" data-mask="">
+                                                <input type="text" name="year" class="form-control" data-inputmask="&quot;mask&quot;: &quot;(999) 999-9999&quot;" data-mask="">
                                             </div>
                                             <div class="form-group">
                                                 <label>Expired Month:</label>
-                                                <input type="text" class="form-control" data-inputmask="&quot;mask&quot;: &quot;(999) 999-9999&quot;" data-mask="">
+                                                <input type="text" name="month" class="form-control" data-inputmask="&quot;mask&quot;: &quot;(999) 999-9999&quot;" data-mask="">
                                             </div>
                                             <div class="form-group ">
-                                                <button type="submit" class="btn btn-primary">Update</button>
+                                                <input  type="submit" class="btn btn-primary" value="Update">                                            
                                             </div>
                                         </div><!-- /.box-body -->
                                     </form>
                                 </div><!-- /.box-body -->
                             </div>
-                        </div>      
+                        </div> 
+
+                        <div class="col-md-6">
+                            <div class="box box-danger">
+                                <div class="box-header">
+                                <h3 class="box-title">Update Customer Information</h3>
+                                </div>
+                                <div class="box-body">
+                                    <form role="form"  action="<?php echo URL ?>CustomerDashboard/updateCustomerInfo" method="post">
+                                        <div class="box-body">
+                                            <div class="form-group">
+                                                <label>First Name:</label>
+                                                <input type="text" name="fname" class="form-control" placeholder="Enter ...">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Last Name</label>
+                                                <input type="text" name="lname" class="form-control" placeholder="Enter ...">
+                                            </div>                                            
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Email Address</label>
+                                                <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Suffix</label>
+                                                <input type="text" name="suffix" class="form-control" placeholder="Enter ...">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Phone Number:</label>
+                                                <input type="text" name="phone" class="form-control" placeholder="Enter ...">
+                                            </div>
+                                            <div class="form-group ">
+                                                <input  type="submit" class="btn btn-primary" value="Update">
+                                            </div>
+                                        </div><!-- /.box-body -->
+                                    </form>
+                                </div><!-- /.box-body -->
+                            </div>
+                        </div>
+
+                             
                     </div>
                     <div class="row">
                         <div class="col-md-6">
@@ -118,18 +121,18 @@
                                     <h3 class="box-title">Customer Credentials</h3>
                                 </div>
                                 <div class="box-body">
-                                    <form role="form">
+                                    <form role="form"  action="<?php echo URL ?>CustomerDashboard/updateCredentials" method="post">
                                         <div class="box-body">
                                             <div class="form-group">
                                                 <label for="username">Username:</label>
-                                                <input id="username" type="text" class="form-control" placeholder="Enter ...">
+                                                <input id="username" name="username" type="text" class="form-control" placeholder="Enter ...">
                                             </div>
                                             <div class="form-group">
                                                 <label for="userpassword">Password:</label>
-                                                <input type="password" class="form-control" id="userpassword" placeholder="Password">
+                                                <input type="password" name="password" class="form-control" id="userpassword" placeholder="Password">
                                             </div>
                                             <div class="form-group ">
-                                                <button type="submit" class="btn btn-primary">Create</button>
+                                                <input  type="submit" class="btn btn-primary" value="Update">
                                             </div>
                                         </div><!-- /.box-body -->
                                     </form>

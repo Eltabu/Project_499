@@ -42,7 +42,7 @@
                     <div class="col-md-4">                            
                         <div class="box box-solid ">
                             <div class="box-header with-border">
-                                <h3 class="box-title">My Messages:</h3>
+                                <h3 class="box-title">My Index:</h3>
                             </div>
                             <div class="box-body no-padding customers-inquiries-list">
                                 <ul class="nav nav-pills nav-stacked">
@@ -68,7 +68,7 @@
                                             <textarea disabled class="form-control" rows="7" id="customer-message"></textarea>
                                         </div>
                                         <div class="form-group">
-                                            <label>Replay Message:</label>
+                                            <label>Reply Body:</label>
                                             <textarea disabled class="form-control" rows="7" id="compose-textarea"></textarea>
                                         </div>
                                     </form>    
