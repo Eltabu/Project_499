@@ -183,7 +183,7 @@ class CustomerDashboard extends Controller
     { 
       //get tickets info features from the database
       $CustomerDashboardModel = $this->model('CustomerDashboardModel');
-      //$CustomerDashboardModel->updateCustomerCreditCard($_SESSION['id'], $_POST);
+      $CustomerDashboardModel->updateCustomerCreditCard($_SESSION['id'], $_POST);
 
       
 
@@ -200,7 +200,7 @@ class CustomerDashboard extends Controller
       $CustomerDashboardModel->updateCusotmerCredential($_SESSION['id'], $_POST);
 
 
-      //$this->settings();
+      header('location: '.URL.'Login/logout');
     }
   }
 
@@ -211,9 +211,9 @@ class CustomerDashboard extends Controller
       
       //get tickets info features from the database
       $CustomerDashboardModel = $this->model('CustomerDashboardModel');
-      //$CustomerDashboardModel->updateCustomerInfo($_SESSION['id'], $_POST);
+      $CustomerDashboardModel->updateCustomerInfo($_SESSION['id'], $_POST);
 
-      print_r($_POST);
+      //print_r($_POST);
 
       //$this->settings();
     }

@@ -14,12 +14,12 @@
 	        				<b>Address:</b> 401 Sunset Ave, Windsor, ON N9B 3P4<br/>
 	        				<b>Phone:</b> +1 519-971-3650<br/>
 	        				<b>Fax:</b> +1 519-971-3650<br/>
-	        				<b>Email:</b> <a href="mailto:info@uwindsor.com">info@uwindsor.com</a>
+	        				<b>Email:</b> <a href="info@vrs.myweb.cs.uwindsor.ca">info@vrs.myweb.cs.uwindsor.ca</a>
 	        			</p>
 		    		</div>
 		    		<div class="col-footer col-md-4 col-sm-4">
 		    			<h3>Our Social Networks</h3>
-						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.</p>
+						<p>Many norms and behaviors are established by the community. For example, if everyone around us is smoking, then it becomes okay to do so.</p>
                         <ul class="social-share">
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -30,7 +30,7 @@
 		    		</div>
 		    		<div class="col-footer  col-md-4 col-sm-4">
 		    			<h3>About Our Company</h3>
-		    				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci.</p>
+		    				<p>VRS is brought to you by a team of enterprise and technology experts at Web Enterprises who recognize the role of technology in solving common problems with a fresh perspective. Today, most businesses still manage their rental orders and equipment.</p>
 		    		</div>
 					<div class="footer-center">
 					<div class="row ">

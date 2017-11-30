@@ -27,14 +27,14 @@ class CustomerDashboardModel extends Model
     public function updateCusotmerCredential($customerID, $data)
     {
 
-        $holdername = $data['username'];
-        $cardnumber = md5($data['password']);
+        $username = $data['username'];
+        $password = md5($data['password']);
 
         $stmt = $this->db->prepare("CALL sp_customer_update_credentials(?,?,?)");
 
         $stmt->bindParam(1, $customerID, PDO::PARAM_INT);
-        $stmt->bindParam(2, $customerID, PDO::PARAM_STR);
-        $stmt->bindParam(3, $customerID, PDO::PARAM_STR);
+        $stmt->bindParam(2, $username, PDO::PARAM_STR);
+        $stmt->bindParam(3, $password, PDO::PARAM_STR);
 
 
         $stmt->execute();
@@ -53,11 +53,11 @@ class CustomerDashboardModel extends Model
         $stmt = $this->db->prepare("CALL sp_customer_update_credit(?,?,?,?,?,?)");
 
         $stmt->bindParam(1, $customerID, PDO::PARAM_INT);
-        $stmt->bindParam(2, $customerID, PDO::PARAM_STR);
-        $stmt->bindParam(3, $customerID, PDO::PARAM_STR);
-        $stmt->bindParam(4, $customerID, PDO::PARAM_STR);
-        $stmt->bindParam(5, $customerID, PDO::PARAM_STR);
-        $stmt->bindParam(6, $customerID, PDO::PARAM_STR);
+        $stmt->bindParam(2, $cardnumber, PDO::PARAM_STR);
+        $stmt->bindParam(3, $securitycode, PDO::PARAM_STR);
+        $stmt->bindParam(4, $year, PDO::PARAM_STR);
+        $stmt->bindParam(5, $month, PDO::PARAM_STR);
+        $stmt->bindParam(6, $holdername, PDO::PARAM_STR);
 
         $stmt->execute();
 
@@ -72,14 +72,14 @@ class CustomerDashboardModel extends Model
         $suffix = $data['suffix'];
         $phone = $data['phone'];
 
-        $stmt = $this->db->prepare("CALL sp_customer_info(?,?,?,?,?,?)");
+        $stmt = $this->db->prepare("CALL sp_customer_update_info(?,?,?,?,?,?)");
 
         $stmt->bindParam(1, $customerID, PDO::PARAM_INT);
-        $stmt->bindParam(2, $customerID, PDO::PARAM_STR);
-        $stmt->bindParam(3, $customerID, PDO::PARAM_STR);
-        $stmt->bindParam(4, $customerID, PDO::PARAM_STR);
-        $stmt->bindParam(5, $customerID, PDO::PARAM_STR);
-        $stmt->bindParam(6, $customerID, PDO::PARAM_STR);
+        $stmt->bindParam(2, $fname, PDO::PARAM_STR);
+        $stmt->bindParam(3, $lname, PDO::PARAM_STR);
+        $stmt->bindParam(4, $email, PDO::PARAM_STR);
+        $stmt->bindParam(5, $suffix, PDO::PARAM_STR);
+        $stmt->bindParam(6, $phone, PDO::PARAM_STR);
 
         $stmt->execute();
     }
