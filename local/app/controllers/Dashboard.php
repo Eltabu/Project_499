@@ -56,6 +56,23 @@ class Dashboard extends Controller
     }
   }
 
+   public function transactions()
+  { 
+     if ($_SESSION['type'] == 2)
+     {   
+     
+
+    $this->getTransactions();
+    
+     $this->view('Dashboard/Transactions', ['viewName' => 'Dashboard']);
+
+     }
+    else
+    {
+      header('location: '.URL.'Login');
+    }
+  }
+
   public function getReservations()
     {
       $reservationsModel = $this->model('Reservation');
@@ -78,6 +95,19 @@ class Dashboard extends Controller
       header('location: '.URL.'Dashboard/Account'); 
     }
 
+     public function updatePassword()
+    {
+      $userModel = $this->model('User');
+      $this->user = $userModel->updatePassword($_POST);
+
+      header('location: '.URL.'Dashboard/Account'); 
+    }
+
+    public function getTransactions()
+    {
+      $reservationsModel = $this->model('Reservation');
+      $this->reservations = $reservationsModel->getTransactions();
+    }
 
   public function sendMessage()
   {

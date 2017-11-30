@@ -23,7 +23,7 @@ class App
      require_once(__DIR__ .'/../controllers/' . $this->controller . '.php');
      $this->controller = new $this->controller;
 
-     //parase the methods if exist
+     //parse the methods if exist
      if(isset($url[1]))
      {
          if(method_exists($this->controller, $url[1]))
@@ -33,7 +33,7 @@ class App
          }
      }
 
-     //parase the params of exist
+     //parse the params of exist
      $this->params = $url ? array_values($url) : []; 
 
 

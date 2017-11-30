@@ -7,27 +7,15 @@
               <a href="index.html" class="list-group-item active main-color-bg">
                 <span aria-hidden="true"></span>
               </a>
-              <a href="<?php echo URL ?>Admin/index" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Customers </a>
+              <a href="<?php echo URL ?>Admin/index" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Users </a>
               <a href="<?php echo URL ?>Admin/locations" class="list-group-item"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Locations </a>
               <a href="<?php echo URL ?>Admin/vehicles" class="list-group-item"><span class="fa fa-car" aria-hidden="true"></span> Vehicles </a>
+              <a href="<?php echo URL ?>Admin/pages" class="list-group-item"><span class="fa fa-file-text" aria-hidden="true"></span> Pages </a>
 
              <?php include("inquirymenu.php"); ?>
 
-            </div>
+              <a href="<?php echo URL ?>Admin/account" class="list-group-item"><span class="fa fa-cog" aria-hidden="true"></span> Settings </a>
 
-            <div class="well">
-              <h4>Disk Space Used</h4>
-              <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                      60%
-              </div>
-            </div>
-            <h4>Bandwidth Used </h4>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-                    40%
-            </div>
-          </div>
             </div>
           </div>
           <div class="col-md-9">
@@ -56,9 +44,10 @@
               </div>
 
         <div class="panel-body">
-            <div class=="col-md-12" style="font-size:20px" id="form-space">
+            <div class=="col-md-12" id="form-space">
 
-                <table style="width:100%">
+                 <table  id="customerTable" class="table table-striped table-bordered">
+                  <thead>
                   <tr>
                     <th>Make</th>
                     <th>Model</th>
@@ -66,14 +55,16 @@
                     <th>Mileage<p style="font-size:0.7em;font-style: italic;">(km)</p></th>
                     <th>Delete</th>
                   </tr>
+                </thead>
 
+                <tbody>
                 <?php
                    foreach ($this->vehicles as $vehicle)
                   {
-                    echo "<tr><td>".$vehicle->make."</td><td>".$vehicle->model."</td> <td>".$vehicle->year."</td><td>".$vehicle->mileage."</td><td><h1 style=\"margin:0px;padding-left:5px\"><span class=\"fa fa-trash-o clickable\" aria-hidden=\"true\"></span></h1></td></tr>";
+                    echo "<tr><td>".$vehicle->make."</td><td>".$vehicle->model."</td> <td>".$vehicle->year."</td><td>".$vehicle->mileage."</td><td><h1 style=\"margin:0px;padding-left:5px\"><a style=\"color:black;font-size:inherit\"href=\"".URL."Admin/deleteVehicle/".$vehicle->vid."\"><span class=\"fa fa-trash-o clickable\" aria-hidden=\"true\"></span></a></h1></td></tr>";
                   }
                ?>
-
+</tbody>
                 </table>
 
               </div>

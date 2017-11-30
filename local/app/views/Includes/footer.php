@@ -6,8 +6,8 @@
 					<div class="col-footer col-md-4 col-sm-4">
 		    			<h3>Contact Us</h3>
 		    			<p class="contact-us-details">
-	        				<b>Address:</b> 401 Sunset Ave, Windsor, ON N9B 3P4<br/>
-	        				<b>Phone:</b> +1 519-971-3650<br/>
+	        				<b>Address:</b> <?php echo ADDRESS; ?> , Windsor, ON N9B 3P4<br/>
+	        				<b>Phone:</b> +1 <?php echo substr(PHONE, 0, 3).'-'.substr(PHONE, 4, 3).'-'.substr(PHONE,6,4); ?><br/>
 	        				<b>Fax:</b> +1 519-971-3650<br/>
 	        				<b>Email:</b> <a href="mailto:info@uwindsor.com">info@uwindsor.com</a>
 	        			</p>
@@ -15,16 +15,15 @@
 		    		<div class="col-footer col-md-4 col-sm-4">
 		    			<h3>Our Social Networks</h3>
                         <ul class="social-share">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
-                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                            <li><a href="http://<?php echo FACEBOOK ?>"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="http://<?php echo TWITTER ?>"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="http://<?php echo LINKEDIN ?>"><i class="fa fa-linkedin"></i></a></li> 
+                            <li><a href="http://<?php echo INSTAGRAM ?>"><i class="fa fa-instagram"></i></a></li>
                         </ul>
 		    		</div>
 		    		<div class="col-footer  col-md-4 col-sm-4">
 		    			<h3>About Our Company</h3>
-		    				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci.</p>
+		    				<p><?php echo ABOUTUS ?></p>
 		    		</div>
 					<div class="footer-center">
 					<div class="row ">

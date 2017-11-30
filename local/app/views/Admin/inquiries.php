@@ -7,13 +7,13 @@
               <a href="index.html" class="list-group-item active main-color-bg">
                 <span aria-hidden="true"></span>
               </a>
-              <a href="<?php echo URL ?>Admin/index" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Customers </a>
+              <a href="<?php echo URL ?>Admin/index" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Users </a>
               <a href="<?php echo URL ?>Admin/locations" class="list-group-item"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Locations </a>
               <a href="<?php echo URL ?>Admin/vehicles" class="list-group-item"><span class="fa fa-car" aria-hidden="true"></span> Vehicles </a>
-              <a href="<?php echo URL ?>Admin/account" class="list-group-item"><span class="fa fa-user" aria-hidden="true"></span> Account </a>
-                
-
+               <a href="<?php echo URL ?>Admin/pages" class="list-group-item"><span class="fa fa-file-text" aria-hidden="true"></span> Pages </a>
+             
                 <?php include("inquirymenu.php"); ?>
+                <a href="<?php echo URL ?>Admin/account" class="list-group-item"><span class="fa fa-cog" aria-hidden="true"></span> Settings </a>
             </div>
 
             

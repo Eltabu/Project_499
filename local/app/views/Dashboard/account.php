@@ -7,7 +7,7 @@
             <div class="list-group">
               <a href="<?php echo URL ?>Dashboard/Reservations" class="list-group-item"><span class="fa fa-car" aria-hidden="true"></span> My Reservations</a>
               <a href="<?php echo URL ?>rDashboard/Account" class="list-group-item active main-color-bg"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Account Settings</a>
-              <a href="<?php echo URL ?>Dashboard/Transcations" class="list-group-item"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Transcations</a>
+              <a href="<?php echo URL ?>Dashboard/Transactions" class="list-group-item"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Transactions</a>
               <a href="<?php echo URL ?>Dashboard/Support" class="list-group-item"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Support</a>
               <!-- <a href="<?php echo URL ?>CustomerDashboard/paymentHistory" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> My Transactions </a>
               <a href="<?php echo URL ?>CustomerDashboard/support" class="list-group-item"><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> Support </a>

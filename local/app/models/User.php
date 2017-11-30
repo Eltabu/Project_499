@@ -84,6 +84,20 @@ class User extends Model
 
     }
 
+     public function updatePassword($userInfo = []){
+
+        $stmt = $this->db->prepare("CALL sp_update_password(?,?)");
+
+        $password = md5($userInfo['password']);
+
+        // add parameters
+        $stmt->bindParam(1, $_SESSION['user_id'], PDO::PARAM_STR);
+        $stmt->bindParam(2, $password, PDO::PARAM_STR); 
+
+        $stmt->execute();
+
+    }
+
     public function getAccountInfo($userId)
     {
         $stmt = $this->db->prepare("CALL sp_accountinfo(?)");
@@ -96,4 +110,16 @@ class User extends Model
 
         return $result;
     }
+
+        public function getUsers()
+    {
+        $stmt = $this->db->prepare("CALL sp_get_users()");
+         
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+
+        return $result;
+    }
+
+
 }

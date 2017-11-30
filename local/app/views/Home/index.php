@@ -114,6 +114,7 @@
                         <div class="clearfix">
 
                         <div class="row">
+
                           <select name="vehicle" class="home-select" id="vehicle-select">
                             <option selected disabled>Select a Vehicle</option>
                             <?php  foreach ($this->vehicles as $vehicles)
@@ -121,8 +122,8 @@
                                         echo "<option value=".$vehicles->vid.">".$vehicles->year." ".$vehicles->make." ".$vehicles->model."</option>";
                                       }
                                       ?>
-
                           </select>
+
                         </div>
 
                         </div>
@@ -195,58 +196,47 @@
 </div>
 
 <!-- End of Content -->
+  <script src="http://maps.google.com/maps/api/js?key=AIzaSyB7i973YBFx3nNz3I93BbLjZjB_gUmRJz8&callback=initMap" type="text/javascript"></script>
 
-<script type="text/javascript">
+<?php echo "
+<script>
+var locations = [";
 
-function animateMap(lat, long)
-{
-    alert(lat + " " + long);
-}
-
-function initMap(){
-    var locations = [
-      ['Windsor - Huron Church',  42.304863, -83.065108],
-      ['Windsor - Jefferson',  42.304863,-82.951231]
-    ];
-
-     if (navigator.geolocation) {
-     navigator.geolocation.getCurrentPosition(function (position) {
-         initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-         map.setCenter(initialLocation);
-     });
-    } else {
-      map.setCenter("42.304863, -83.065108")
+    foreach ($this->locations as $location) {
+     echo "['".$location->name."', ".$location->latitude.", ".$location->longitude."], ";
     }
+    
 
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 10,
-      center: new google.maps.LatLng(42.304863, -83.065108),
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+     echo "[' ',-85.05112878,87]
+];
+var map = new google.maps.Map(document.getElementById('map'), {
+     zoom: 12,
+     center: new google.maps.LatLng(42.3149,-83.0364),
+     mapTypeId: google.maps.MapTypeId.ROADMAP
+});
+
+var infowindow = new google.maps.InfoWindow;
+
+var marker, i;
+
+for (i = 0; i < locations.length; i++) {  
+    marker = new google.maps.Marker({
+         position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+         map: map
     });
 
-    var infowindow = new google.maps.InfoWindow();
-
-    var marker, i;
-
-    for (i = 0; i < locations.length; i++) {
-      marker = new google.maps.Marker({
-        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-        map: map
-      });
-
-      google.maps.event.addListener(marker, 'click', (function(marker, i) {
-        return function() {
-          infowindow.setContent(locations[i][0]);
-          infowindow.open(map, marker);
-        }
-      })(marker, i));
-    }
-  }
-
-  </script>
+    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+         return function() {
+             infowindow.setContent(locations[i][0]);
+             infowindow.open(map, marker);
+         }
+    })(marker, i));
+}
+</script>
+";
+  ?>
 
 <script type="text/javascript">
     $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
 </script>
 
-  <script src="http://maps.google.com/maps/api/js?key=AIzaSyB7i973YBFx3nNz3I93BbLjZjB_gUmRJz8&callback=initMap" type="text/javascript"></script>

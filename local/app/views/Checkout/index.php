@@ -16,9 +16,10 @@
                                         <label>Total: $</label>  
                                         <input type="text" style="background:transparent;box-shadow: none;border:0" readonly name="total" value="19.99" /> 
                                         <label>User: </label>  
-                                        <input type="text" style="background:transparent;box-shadow: none;border:0" readonly name="user" value="<?php echo $_SESSION['user_id']; ?>" />    
+                                        <input type="text" style="background:transparent;box-shadow: none;border:0" readonly name="user" value="<?php echo $_SESSION['username']; ?>" />    
                                         <br> 
-                                        <br>                       
+                                        <br>        
+                                        <label>Please Select Card Type: </label>               
                                             <label>
                                               <input type="radio" name="type" value="2" required />
                                               <img src="<?php echo URL ?>../assets/img/credit/visa.png" alt="Visa">
@@ -73,6 +74,11 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col-xs-12 col-md-12 offset-4" style="text-align: center" >
+                                            <label>Upload an Image of Your Driver's Liscense *</label>
+                                            <input class="form-admin" id="image" name="image" type="file" accept="image/*" required>
+                                        </div>
+
                                         <div class="row" style="padding-bottom: 10px">
                                           <div class="col-xs-12">
                                             <input type="checkbox" name="terms" id="terms" required> I have read and accepted the terms and conditions</input>
@@ -94,7 +100,7 @@
 
 </div>
 
-<div class="col-lg-6 col-md-6 col-sm-12" style="max-height:400px;overflow-y:scroll;border: 1px solid #ddd;">
+<div class="col-lg-6 col-md-6 col-sm-12" style="max-height:545px;overflow-y:scroll;border: 1px solid #ddd;">
      
           <h1 class="text-center"> Terms of use</h1>
 

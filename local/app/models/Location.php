@@ -28,6 +28,16 @@ class Location extends Model{
 
         $stmt->execute();
 	}
+
+	 public function deleteLocation($locid)
+    {
+        $stmt = $this->db->prepare("CALL sp_delete_location(?)");
+
+        $stmt->bindParam(1, $locid, PDO::PARAM_STR);
+                 
+         $stmt->execute();
+    }
+
     
     public function getLocations()
     {

@@ -7,7 +7,7 @@
             <div class="list-group">
               <a href="<?php echo URL ?>Dashboard/Reservations" class="list-group-item"><span class="fa fa-car" aria-hidden="true"></span> My Reservations</a>
               <a href="<?php echo URL ?>Dashboard/Account" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Account Settings</a>
-              <a href="<?php echo URL ?>Dashboard/Transcations" class="list-group-item"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Transcations</a>
+              <a href="<?php echo URL ?>Dashboard/Transactions" class="list-group-item"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Transactions</a>
               <a href="<?php echo URL ?>Dashboard/Support" class="list-group-item  active main-color-bg"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Support</a>
               <!-- <a href="<?php echo URL ?>CustomerDashboard/paymentHistory" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> My Transactions </a>
               <a href="<?php echo URL ?>CustomerDashboard/support" class="list-group-item"><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> Support </a>
@@ -53,7 +53,7 @@
                                             <textarea disabled class="form-control" rows="7" id="customer-message"></textarea>
                                         </div>
                                         <div class="form-group">
-                                            <label>Replay Message:</label>
+                                            <label>Reply Message:</label>
                                             <textarea disabled class="form-control" rows="7" id="compose-textarea"></textarea>
                                         </div>
                                     </form>    
@@ -72,7 +72,7 @@
                                             <input name="Subject" type="text" id="message-subject" class="form-control">
                                         </div>
                                         <div class="form-group">
-                                            <label>Replay Message</label>
+                                            <label>Message</label>
                                             <textarea id="customer-isssue" class="form-control" style="height: 300px"></textarea>
                                         </div>                                      
                                     </div><!-- /.box-body -->

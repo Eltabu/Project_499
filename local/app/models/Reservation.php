@@ -113,5 +113,17 @@ class Reservation extends Model{
         
         $stmt->execute();
 	}
+
+    public function getTransactions()
+    {
+
+         $stmt = $this->db->prepare("CALL sp_get_transactions(?)");
+
+         $stmt->bindParam(1, $_SESSION['user_id'], PDO::PARAM_STR);
+                 
+         $stmt->execute();
+         $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+         return $result;
+    }
 	
 }

@@ -6,7 +6,6 @@
 <section id="contact-info">
         <div class="center">                
             <h2>How to Reach Us?</h2>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
         </div>
         <div class="gmap-area">
             <div class="container">
@@ -22,7 +21,7 @@
                             <li class="col-sm-6">
                                 <address>
                                     <h5>Head Office</h5>
-                                    <p>1537 Flint Street <br>
+                                    <p><?php echo ADDRESS ?><br>
                                     Tumon, MP 96911</p>
                                     <p>Phone:670-898-2847 <br>
                                     Email Address:info@domain.com</p>

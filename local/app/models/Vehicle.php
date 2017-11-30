@@ -38,6 +38,15 @@ class Vehicle extends Model{
 
 	}
 	
+    public function deleteVehicle($vehid)
+    {
+        $stmt = $this->db->prepare("CALL sp_delete_vehicle(?)");
+
+        $stmt->bindParam(1, $vehid, PDO::PARAM_STR);
+                 
+         $stmt->execute();
+    }
+
 	public function getVehicles()
     {
 

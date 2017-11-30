@@ -42,7 +42,7 @@ color: #ffffff;
 }
 
 label > input{ /* HIDE RADIO */
-  visibility: hidden; /* Makes input not-clickable */
+  opacity:0; /* Makes input not-clickable */
   position: absolute; /* Remove input from document flow */
 }
 label > input + img{ /* IMAGE STYLES */

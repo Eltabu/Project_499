@@ -26,11 +26,10 @@
 
                             <table style="width:100%">
                               <tr>
-                                <th>Code</th>
-                                <th>Car</th> 
-                                <th>Pick Up</th>
-                                <th>Dropoff</th>
-                                <th>Cancel</th>
+                                <th>Card Number</th>
+                                <th>Card Type</th>
+                                <th>Total</th> 
+                                <th>Date</th>
                               </tr>
 
 
@@ -39,7 +38,22 @@
                                foreach ($this->reservations as $reservation) 
                               {
 
-                                echo "<tr><td>".$reservation->resid."</td><td>".$reservation->year." ".$reservation->make." ".$reservation->model."</td> <td>".$reservation->pickup." ".$reservation->pickdate." ".str_replace(":00.00",  "", $reservation->picktime)."</td><td>".$reservation->dropoff." ".$reservation->dropdate." ".str_replace(":00.00",  "", $reservation->droptime)."</td><td><h2 style=\"margin:0px;padding-left:5px\"><a href=\"".URL."Dashboard/cancelReservation/".$reservation->resid."\"><span class=\"fa fa-remove clickable\" aria-hidden=\"true\"></span></a></h2></td></tr>";
+                                $cardNumber = substr($reservation->cardnum, -4);;
+
+                                if($reservation->card_id == 1)
+                                {
+                                  $cardType = "Mastercard";
+                                }
+                                else if($reservation->card_id == 2)
+                                {
+                                  $cardType = "Visa";
+                                } 
+                                else
+                                {
+                                  $cardType = "American Express";
+                                }
+
+                                echo "<tr><td> **** **** **** ".$cardNumber."</td><td>".$cardType."</td><td>".$reservation->total."</td><td>".$reservation->date_made."</td></tr>";
 
                               }
                            ?>
